@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf8'>
+	<meta name='viewport' content='width=device-width'>
+
+	<title>Svelte app</title>
+
+	<link rel='icon' type='image/png' href='favicon.png'>
+	<link rel='stylesheet' href='global.css'>
+	<link rel='stylesheet' href='bundle.css'>
+	<link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script>function parseNewick(a){for(var e=[],r={},s=a.split(/\s*(;|\(|\)|,|:)\s*/),t=0;t<s.length;t++){var n=s[t];switch(n){case"(":var c={};r.branchset=[c],e.push(r),r=c;break;case",":var c={};e[e.length-1].branchset.push(c),r=c;break;case")":r=e.pop();break;case":":break;default:var h=s[t-1];")"==h||"("==h||","==h?r.name=n:":"==h&&(r.length=parseFloat(n))}}return r}</script>
+
+	<style>
+		#browser-embed {
+			margin-top: 500px;
+			width: 80%;
+			height: 400px;
+		}
+	</style>
+
+</head>
+
+<body class="leading-normal tracking-normal text-gray-900" style="font-family: 'Source Sans Pro', sans-serif;">
+	<script src='bundle.js'></script>
+	<!-- <div id="svelte_app">
+		here
+	</div> -->
+	<div id="browser-embed">
+		<iframe width="1560" height="315" src="browser.html" frameborder="0" allowfullscreen></iframe> 
+	</div>
+</body>
+</html>
