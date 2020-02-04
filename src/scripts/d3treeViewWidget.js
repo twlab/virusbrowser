@@ -1,15 +1,16 @@
+import * as d3 from 'd3';
+
 export function drawTreeWidget(node) {
 
   var outerRadius = 960 / 2,
     innerRadius = outerRadius - 170;
 
   var color = d3
-    .scaleOrdinal()
+    .scaleOrdinal() // v4
     .domain(["Bacteria", "Eukaryota", "Archaea"])
     .range(d3.schemeCategory10);
 
-  var cluster = d3
-    .cluster()
+  var cluster = d3.cluster()
     .size([360, innerRadius])
     .separation(function (a, b) {
       return 1;

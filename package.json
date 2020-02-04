@@ -19,6 +19,7 @@
     "deploy": "aws s3 sync public s3://virus-browser"
   },
   "dependencies": {
+    "d3": "^5.15.0",
     "svelte-watch-resize": "^1.0.3"
   }
 }

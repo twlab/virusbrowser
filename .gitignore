@@ -1,5 +1,6 @@
 .DS_Store
 node_modules
 public/bundle.*
+public/phylotree
 package-lock.json
 yarn.lock
