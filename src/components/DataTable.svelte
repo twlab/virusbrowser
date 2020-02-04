@@ -1,0 +1,207 @@
+<script>
+  import SvelteTable from "./SvelteTable.svelte";
+  import { onMount } from "svelte";
+  import { Cart } from "../stores/Cart.js";
+  import _data from "../metadata/nCov_all_skinny.json";
+
+  const DATA = _data.map((d, i) => {
+    const {
+      accession,
+      organism,
+      isolate,
+      mol_type,
+      strain,
+      db_xref,
+      collection_date,
+      country,
+      host
+    } = d;
+    let tmp = { _id: i + 1 };
+    tmp.Accession = accession;
+    tmp.Organism = organism[0] || "";
+    tmp.Molecule_Type = mol_type !== undefined ? mol_type[0] : "N/A";
+    tmp.Strain = strain !== undefined ? strain[0] : "N/A";
+    tmp.Isolate = isolate !== undefined ? isolate[0] : "N/A";
+    tmp.Collection_Date =
+      collection_date !== undefined ? collection_date[0] : "N/A";
+    tmp.Country = country !== undefined ? country[0] : "N/A";
+    tmp.db_xref = db_xref !== undefined ? db_xref[0] : "N/A";
+    tmp.Host = host !== undefined ? host[0] : "N/A";
+    return tmp;
+  });
+
+  function updateCart(input) {
+    let found = $Cart.data.filter(d => d._id === input.detail.row._id);
+    if (found.length > 0) {
+      Cart.addDataItems($Cart.data.filter(d => d._id !== input.detail.row._id));
+    } else {
+      Cart.addDataItems([...new Set([...$Cart.data, input.detail.row])]);
+    }
+    console.log($Cart.data);
+  }
+
+  let example = 0;
+  let sortBy = "id";
+  let sortOrder = 1;
+  let iconAsc = "↑";
+  let iconDesc = "↓";
+  const ROWS_PER_PAGE = 50;
+
+  const cols = [
+    {
+      key: "_id",
+      title: "ID",
+      value: v => v._id,
+      sortable: true,
+      filterOptions: rows => {
+        let nums = {};
+        rows.forEach(row => {
+          let num = Math.floor(row._id / ROWS_PER_PAGE);
+          if (nums[num] === undefined)
+            nums[num] = {
+              name: `${num * ROWS_PER_PAGE} to ${(num + 1) * ROWS_PER_PAGE}`,
+              value: num
+            };
+        });
+        // fix order
+        nums = Object.entries(nums)
+          .sort()
+          .reduce((o, [k, v]) => ((o[k] = v), o), {});
+        return Object.values(nums);
+      },
+      filterValue: v => Math.floor(v._id / ROWS_PER_PAGE),
+      headerClass: "text-left"
+    },
+    {
+      key: "Accession",
+      title: "Accession",
+      value: v => v.Accession,
+      sortable: true,
+      filterOptions: rows => {
+        let letrs = {};
+        rows.forEach(row => {
+          let letr = row.Accession.charAt(0);
+          if (letrs[letr] === undefined)
+            letrs[letr] = {
+              name: `${letr.toUpperCase()}`,
+              value: letr.toLowerCase()
+            };
+        });
+        // fix order
+        letrs = Object.entries(letrs)
+          .sort()
+          .reduce((o, [k, v]) => ((o[k] = v), o), {});
+        return Object.values(letrs);
+      },
+      filterValue: v => v.Accession.charAt(0).toLowerCase()
+    },
+    {
+      key: "Isolate",
+      title: "Isolate",
+      value: v => v.Isolate,
+      sortable: true,
+      filterOptions: rows => {
+        let letrs = {};
+        rows.forEach(row => {
+          let letr = row.Isolate.charAt(0);
+          if (letrs[letr] === undefined)
+            letrs[letr] = {
+              name: `${letr.toUpperCase()}`,
+              value: letr.toLowerCase()
+            };
+        });
+        // fix order
+        letrs = Object.entries(letrs)
+          .sort()
+          .reduce((o, [k, v]) => ((o[k] = v), o), {});
+        return Object.values(letrs);
+      },
+      filterValue: v => v.Isolate.charAt(0).toLowerCase()
+    },
+    {
+      key: "Molecule_Type",
+      title: "Molecule Type",
+      value: v => v.Molecule_Type,
+      sortable: true,
+      filterOptions: rows => {
+        let letrs = {};
+        rows.forEach(row => {
+          let letr = row.Molecule_Type;
+          if (letrs[letr] === undefined)
+            letrs[letr] = {
+              name: letr,
+              value: letr
+            };
+        });
+        // fix order
+        letrs = Object.entries(letrs)
+          .sort()
+          .reduce((o, [k, v]) => ((o[k] = v), o), {});
+        return Object.values(letrs);
+      },
+      filterValue: v => v.Molecule_Type
+    },
+    {
+      key: "Country",
+      title: "Country",
+      value: v => v.Country,
+      sortable: true,
+      filterOptions: rows => {
+        let letrs = {};
+        rows.forEach(row => {
+          let letr = row.Country.split(":")[0];
+          if (letrs[letr] === undefined)
+            letrs[letr] = {
+              name: letr,
+              value: letr
+            };
+        });
+        // fix order
+        letrs = Object.entries(letrs)
+          .sort()
+          .reduce((o, [k, v]) => ((o[k] = v), o), {});
+        return Object.values(letrs);
+      },
+      filterValue: v => v.Country.split(":")[0]
+    },
+    {
+      key: "Collection_Date",
+      title: "Year",
+      value: v => v.Collection_Date,
+      sortable: true,
+      filterOptions: rows => {
+        let letrs = {};
+        rows.forEach(row => {
+          let splitStr = row.Collection_Date.split("-");
+          let year =
+            splitStr.length !== 0 ? splitStr[splitStr.length - 1] : "N/A";
+          let letr = year;
+          if (letrs[letr] === undefined)
+            letrs[letr] = {
+              name: letr,
+              value: letr
+            };
+        });
+        // fix order
+        letrs = Object.entries(letrs)
+          .sort()
+          .reduce((o, [k, v]) => ((o[k] = v), o), {});
+        return Object.values(letrs);
+      },
+      filterValue: v => {
+        let splitStr = v.Collection_Date.split("-");
+        let year =
+          splitStr !== undefined && splitStr.length !== 0
+            ? splitStr[splitStr.length - 1]
+            : "N/A";
+        return splitStr[splitStr.length - 1];
+      }
+    }
+  ];
+</script>
+
+{#if DATA !== undefined}
+  <SvelteTable on:clickRow={updateCart} columns={cols} rows={DATA} />
+{:else}
+  <div>Loading..</div>
+{/if}

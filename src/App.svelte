@@ -5,6 +5,7 @@
   import Footer from "./UI/Footer.svelte";
   import Nav from "./UI/Nav.svelte";
   import LargeTreeContainer from "./containers/LargeTreeContainer.svelte";
+  import DataTable from './components/DataTable.svelte';
 </script>
 
 <style>
@@ -26,10 +27,10 @@
     
     </div>
 
-      
       <!-- <TreeComponent /> -->
-      <LargeTreeContainer />
+      <!-- <LargeTreeContainer /> -->
       <!-- <CollapsibleTree/> -->
+      <DataTable/>
     </div>
   <!-- <SplashBanner /> -->
   <!-- <Footer class="mt-14"/> -->

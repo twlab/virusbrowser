@@ -46,7 +46,7 @@ export function createLargeTree(FILEPATH) {
                     .update();
       console.log('Hiding following nodes ' + __nodes.map(d => d.name).join(', '));
       }
-    , 3000);
+    , 5000);
   });
 }
 

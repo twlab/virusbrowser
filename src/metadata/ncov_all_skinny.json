@@ -1,0 +1,480 @@
+[
+  {
+    "accession": "NC_045512.2",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": [
+      "Wuhan seafood market pneumonia virus"
+    ],
+    "mol_type": [
+      "genomic RNA"
+    ],
+    "isolate": [
+      "Wuhan-Hu-1"
+    ],
+    "host": [
+      "Homo sapiens"
+    ],
+    "db_xref": [
+      "taxon:2697049"
+    ],
+    "country": [
+      "China"
+    ],
+    "collection_date": [
+      "Dec-2019"
+    ]
+  },
+  {
+    "accession": "MN938384.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": [
+      "Wuhan seafood market pneumonia virus"
+    ],
+    "mol_type": [
+      "genomic RNA"
+    ],
+    "isolate": [
+      "2019-nCoV_HKU-SZ-002a_2020"
+    ],
+    "isolation_source": [
+      "nasopharyngeal swab"
+    ],
+    "host": [
+      "Homo sapiens"
+    ],
+    "db_xref": [
+      "taxon:2697049"
+    ],
+    "country": [
+      "China: Shenzhen"
+    ],
+    "collection_date": [
+      "Jan-2020"
+    ]
+  },
+  {
+    "accession": "MN975262.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": [
+      "Wuhan seafood market pneumonia virus"
+    ],
+    "mol_type": [
+      "genomic RNA"
+    ],
+    "isolate": [
+      "2019-nCoV_HKU-SZ-005b_2020"
+    ],
+    "isolation_source": [
+      "sputum"
+    ],
+    "host": [
+      "Homo sapiens"
+    ],
+    "db_xref": [
+      "taxon:2697049"
+    ],
+    "country": [
+      "China"
+    ],
+    "collection_date": [
+      "Jan-2020"
+    ]
+  },
+  {
+    "accession": "MN985325.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": [
+      "Wuhan seafood market pneumonia virus"
+    ],
+    "mol_type": [
+      "genomic RNA"
+    ],
+    "isolate": [
+      "2019-nCoV/USA-WA1/2020"
+    ],
+    "isolation_source": [
+      "oropharyngeal swab"
+    ],
+    "host": [
+      "Homo sapiens"
+    ],
+    "db_xref": [
+      "taxon:2697049"
+    ],
+    "country": [
+      "USA"
+    ],
+    "collection_date": [
+      "19-Jan-2020"
+    ],
+    "note": [
+      "5' end is primer sequence used"
+    ]
+  },
+  {
+    "accession": "MN988713.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": [
+      "Wuhan seafood market pneumonia virus"
+    ],
+    "mol_type": [
+      "genomic RNA"
+    ],
+    "isolate": [
+      "2019-nCoV/USA-IL1/2020"
+    ],
+    "isolation_source": [
+      "sputum"
+    ],
+    "host": [
+      "Homo sapiens"
+    ],
+    "db_xref": [
+      "taxon:2697049"
+    ],
+    "country": [
+      "USA: Illinois"
+    ],
+    "collection_date": [
+      "21-Jan-2020"
+    ],
+    "note": [
+      "5' sequence is the primer sequence used"
+    ]
+  },
+  {
+    "accession": "MN994467.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": [
+      "Wuhan seafood market pneumonia virus"
+    ],
+    "mol_type": [
+      "genomic RNA"
+    ],
+    "isolate": [
+      "2019-nCoV/USA-CA1/2020"
+    ],
+    "isolation_source": [
+      "nasopharyngeal swab"
+    ],
+    "host": [
+      "Homo sapiens"
+    ],
+    "db_xref": [
+      "taxon:2697049"
+    ],
+    "country": [
+      "USA: CA"
+    ],
+    "collection_date": [
+      "23-Jan-2020"
+    ],
+    "note": [
+      "5' sequence is the primer sequence used"
+    ]
+  },
+  {
+    "accession": "MN994468.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": [
+      "Wuhan seafood market pneumonia virus"
+    ],
+    "mol_type": [
+      "genomic RNA"
+    ],
+    "isolate": [
+      "2019-nCoV/USA-CA2/2020"
+    ],
+    "isolation_source": [
+      "nasopharyngeal swab"
+    ],
+    "host": [
+      "Homo sapiens"
+    ],
+    "db_xref": [
+      "taxon:2697049"
+    ],
+    "country": [
+      "USA: CA"
+    ],
+    "collection_date": [
+      "22-Jan-2020"
+    ],
+    "note": [
+      "5' sequence is the primer sequence used"
+    ]
+  },
+  {
+    "accession": "MN997409.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": [
+      "Wuhan seafood market pneumonia virus"
+    ],
+    "mol_type": [
+      "genomic RNA"
+    ],
+    "isolate": [
+      "2019-nCoV/USA-AZ1/2020"
+    ],
+    "isolation_source": [
+      "buccal swab"
+    ],
+    "host": [
+      "Homo sapiens"
+    ],
+    "db_xref": [
+      "taxon:2697049"
+    ],
+    "country": [
+      "USA: AZ"
+    ],
+    "collection_date": [
+      "22-Jan-2020"
+    ],
+    "note": [
+      "5' sequence is the primer sequence used"
+    ]
+  },
+  {
+    "accession": "MN988668.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": [
+      "Wuhan seafood market pneumonia virus"
+    ],
+    "mol_type": [
+      "genomic RNA"
+    ],
+    "isolate": [
+      "2019-nCoV WHU01"
+    ],
+    "isolation_source": [
+      "BALF sample of 2019 Wuhan peumoniapatient 01"
+    ],
+    "host": [
+      "Homo sapiens"
+    ],
+    "db_xref": [
+      "taxon:2697049"
+    ],
+    "country": [
+      "China"
+    ],
+    "collection_date": [
+      "02-Jan-2020"
+    ],
+    "note": [
+      "genome sequence collected on Jan 7, 2020"
+    ]
+  },
+  {
+    "accession": "MN988669.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": [
+      "Wuhan seafood market pneumonia virus"
+    ],
+    "mol_type": [
+      "genomic RNA"
+    ],
+    "isolate": [
+      "2019-nCoV WHU02"
+    ],
+    "isolation_source": [
+      "BALF sample of 2019 Wuhan peumoniapatient 02"
+    ],
+    "host": [
+      "Homo sapiens"
+    ],
+    "db_xref": [
+      "taxon:2697049"
+    ],
+    "country": [
+      "China"
+    ],
+    "collection_date": [
+      "02-Jan-2020"
+    ],
+    "note": [
+      "genome sequence collected on Jan 7, 2020"
+    ]
+  },
+  {
+    "accession": "MN996527.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": [
+      "Wuhan seafood market pneumonia virus"
+    ],
+    "mol_type": [
+      "genomic RNA"
+    ],
+    "isolate": [
+      "WIV02"
+    ],
+    "isolation_source": [
+      "bronchoalveolar lavage fluid"
+    ],
+    "host": [
+      "Homo sapiens"
+    ],
+    "db_xref": [
+      "taxon:2697049"
+    ],
+    "country": [
+      "China: Wuhan"
+    ],
+    "collection_date": [
+      "30-Dec-2019"
+    ],
+    "collected_by": [
+      "Wuhan Jinyintan Hospital"
+    ]
+  },
+  {
+    "accession": "MN996528.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": [
+      "Wuhan seafood market pneumonia virus"
+    ],
+    "mol_type": [
+      "genomic RNA"
+    ],
+    "isolate": [
+      "WIV04"
+    ],
+    "isolation_source": [
+      "bronchoalveolar lavage fluid"
+    ],
+    "host": [
+      "Homo sapiens"
+    ],
+    "db_xref": [
+      "taxon:2697049"
+    ],
+    "country": [
+      "China: Wuhan"
+    ],
+    "collection_date": [
+      "30-Dec-2019"
+    ],
+    "collected_by": [
+      "Wuhan Jinyintan Hospital"
+    ]
+  },
+  {
+    "accession": "MN996529.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": [
+      "Wuhan seafood market pneumonia virus"
+    ],
+    "mol_type": [
+      "genomic RNA"
+    ],
+    "isolate": [
+      "WIV05"
+    ],
+    "isolation_source": [
+      "bronchoalveolar lavage fluid"
+    ],
+    "host": [
+      "Homo sapiens"
+    ],
+    "db_xref": [
+      "taxon:2697049"
+    ],
+    "country": [
+      "China: Wuhan"
+    ],
+    "collection_date": [
+      "30-Dec-2019"
+    ],
+    "collected_by": [
+      "Wuhan Jinyintan Hospital"
+    ]
+  },
+  {
+    "accession": "MN996530.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": [
+      "Wuhan seafood market pneumonia virus"
+    ],
+    "mol_type": [
+      "genomic RNA"
+    ],
+    "isolate": [
+      "WIV06"
+    ],
+    "isolation_source": [
+      "bronchoalveolar lavage fluid"
+    ],
+    "host": [
+      "Homo sapiens"
+    ],
+    "db_xref": [
+      "taxon:2697049"
+    ],
+    "country": [
+      "China: Wuhan"
+    ],
+    "collection_date": [
+      "30-Dec-2019"
+    ],
+    "collected_by": [
+      "Wuhan Jinyintan Hospital"
+    ]
+  },
+  {
+    "accession": "MN996531.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": [
+      "Wuhan seafood market pneumonia virus"
+    ],
+    "mol_type": [
+      "genomic RNA"
+    ],
+    "isolate": [
+      "WIV07"
+    ],
+    "isolation_source": [
+      "bronchoalveolar lavage fluid"
+    ],
+    "host": [
+      "Homo sapiens"
+    ],
+    "db_xref": [
+      "taxon:2697049"
+    ],
+    "country": [
+      "China: Wuhan"
+    ],
+    "collection_date": [
+      "30-Dec-2019"
+    ],
+    "collected_by": [
+      "Wuhan Jinyintan Hospital"
+    ]
+  },
+  {
+    "accession": "MT007544.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": [
+      "Wuhan seafood market pneumonia virus"
+    ],
+    "mol_type": [
+      "genomic RNA"
+    ],
+    "isolate": [
+      "Australia/VIC01/2020"
+    ],
+    "host": [
+      "Homo sapiens"
+    ],
+    "db_xref": [
+      "taxon:2697049"
+    ],
+    "country": [
+      "Australia: Victoria"
+    ],
+    "collection_date": [
+      "25-Jan-2020"
+    ]
+  }
+]
