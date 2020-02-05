@@ -23,6 +23,25 @@ export const generateDatahub = function(files, virusName, referencefasta) {
 }
 
 
+/**
+ * tmp.push(`
+      {
+        "type": "categorical",
+        "name": "${file.Accession}",
+        "url": "${URLBASE}/${virusName}/SNV/${file.Accession}.cat.gz",
+        "options": {
+            "category": {
+              "1": { "name": "A", "color": "#89C738" },
+              "2": { "name": "T", "color": "#9238C7" },
+              "3": { "name": "C", "color": "#E05144" },
+              "4": { "name": "G", "color": "#3899C7" },
+              "5": { "name": "N", "color": "#858585" },
+              "6": { "name": "Deletion", "color": "#462185" }
+            }
+          }
+        }
+      `)
+ */
 
 
 /**

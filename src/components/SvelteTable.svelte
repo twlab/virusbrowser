@@ -1,5 +1,5 @@
 <script>
-	import { createEventDispatcher, onDestroy } from 'svelte';
+	import { createEventDispatcher, onDestroy, beforeUpdate } from 'svelte';
 	import { Cart } from '../stores/Cart.js';
 	let dataIds;
 
@@ -13,6 +13,10 @@
 	onDestroy(() => {
 		unsubscribe();
 	});
+
+	beforeUpdate(() => {
+		calculateFilterValues()
+	})
 
 	export let columns;
 	export let rows;
@@ -55,7 +59,7 @@
 	    } else if (Array.isArray(c.filterOptions)) {
 	      filterValues[c.key] = [...c.filterOptions];
 	    }
-	  });
+		});
 	};
 
 

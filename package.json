@@ -16,7 +16,9 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "dev": "webpack-dev-server --content-base public",
-    "deploy": "aws s3 sync public s3://virus-browser"
+    "deploy": "aws s3 sync public s3://virus-browser",
+    "deployaws": "aws s3 sync public s3://virusgateway.wustl.edu",
+    "deployprod" : "scp -r public/* target.wustl.edu:/var/www/html/virusgateway"
   },
   "dependencies": {
     "d3": "^5.15.0",

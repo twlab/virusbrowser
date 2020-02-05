@@ -1,47 +1,122 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-	<meta charset='utf8'>
-	<meta name='viewport' content='width=device-width'>
+  <head>
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width" />
 
-	<title>WashU Viral Gateway</title>
+    <title>WashU Viral Gateway</title>
 
-	<link rel='icon' type='image/png' href='favicon.png'>
-	<link rel='stylesheet' href='global.css'>
-	<link rel='stylesheet' href='bundle.css'>
-	<link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
-	<!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
-	<!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
-  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
-  <!-- <link href="//veg.github.io/phylotree.js/phylotree.css" rel="stylesheet"> -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="bundle.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss/dist/tailwind.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700"
+      rel="stylesheet"
+    />
+    <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
+    <!-- <link href="//veg.github.io/phylotree.js/phylotree.css" rel="stylesheet"> -->
 
-  <script src="//code.jquery.com/jquery.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script src="//d3js.org/d3.v3.min.js"></script>
-  <!-- <script src="/phylotree/phylotree.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" charset="utf-8"></script>
-	<script>function parseNewick(a){for(var e=[],r={},s=a.split(/\s*(;|\(|\)|,|:)\s*/),t=0;t<s.length;t++){var n=s[t];switch(n){case"(":var c={};r.branchset=[c],e.push(r),r=c;break;case",":var c={};e[e.length-1].branchset.push(c),r=c;break;case")":r=e.pop();break;case":":break;default:var h=s[t-1];")"==h||"("==h||","==h?r.name=n:":"==h&&(r.length=parseFloat(n))}}return r}</script>
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <!-- <script src="/phylotree/phylotree.js"></script> -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"
+      charset="utf-8"
+    ></script>
+    <script>
+      function parseNewick(a) {
+        for (
+          var e = [], r = {}, s = a.split(/\s*(;|\(|\)|,|:)\s*/), t = 0;
+          t < s.length;
+          t++
+        ) {
+          var n = s[t];
+          switch (n) {
+            case '(':
+              var c = {};
+              (r.branchset = [c]), e.push(r), (r = c);
+              break;
+            case ',':
+              var c = {};
+              e[e.length - 1].branchset.push(c), (r = c);
+              break;
+            case ')':
+              r = e.pop();
+              break;
+            case ':':
+              break;
+            default:
+              var h = s[t - 1];
+              ')' == h || '(' == h || ',' == h
+                ? (r.name = n)
+                : ':' == h && (r.length = parseFloat(n));
+          }
+        }
+        return r;
+      }
+    </script>
 
-	<style>
-		#browser-embed {
-			/* margin-top: 500px; */
-			width: 80%;
-			height: 400px;
-		}
-	</style>
+    <style>
+      #browser-embed {
+        margin-top: 10%;
+        /* /* width: 80%; */
+        height: 90%; 
+      }
+		</style>
+		<script>
+      window.onload = function() {
+        var refresherButton = document.getElementById('iframeRefresher');
+        if (refresherButton.addEventListener)
+          refresherButton.addEventListener('click', refreshIframe, false);
+        else refresherButton.attachEvent('click', refreshIframe);
+      };
 
-</head>
+      function refreshIframe() {
+				let browserDOMHandle = document.getElementById('browser-embed');
+				browserDOMHandle.contentDocument.location.reload(true);
 
-<body class="leading-normal tracking-normal text-gray-900" style="font-family: 'Source Sans Pro', sans-serif;">
-	<script src='bundle.js'></script>
-	<!-- <div id="svelte_app">
+				let browserDOMWrapper = document.getElementById('browser-wrapper');
+				if (browserDOMWrapper.style.display === "none") {
+					document.getElementById('iframeRefresher').innerHTML = 'Hide Browser View'
+					browserDOMWrapper.style.display = "block";
+				} else {
+					browserDOMWrapper.style.display = "none";
+					document.getElementById('iframeRefresher').innerHTML = 'Show Browser View'
+				}
+      }
+    </script>
+  </head>
+
+  <body
+    class="leading-normal tracking-normal text-gray-900"
+    style="font-family: 'Source Sans Pro', sans-serif;"
+  >
+    <script src="bundle.js"></script>
+    <!-- <div id="svelte_app">
 		here
 	</div> -->
-	<div id="browser-embed" style="margin-left: 20px;">
-		<!-- <iframe width="1560" height="315" src="browser.html" frameborder="0" allowfullscreen></iframe>  -->
-		<iframe width="1860" height="815" src="/browser" frameborder="50" allowfullscreen></iframe> 
-		<!-- <iframe width="1560" height="1315" src="give.html" frameborder="0" allowfullscreen></iframe>  -->
-	</div>
-</body>
+    <button style="position:absolute; top:0; right: 0; padding: 2ch;" id="iframeRefresher">Show Browser View</button>
+
+    <div id="browser-wrapper" style="display: none;">
+      <!-- <iframe width="1560" height="315" src="browser.html" frameborder="0" allowfullscreen></iframe>  -->
+
+			<iframe
+			id="browser-embed"
+				width="100%" height="100%"
+				style="position:absolute; top:0; left: 0"
+        src="/browser"
+        frameborder="50"
+        allowfullscreen
+      ></iframe>
+      <!-- <iframe width="1560" height="1315" src="give.html" frameborder="0" allowfullscreen></iframe>  -->
+    </div>
+    
+  </body>
 </html>
