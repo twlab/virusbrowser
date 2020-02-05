@@ -4,3 +4,4 @@ public/bundle.*
 public/phylotree
 package-lock.json
 yarn.lock
+public/browser

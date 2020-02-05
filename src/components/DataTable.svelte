@@ -1,34 +1,49 @@
 <script>
   import SvelteTable from "./SvelteTable.svelte";
-  import { onMount } from "svelte";
+  import { onMount, afterUpdate } from "svelte";
   import { Cart } from "../stores/Cart.js";
-  import _data from "../metadata/nCov_all_skinny.json";
+  export let virusName;
+  let DATA;
 
-  const DATA = _data.map((d, i) => {
-    const {
-      accession,
-      organism,
-      isolate,
-      mol_type,
-      strain,
-      db_xref,
-      collection_date,
-      country,
-      host
-    } = d;
-    let tmp = { _id: i + 1 };
-    tmp.Accession = accession;
-    tmp.Organism = organism[0] || "";
-    tmp.Molecule_Type = mol_type !== undefined ? mol_type[0] : "N/A";
-    tmp.Strain = strain !== undefined ? strain[0] : "N/A";
-    tmp.Isolate = isolate !== undefined ? isolate[0] : "N/A";
-    tmp.Collection_Date =
-      collection_date !== undefined ? collection_date[0] : "N/A";
-    tmp.Country = country !== undefined ? country[0] : "N/A";
-    tmp.db_xref = db_xref !== undefined ? db_xref[0] : "N/A";
-    tmp.Host = host !== undefined ? host[0] : "N/A";
-    return tmp;
+  afterUpdate(() => {
+    const _data = require(`../metadata/${virusName}_all_skinny.json`);
+    refetchMetadata(_data);
   });
+
+  onMount(() => {
+    const _data = require(`../metadata/${virusName}_all_skinny.json`);
+    refetchMetadata(_data);
+  });
+
+  function refetchMetadata(_data) {
+    console.log('fetched again..')
+    DATA = _data.map((d, i) => {
+      const {
+        accession,
+        organism,
+        isolate,
+        mol_type,
+        strain,
+        db_xref,
+        collection_date,
+        country,
+        host
+      } = d;
+      let tmp = { _id: i + 1 };
+      tmp.Accession = accession;
+      tmp.Organism = organism[0] || "";
+      tmp.Molecule_Type = mol_type !== undefined ? mol_type[0] : "N/A";
+      tmp.Strain = strain !== undefined ? strain[0] : "N/A";
+      tmp.Isolate = isolate !== undefined ? isolate[0] : "N/A";
+      tmp.Collection_Date =
+        collection_date !== undefined ? collection_date[0] : "N/A";
+      tmp.Country = country !== undefined ? country[0] : "N/A";
+      tmp.db_xref = db_xref !== undefined ? db_xref[0] : "N/A";
+      tmp.Host = host !== undefined ? host[0] : "N/A";
+      return tmp;
+    });
+  }
+  
 
   function updateCart(input) {
     let found = $Cart.data.filter(d => d._id === input.detail.row._id);
@@ -37,7 +52,7 @@
     } else {
       Cart.addDataItems([...new Set([...$Cart.data, input.detail.row])]);
     }
-    console.log($Cart.data);
+    // console.log($Cart.data);
   }
 
   let example = 0;

@@ -1,4 +1,5 @@
 <script>
+  import CartIndicator from './CartIndicator.svelte';
 </script>
 
 <div class="w-full container mx-auto p-6">
@@ -20,23 +21,9 @@
       Wash U Virus Browser
     </a>
 
-    <a href="/tree/ebola_large_tree.html">Ebola</a>
-      <a href="/tree/mers_large_tree.html">mers</a>
-      <a href="/tree/sars_large_tree.html">sars</a>
-      <a href="/tree/nCov_large_tree.html">nCov</a>
-    
-
-    <!-- <ul class="flex">
-      <li class="mr-6">
-        <a class="text-blue-500 hover:text-blue-800" href="/">Active</a>
-      </li>
-      <li class="mr-6">
-        <a class="text-blue-500 hover:text-blue-800" href="/">Link</a>
-      </li>
-      <li class="mr-6">
-        <a class="text-blue-500 hover:text-blue-800" href="/">Link</a>
-      </li>
-    </ul> -->
+    <div class="inline-block min-w-6 bg-red pin-r pin-t rounded-full leading-normal p-8">
+      <CartIndicator/> 
+    </div>
 
     <div class="flex w-1/2 justify-end content-center">
       <a

@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "d3": "^5.15.0",
+    "js-file-download": "^0.4.9",
     "svelte-watch-resize": "^1.0.3"
   }
 }
