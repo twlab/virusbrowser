@@ -58,14 +58,19 @@
 
   let iconTabs = [
     {
-      k: 1,
+      k: 0,
       icon: "",
-      label: "Data"
+      label: ""
+    },
+    {
+      k: 1,
+      icon: "green",
+      label: "Tree View"
     },
     {
       k: 2,
-      icon: "green",
-      label: "Tree View"
+      icon: "",
+      label: "Data"
     },
     {
       k: 3,
@@ -97,7 +102,7 @@
             1 11.2 0 8 8 0 1 0-11.2 0zm6.12-7.64l3.02-3.02 1.41 1.41-3.02 3.02a2
             2 0 1 1-1.41-1.41z" />
         </svg>
-        Wash U Virus Browser
+        WashU Virus Genome Browser
       </a>
     </div>
 
@@ -130,14 +135,21 @@
   </div>
   <div id="main-wrapper" class="mx-16">
     <div>
-      {#if keyedTabsActive.k === 1}
+      {#if keyedTabsActive.k === 0}
         <div style="height: 800px;">
-          <DataTable {virusName} DATA={DATA[virusName]} />
+          <SplashBanner on:start={() => keyedTabsActive = iconTabs[2]}/>
         </div>
-      {:else if keyedTabsActive.k === 2}
+
+      {:else if keyedTabsActive.k === 1}
         <div style="height: 800px;" class="container">
           <LargeTreeContainer {virusName}/>
         </div>
+
+      {:else if keyedTabsActive.k === 2}
+        <div style="height: 800px;">
+          <DataTable {virusName} DATA={DATA[virusName]} />
+        </div>
+     
       {:else if keyedTabsActive.k === 3}
         <div style="height: 800px;" class="container">
           <CartView />

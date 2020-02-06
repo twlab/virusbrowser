@@ -32,7 +32,7 @@
     <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
     <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
-    <link href="//veg.github.io/phylotree.js/phylotree.css" rel="stylesheet">
+    <link href="//veg.github.io/phylotree.js/phylotree.css" rel="stylesheet" />
 
     <script src="//code.jquery.com/jquery.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -79,10 +79,10 @@
       #browser-embed {
         margin-top: 5%;
         /* /* width: 80%; */
-        height: 95%; 
+        height: 95%;
       }
-		</style>
-		<script>
+    </style>
+    <script>
       window.onload = function() {
         var refresherButton = document.getElementById('iframeRefresher');
         if (refresherButton.addEventListener)
@@ -91,18 +91,39 @@
       };
 
       function refreshIframe() {
-				let browserDOMHandle = document.getElementById('browser-embed');
-				browserDOMHandle.contentDocument.location.reload(true);
+        let browserDOMHandle = document.getElementById('browser-embed');
+        browserDOMHandle.contentDocument.location.reload(true);
 
-				let browserDOMWrapper = document.getElementById('browser-wrapper');
-				if (browserDOMWrapper.style.display === "none") {
-					document.getElementById('iframeRefresher').innerHTML = 'Hide Browser View'
-					browserDOMWrapper.style.display = "block";
-				} else {
-					browserDOMWrapper.style.display = "none";
-					document.getElementById('iframeRefresher').innerHTML = 'Show Browser View'
-				}
+        let browserDOMWrapper = document.getElementById('browser-wrapper');
+        if (browserDOMWrapper.style.display === 'none') {
+          document.getElementById('iframeRefresher').innerHTML =
+            'Hide Browser View';
+          browserDOMWrapper.style.display = 'block';
+        } else {
+          browserDOMWrapper.style.display = 'none';
+          document.getElementById('iframeRefresher').innerHTML =
+            'Show Browser View';
+        }
       }
+
+      window.addEventListener('click', function(e) {
+        let browserDOMWrapper = document.getElementById('browser-wrapper');
+        if (
+          document.getElementById('browser-wrapper').contains(e.target) ||
+          document.getElementById('iframeRefresher').contains(e.target)
+        ) {
+          // Clicked in required area
+          // that's ok, keep it
+        } else {
+          // Clicked outside the box
+          if (browserDOMWrapper.style.display === 'block') {
+            browserDOMWrapper.style.display = 'none';
+            var refresherButton = document.getElementById('iframeRefresher');
+            document.getElementById('iframeRefresher').innerHTML =
+              'Show Browser View';
+          }
+        }
+      });
     </script>
   </head>
 
@@ -110,25 +131,45 @@
     class="leading-normal tracking-normal text-gray-900"
     style="font-family: 'Source Sans Pro', sans-serif;"
   >
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-157959055-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-157959055-1');
+    </script>
     <script src="bundle.js"></script>
     <!-- <div id="svelte_app">
 		here
 	</div> -->
-    <button style="position:absolute; top:0; right: 0; padding: 2ch; margin-top: 2ch; margin-right: 12ch;" class="bg-gray-300" id="iframeRefresher">Show Browser View</button>
+    <button
+      style="position:absolute; top:0; right: 0; padding: 2ch; margin-top: 2ch; margin-right: 12ch;"
+      class="bg-gray-300"
+      id="iframeRefresher"
+    >
+      Show Browser View
+    </button>
 
     <div id="browser-wrapper" style="display: none;">
       <!-- <iframe width="1560" height="315" src="browser.html" frameborder="0" allowfullscreen></iframe>  -->
 
-			<iframe
-			id="browser-embed"
-				width="100%" height="100%"
-				style="position:absolute; top:0; left: 0"
+      <iframe
+        id="browser-embed"
+        width="100%"
+        height="100%"
+        style="position:absolute; top:0; left: 0"
         src="/browser"
         frameborder="50"
         allowfullscreen
       ></iframe>
       <!-- <iframe width="1560" height="1315" src="give.html" frameborder="0" allowfullscreen></iframe>  -->
     </div>
-    
   </body>
 </html>

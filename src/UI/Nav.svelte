@@ -18,7 +18,7 @@
           11.2 0 8 8 0 1 0-11.2 0zm6.12-7.64l3.02-3.02 1.41 1.41-3.02 3.02a2 2 0
           1 1-1.41-1.41z" />
       </svg>
-      Wash U Virus Browser
+      WashU Virus Genome Browser
     </a>
 
     <div class="inline-block min-w-6 bg-red pin-r pin-t rounded-full leading-normal p-8">
