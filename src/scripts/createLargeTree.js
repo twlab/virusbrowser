@@ -40,13 +40,13 @@ export function createLargeTree(FILEPATH) {
     console.log(__nodes);
 
      // TODO: export this function, provide a button to hide the node (query by name)
-    setTimeout(() => {
-      main_tree.modify_selection([_nodes[2]], "notshown", true, true)
-                    .update_has_hidden_nodes()
-                    .update();
-      console.log('Hiding following nodes ' + __nodes.map(d => d.name).join(', '));
-      }
-    , 5000);
+    // setTimeout(() => {
+    //   main_tree.modify_selection([_nodes[2]], "notshown", true, true)
+    //                 .update_has_hidden_nodes()
+    //                 .update();
+    //   console.log('Hiding following nodes ' + __nodes.map(d => d.name).join(', '));
+    //   }
+    // , 5000);
   });
 }
 

@@ -1,11 +1,15 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount, beforeUpdate } from "svelte";
   export let virusName;
   import { createLargeTree } from "../scripts/createLargeTree";
 
   onMount(() => {
     createLargeTree(`/data/${virusName}_align.tree`);
   });
+
+  beforeUpdate(() => {
+    createLargeTree(`/data/${virusName}_align.tree`);
+  })
 </script>
 
 <style>

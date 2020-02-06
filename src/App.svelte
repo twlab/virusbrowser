@@ -136,7 +136,7 @@
         </div>
       {:else if keyedTabsActive.k === 2}
         <div style="height: 800px;" class="container">
-          <LargeTreeContainer />
+          <LargeTreeContainer {virusName}/>
         </div>
       {:else if keyedTabsActive.k === 3}
         <div style="height: 800px;" class="container">
