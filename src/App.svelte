@@ -1,5 +1,8 @@
 <script>
-  import SplashBanner from "./UI/SplashBanner.svelte";  
+  import SplashBanner from "./UI/SplashBanner.svelte";
+  import Tab, { Icon, Label } from "@smui/tab";
+  import TabBar from "@smui/tab-bar";
+  import Button from "@smui/button";
   import { onMount, afterUpdate } from "svelte";
   import TreeComponent from "./components/TreeComponent.svelte";
   import CollapsibleTree from "./components/CollapsibleTree.svelte";
@@ -7,9 +10,10 @@
   import Nav from "./UI/Nav.svelte";
   import LargeTreeContainer from "./containers/LargeTreeContainer.svelte";
   import DataTable from "./components/DataTable.svelte";
-  // import DownloadDatahub from './components/DownloadDatahub.svelte';
   import { Cart } from "./stores/Cart.js";
-  import Dropdown from './UI/Dropdown.svelte';
+  import Dropdown from "./UI/Dropdown.svelte";
+  import CartIndicator from "./UI/CartIndicator.svelte";
+  import CartView from './containers/CartView.svelte';
 
   const virusList = ["Ebola", "SARS", "MERS", "nCov"];
   let DATA = {};
@@ -51,27 +55,101 @@
       });
     });
   });
+
+  let iconTabs = [
+    {
+      k: 1,
+      icon: "",
+      label: "Data"
+    },
+    {
+      k: 2,
+      icon: "green",
+      label: "Tree View"
+    },
+    {
+      k: 3,
+      icon: "shopping_cart",
+      label: "Cart"
+    }
+  ];
+  let keyedTabsActive = iconTabs[0];
 </script>
 
 <style>
 
 </style>
 
-<div
-  class="pb-12 bg-right bg-cover"
-  style="background-image:url('/images/bg.svg');">
-  <!--Nav-->
-  <Nav />
-  <div class="h-screen">
-    <Dropdown on:reference-select={handleReferenceSelect} names={virusList}/>
+<div class="bg-right bg-cover" style="background-image:url('/images/bg.svg');">
+  <!-- <Nav/> -->
+  <div class="w-full container mx-auto flex justify-between">
+    <div class="w-full flex items-center justify-between">
+      <a
+        class="flex items-center text-indigo-400 no-underline hover:no-underline
+        font-bold text-2xl lg:text-4xl"
+        href="/">
+        <svg
+          class="h-8 fill-current text-indigo-600 pr-2"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20">
+          <path
+            d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm-5.6-4.29a9.95 9.95 0 0
+            1 11.2 0 8 8 0 1 0-11.2 0zm6.12-7.64l3.02-3.02 1.41 1.41-3.02 3.02a2
+            2 0 1 1-1.41-1.41z" />
+        </svg>
+        Wash U Virus Browser
+      </a>
+    </div>
 
-    <!-- <TreeComponent /> -->
-    <!-- <LargeTreeContainer /> -->
-    <!-- <CollapsibleTree/> -->
-    <!-- <DownloadDatahub {virusName}/> -->
-    <DataTable {virusName} DATA={DATA[virusName]} />
-    <!-- TEST -->
+    <div class="flex flex-col m-2">
+      <Dropdown on:reference-select={handleReferenceSelect} names={virusList} />
+      <Label>Reference</Label>
+    </div>
+
+    <TabBar
+      tabs={iconTabs}
+      let:tab
+      key={tab => tab.k}
+      bind:active={keyedTabsActive}>
+      <Tab
+        {tab}
+        stacked={true}
+        indicatorSpanOnlyContent={true}
+        tabIndicator$transition="fade">
+
+        <Icon class="material-icons">{tab.icon}</Icon>
+        <Label>
+          {#if tab.k === 3}
+            <CartIndicator />
+          {:else}{tab.label}{/if}
+        </Label>
+      </Tab>
+    </TabBar>
+    <div class="w-1/5" />
+
   </div>
+  <div id="main-wrapper" class="mx-16">
+    <div>
+      {#if keyedTabsActive.k === 1}
+        <div style="height: 800px;">
+          <DataTable {virusName} DATA={DATA[virusName]} />
+        </div>
+      {:else if keyedTabsActive.k === 2}
+        <div style="height: 800px;" class="container">
+          <LargeTreeContainer />
+        </div>
+      {:else if keyedTabsActive.k === 3}
+        <div style="height: 800px;" class="container">
+          <CartView />
+        </div>
+      {/if}
+    </div>
+  </div>
+
+  <!-- <TreeComponent /> -->
+  <!-- <CollapsibleTree/> -->
+
+  <!-- TEST -->
   <!-- <SplashBanner /> -->
   <!-- <Footer class="mt-14"/> -->
 

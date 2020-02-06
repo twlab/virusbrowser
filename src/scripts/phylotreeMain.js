@@ -858,7 +858,7 @@
           .select(self.container)
           .append("ul")
           .attr("id", d3_layout_phylotree_context_menu_id)
-          .attr("class", "dropdown-menu")
+          .attr("class", "bg-gray-300 text-gray-700 py-2 px-4 rounded inline-flex items-center")
           .attr("role", "menu");
       }
 

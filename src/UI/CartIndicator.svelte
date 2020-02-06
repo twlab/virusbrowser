@@ -4,6 +4,6 @@
 <div class="flex justify-center">
 <span
   class="p-4">
-  {$Cart.data.length} files selected
+  {$Cart.data.length} files
 </span>
 </div>

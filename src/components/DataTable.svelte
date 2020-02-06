@@ -24,7 +24,7 @@
   let sortOrder = 1;
   let iconAsc = "↑";
   let iconDesc = "↓";
-  const ROWS_PER_PAGE = 50;
+  const ROWS_PER_PAGE = 20;
   const COLS = [
     {
       key: "_id",
@@ -183,5 +183,5 @@
     <SvelteTable on:clickRow={updateCart} columns={COLS} rows={DATA} />
   </div>
 {:else}
-  <div>Loading..</div>
+  <div>No data to show</div>
 {/if}

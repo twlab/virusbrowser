@@ -4,6 +4,7 @@
     "2": { "name": "T", "color": "#9238C7" },
     "3": { "name": "C", "color": "#E05144" },
     "4": { "name": "G", "color": "#3899C7" },
-    "5": { "name": "N", "color": "#858585" }
+    "5": { "name": "N", "color": "#858585" },
+    "6": { "name": "deletion", "color": "#BC8F8F" }
   }
 }

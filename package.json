@@ -18,11 +18,18 @@
     "dev": "webpack-dev-server --content-base public",
     "deploy": "aws s3 sync public s3://virus-browser",
     "deployaws": "aws s3 sync public s3://virusgateway.wustl.edu",
-    "deployprod" : "scp -r public/* target.wustl.edu:/var/www/html/virusgateway"
+    "deployprod": "scp -r public/* target.wustl.edu:/var/www/html/virusgateway"
   },
   "dependencies": {
+    "@material/typography": "^4.0.0",
+    "@smui/button": "^1.0.0-beta.20",
+    "@smui/list": "^1.0.0-beta.20",
+    "@smui/tab": "^1.0.0-beta.20",
+    "@smui/tab-bar": "^1.0.0-beta.20",
     "d3": "^5.15.0",
     "js-file-download": "^0.4.9",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
     "svelte-watch-resize": "^1.0.3"
   }
 }

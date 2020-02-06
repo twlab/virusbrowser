@@ -17,7 +17,7 @@
   }
 </style>
 
-<div class="p-10">
+<div class="h-10">
 
   <div class="dropdown inline-block relative">
     <button
