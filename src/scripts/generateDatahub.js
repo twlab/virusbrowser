@@ -7,7 +7,6 @@ export const generateDatahub = function(files, virusName, referencefasta) {
 
   tmp.fastaUrl = `${URLBASE}/${virusName}/reference/${referencefasta}`;
   let tracks = files.forEach(file => {
-    console.log(file)
       console.log(`{
         "type": "categorical",
         "name": "${file.accession}",
@@ -15,8 +14,6 @@ export const generateDatahub = function(files, virusName, referencefasta) {
         "options": ${CATEGORIES}"
       }`)
   })
-
-  // console.log(tracks)
 
   return tracks;
 
