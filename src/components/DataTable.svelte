@@ -6,6 +6,7 @@
   export let virusName;
   export let DATA;
   import FILESJSON from '../json/database.json';
+  import ALIGNMENTSJSON from '../json/alignment_bed.json';
 
 
   function updateCart(input) {
@@ -15,7 +16,7 @@
     } else {
       Cart.addDataItems([...new Set([...$Cart.data, input.detail.row])]);
     }
-    const tracksWindow = saveDataOnWindow($Cart.data, virusName, FILESJSON);
+    const tracksWindow = saveDataOnWindow($Cart.data, virusName, FILESJSON, ALIGNMENTSJSON);
     window.TRACKS = tracksWindow;
   }
 
