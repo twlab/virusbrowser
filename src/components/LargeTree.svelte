@@ -14,7 +14,7 @@
     } else {
       mode = 'linear'
     }
-    createLargeTree(virusName, metadata, mode);
+    createLargeTree(virusName, metadata, mode, indent);
   }
 
   function handleIndentChange(event) {

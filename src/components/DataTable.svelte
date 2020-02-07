@@ -181,7 +181,12 @@
 </script>
 
 {#if DATA !== undefined}
-  <div class="overflow-y-scroll border-2 p-8 m-4" style="height: 80%;">
+  <div class="overflow-y-scroll border-2 p-2 m-4" style="height: 80%;">
+    <div class="w-full pt-6 pb-6 text-sm text-center md:text-left fade-in flex justify-center">
+      <div class="text-gray-500 no-underline hover:no-underline">
+        Click on rows to add to Cart
+      </div>
+    </div>
     <SvelteTable on:clickRow={updateCart} columns={COLS} rows={DATA} />
   </div>
 {:else}

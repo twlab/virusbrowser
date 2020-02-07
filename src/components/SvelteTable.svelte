@@ -99,7 +99,7 @@
 
 <style>
 	.selected {
-		background-color: aquamarine;
+		background-color: rgba(160, 155, 233, 0.3);
 	}
 	table {
 		margin-left: 10%;
