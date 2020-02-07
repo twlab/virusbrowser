@@ -85,7 +85,8 @@
 
 </style>
 
-<div class="bg-right bg-cover" style="background-image:url('/images/bg.svg');">
+<!-- <div class="bg-right bg-cover" style="background-image:url('/images/bg.svg');"> -->
+<div>
   <!-- <Nav/> -->
   <div class="w-full container mx-auto flex justify-between">
     <div class="w-full flex items-center justify-between">

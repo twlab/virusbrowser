@@ -1,9 +1,11 @@
 <script>
   import { onMount, beforeUpdate } from "svelte";
   import Switch from '../UI/Switch.svelte';
+  import ButtonGroup from '../UI/ButtonGroup.svelte';
   export let virusName;
   import { createLargeTree } from "../scripts/createLargeTree";
   let mode = 'linear'; // mode
+  let indent = 'right';
   export let metadata;
 
   function handleModeChange(event) {
@@ -15,12 +17,17 @@
     createLargeTree(virusName, metadata, mode);
   }
 
+  function handleIndentChange(event) {
+    indent = event.detail;
+    createLargeTree(virusName, metadata, mode, indent);
+  }
+
   onMount(() => {
-    createLargeTree(virusName, metadata, mode);
+    createLargeTree(virusName, metadata, mode, indent);
   });
 
   beforeUpdate(() => {
-    createLargeTree(virusName, metadata, mode);
+    createLargeTree(virusName, metadata, mode, indent);
   })
 </script>
 
@@ -50,5 +57,6 @@
 <!-- <div>
   <svg width="300" height="600" id="tree_guide" />
 </div> -->
+<ButtonGroup on:indent-change={handleIndentChange}/>
 <Switch on:mode-change={handleModeChange}/>
 <div><svg width="800" height="600" id="tree_display" /></div>
