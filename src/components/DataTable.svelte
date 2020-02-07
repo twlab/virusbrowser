@@ -5,7 +5,8 @@
   import { saveDataOnWindow } from '../scripts/saveDataOnWindow';
   export let virusName;
   export let DATA;
-  import FILESJSON from '../json/database.json';
+  // import FILESJSON from '../json/database.json';
+  import FILESJSON from '../json/pairwise.json';
   import ALIGNMENTSJSON from '../json/alignment_bed.json';
 
 

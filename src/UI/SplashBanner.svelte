@@ -4,7 +4,7 @@
 </script>
 <!--Main-->
 <div
-  class="container pt-24 md:pt-48 px-6 mx-auto flex flex-wrap flex-col
+  class="container pt-12 md:pt-24 px-6 mx-auto flex flex-wrap flex-col
   md:flex-row items-center block">
 
   <!--Left Col-->
@@ -17,12 +17,11 @@
     <p
       class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left
       slide-in-bottom-subtitle">
-       or 2019-nCoV belongs to the Betacoronavirus, which is one of four genera of coronaviruses of the subfamily Orthocoronavirinae in the family Coronaviridae, of the order Nidovirales. These are enveloped, ssRNA positive-strand viruses of zoonotic origins. It is one of the largest RNA virus genomes varying from 27kb to 32kb in size, with this particular strain ringing in at 29,903 bps long. 
-    </p>
+      Since its debut in mid-December, 2019, the zoonotic Wuhan Coronavirus or 2019-nCoV has rapidly spread from its origin in Wuhan, China, to several countries across the globe, leading to a global health crisis. Research efforts have begun sequencing the 29 kb virus genome, allowing for comparisons between the novel virus and close relatives. The WashU Virus Genome Browser is home to the genomic sequences of 16 2019-nCoV strains, as well as hundreds of related viruses, including severe acute respiratory syndrome coronavirus (SARS-CoV), Middle East respiratory syndrome coronavirus (MERS-CoV), and Ebola virus. In addition to several included data tracks, the browser supports user-uploaded sequences, as well as two visualization platforms: a genomic track view and a phylogenetic tree view. Our hope is that the WashU Virus Genome Browser will serve as an efficient tool, aiding researchers in better understanding the disease.    </p>
   </div>
-  <div class="flex flex-col w-full xl:w-3/5 p-16 justify-center lg:items-start
+  <div class="flex flex-col w-full xl:w-2/5 p-16 justify-center lg:items-start 
     overflow-y-hidden">
-    <div on:click={() => dispatch('start')} class="bg-gray-300 text-gray-700 font-semibold py-6 px-6 rounded inline-flex items-center cursor-pointer">Browse Data</div>
+    <div on:click={() => dispatch('start')} class="bg-gray-300 text-gray-700 font-semibold py-6 px-6 rounded flex justify-center items-center cursor-pointer">Browse Data</div>
   </div>
   <!--Right Col-->
 </div>

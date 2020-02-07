@@ -114,6 +114,10 @@
 		width: 100%;
 	}
 
+	tr :hover {
+		cursor: pointer;
+	}
+
 	tr {
 		margin-bottom: 10px;
 	}
