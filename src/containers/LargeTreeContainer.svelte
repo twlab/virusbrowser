@@ -1,6 +1,7 @@
 <script>
   import LargeTree from '../components/LargeTree.svelte';
   export let virusName;
+  export let DATA;
 </script>
 
-<LargeTree {virusName}/>
+<LargeTree {virusName} metadata={DATA}/>

@@ -109,7 +109,7 @@
         "left-offset": 0,
         "show-scale": "top",
         // currently not implemented to support any other positioning
-        "draw-size-bubbles": false,
+        "draw-size-bubbles": true,
         "binary-selectable": false,
         "is-radial": false,
         "attribute-list": [],
@@ -156,7 +156,7 @@
       },
       scales = [1, 1],
       fixed_width = [15, 20],
-      font_size = 12,
+      font_size = 15,
       scale_bar_font_size = 12,
       offsets = [0, font_size/2],
       draw_line = d3.svg
@@ -1659,6 +1659,9 @@
       traversal_type = traversal_type || "post-order";
 
       function post_order(node) {
+        if (node === undefined) {
+          console.log(node);
+        }
         if (node.children) {
           for (var k = 0; k < node.children.length; k++) {
             post_order(node.children[k]);

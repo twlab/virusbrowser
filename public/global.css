@@ -266,6 +266,19 @@ button:focus {
   font-weight: bold;
 }
 
+div.tooltip {	
+	position: absolute;			
+	text-align: center;
+	align-items: center;			
+	width: 160px;					
+	height: 58px;					
+	padding: 5px;				
+	font: 18px sans-serif;		
+	background: rgb(224, 227, 231, 0.7);	
+	border: 0px;		
+	border-radius: 8px;			
+	pointer-events: none;			
+}
 
 /* COLLAPSIBLE TREE */
 /* 

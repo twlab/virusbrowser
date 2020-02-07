@@ -142,7 +142,7 @@
 
       {:else if keyedTabsActive.k === 1}
         <div style="height: 800px;" class="container">
-          <LargeTreeContainer {virusName}/>
+          <LargeTreeContainer {virusName} DATA={DATA[virusName]} />
         </div>
 
       {:else if keyedTabsActive.k === 2}

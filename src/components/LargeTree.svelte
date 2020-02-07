@@ -4,6 +4,7 @@
   export let virusName;
   import { createLargeTree } from "../scripts/createLargeTree";
   let mode = 'linear'; // mode
+  export let metadata;
 
   function handleModeChange(event) {
     if (event.detail) {
@@ -11,16 +12,15 @@
     } else {
       mode = 'linear'
     }
-    createLargeTree(`/data/${virusName}_align.tree`, mode);
+    createLargeTree(virusName, metadata, mode);
   }
 
   onMount(() => {
-    createLargeTree(`/data/${virusName}_align.tree`, mode);
+    createLargeTree(virusName, metadata, mode);
   });
 
   beforeUpdate(() => {
-    console.log('yup! I run again!')
-    createLargeTree(`/data/${virusName}_align.tree`, mode);
+    createLargeTree(virusName, metadata, mode);
   })
 </script>
 
@@ -41,9 +41,9 @@
     stroke-width: 2px;
   }
 
-  #tree_display {
+  /* #tree_display {
     width: 800px;
-  }
+  } */
 
 </style>
 
