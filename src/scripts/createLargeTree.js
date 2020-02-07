@@ -9,7 +9,7 @@ export function createLargeTree(FILEPATH, MODE) {
     main_tree = d3.layout.phylotree()
       // create a tree layout object
       .svg(d3.select("#tree_display"))
-      .align_tips (true)
+      // .align_tips (true)
       .options({
         brush: false,
         zoom: true,
@@ -24,7 +24,7 @@ export function createLargeTree(FILEPATH, MODE) {
       return standard_label(node) + "             ";
     });
     
-    
+
     parsed = d3.layout.newick_parser(newick)
     // console.log(parsed);
 
@@ -40,36 +40,36 @@ export function createLargeTree(FILEPATH, MODE) {
     
     var maximum_length = 0;
     
-    main_tree.traverse_and_compute (function (node) {
-      if (d3.layout.phylotree.is_leafnode (node)) {
-        tree_attributes[node.name] = [0,0,0].map (function () {return Math.floor(Math.random() * 5);});
-        maximum_length = maximum_length < node.name.length ? node.name.length : maximum_length;
-      }
-    });
+    // main_tree.traverse_and_compute (function (node) {
+    //   if (d3.layout.phylotree.is_leafnode (node)) {
+    //     tree_attributes[node.name] = [0,0,0].map (function () {return Math.floor(Math.random() * 5);});
+    //     maximum_length = maximum_length < node.name.length ? node.name.length : maximum_length;
+    //   }
+    // });
     
     
-     main_tree.style_nodes(function (element, node_data) {       
-        if (node_data.name in tree_attributes) {   // see if the node has attributes
-          var node_label = element.select("text");
-          var font_size  = parseFloat (node_label.style ("font-size"));
+    //  main_tree.style_nodes(function (element, node_data) {       
+    //     if (node_data.name in tree_attributes) {   // see if the node has attributes
+    //       var node_label = element.select("text");
+    //       var font_size  = parseFloat (node_label.style ("font-size"));
           
               
           
-          var annotation = element.selectAll ("rect").data (tree_attributes[node_data.name]);
-          annotation.enter().append ("rect");
-          annotation.attr ("width", font_size)
-            .attr ("height", font_size)
-            .attr ("y", -font_size/2).style ("fill", function(d, i) {
-              return attribute_to_color (d);
-             });
+    //       var annotation = element.selectAll ("rect").data (tree_attributes[node_data.name]);
+    //       annotation.enter().append ("rect");
+    //       annotation.attr ("width", font_size)
+    //         .attr ("height", font_size)
+    //         .attr ("y", -font_size/2).style ("fill", function(d, i) {
+    //           return attribute_to_color (d);
+    //          });
           
-          var move_past_label = maximum_length * 0.75 * font_size;
+    //       var move_past_label = maximum_length * 0.75 * font_size;
           
-          var x_shift = main_tree.shift_tip (node_data)[0] + move_past_label;
-          annotation.attr ("transform", null).attr ("x", function (d, i) { return  x_shift + font_size * i;});
+    //       var x_shift = main_tree.shift_tip (node_data)[0] + move_past_label;
+    //       annotation.attr ("transform", null).attr ("x", function (d, i) { return  x_shift + font_size * i;});
                 
-        }
-    });
+    //     }
+    // });
     //==================/
     let parsedLayout = main_tree(parsed)
     // parse the Newick into a d3 hierarchy object with additional fields
