@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte'
-  let selected = "nCov";
+  let selected = "2019-nCoV";
   export let names;
 
   const dispatch = createEventDispatcher();
@@ -17,7 +17,7 @@
   }
 </style>
 
-<div class="h-10">
+<div class="h-10 w-64">
 
   <div class="dropdown inline-block relative">
     <button

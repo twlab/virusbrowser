@@ -1,7 +1,8 @@
 require('./phyloTreeMain');
 import {COLORS} from './colors';
+import { Cart } from '../stores/Cart';
 
-export function createLargeTree(VIRUSNAME, METADATA, MODE, INDENT) {
+export function createLargeTree(VIRUSNAME, METADATA, MODE, INDENT, addDataToCart) {
   const metadataList = makeMetadataTerms(METADATA);
   const FILEPATH = `/data/${VIRUSNAME}_align.tree`;
   var main_tree,
@@ -118,8 +119,41 @@ export function createLargeTree(VIRUSNAME, METADATA, MODE, INDENT) {
       });
     }
 
+    // =======================
+    function my_node_style_text(node) {
+      node['text-italic'] = !node['text-italic'];
+      d3.layout.phylotree.trigger_refresh(tree);
+    }
+    
+    function my_menu_title(node) {
+      if (node['text-italic']) {
+        return "Remove Italics";
+      }
+      return "Add to Cart";
+    }
+    
+    function my_style_nodes(element, node) {
+      element.style("font-style", node['text-italic'] ? "italic" : "normal");
+    }
+
+    tree.get_nodes()
+      .filter(d3.layout.phylotree.is_leafnode)
+      .forEach(function(tree_node) {
+      d3.layout.phylotree.add_custom_menu(tree_node, // add to this node
+        my_menu_title, // display this text for the menu
+        function() {
+          // my_node_style_text(tree_node);
+          addDataToCart(tree_node);
+        },
+        // on-click callback include a reference to tree_node via transitive closure
+        d3.layout.phylotree.is_leafnode // condition on when to display the menu
+        // a function that takes node as an argument
+      );
+    });
+
+    // =======================
     // parse the Newick into a d3 hierarchy object with additional fields
-    tree.layout();
+    tree.style_nodes(my_style_nodes).layout();
 
     // TODO: export this function, provide a button to hide the node (query by name)
     // setTimeout(() => {   main_tree.modify_selection([_nodes[2]], "notshown",
@@ -129,10 +163,6 @@ export function createLargeTree(VIRUSNAME, METADATA, MODE, INDENT) {
     //
 
   });
-}
-
-function is_leaf(node) {
-  return node.name && node.name != 'root' && isNaN(parseFloat(node.name.slice(0, 1)));
 }
 
 function makeMetadataTerms(list) {
@@ -197,3 +227,4 @@ function sanitizeMetadataItem(item) {
 
   return {Organism, Molecule_Type, Isolate, country, year}
 }
+

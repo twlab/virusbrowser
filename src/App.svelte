@@ -15,18 +15,23 @@
   import CartIndicator from "./UI/CartIndicator.svelte";
   import CartView from './containers/CartView.svelte';
 
-  const virusList = ["Ebola", "SARS", "MERS", "nCov"];
+  const virusList = ["Ebola", "SARS", "MERS", "2019-nCoV"];
+  const virusNameList = ["ebola", "sars", "mers", "ncov"];
   let DATA = {};
-  let virusName = virusList[3].toLowerCase();
+  let virusName = 'ncov';
 
   function handleReferenceSelect(event) {
-    virusName = event.detail.toLowerCase();
+    if (event.detail === '2019-nCoV') {
+      virusName = 'ncov';
+    } else {
+      virusName = event.detail.toLowerCase();
+    }
+    console.log(virusName);
     Cart.addDataItems([]);
   }
 
   onMount(() => {
-    virusList.forEach(ref => {
-      let reference = ref.toLowerCase();
+    virusNameList.forEach(reference => {
       let fileHandle = require(`./metadata/${reference}_all_skinny.json`);
       DATA[reference] = fileHandle.map((d, i) => {
         const {

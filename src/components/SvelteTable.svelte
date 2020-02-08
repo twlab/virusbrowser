@@ -7,7 +7,7 @@
 
 	const unsubscribe = Cart.subscribe(async store => {
     const { data } = store;
-		dataIds = data.map(d => d._id);
+		dataIds = data.map(d => d.Accession);
 	});
 	
 	onDestroy(() => {
@@ -157,7 +157,7 @@
 		</slot>
 	{#each c_rows as row, n}
 		<slot name="row" row={row} n={n}> 
-			<tr on:click={()=>{handleClickRow(row)}} class:selected={dataIds.indexOf(row._id)>=0} >
+			<tr on:click={()=>{handleClickRow(row)}} class:selected={dataIds.indexOf(row.Accession)>=0} >
 			  {#each columns as col}
 			  	<td
 						on:click={()=>{handleClickCell(row, col.key)}}

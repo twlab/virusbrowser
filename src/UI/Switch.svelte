@@ -10,7 +10,7 @@
   }
 </script>
 
-<div class="flex justify-center py-8">
+<div class="flex py-16">
   <div class="px-2 mx2">
     <FormField>
       <span slot="label">Linear</span>

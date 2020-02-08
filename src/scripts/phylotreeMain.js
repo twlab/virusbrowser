@@ -976,7 +976,7 @@
               .on("click", function(d) {
                 // dpuru
                 menu_object.style("display", "none");
-                console.log(node);
+                // console.log(node);
                 phylotree
                   .modify_selection([node], "notshown", true, true)
                   .update_has_hidden_nodes()
@@ -1142,7 +1142,7 @@
       });
 
       d3_phylotree_trigger_refresh(phylotree);
-
+      
       if (phylotree.count_handler()) {
         var counts = {};
         counts[selection_attribute_name] = links.reduce(function(p, c) {
@@ -1230,8 +1230,6 @@
             }
           });
         } else {
-          // dpuru
-          // console.log('reaching here ' + node_selecter);
           node_selecter.forEach(function(d) {
             var new_value;
             switch (mode) {
@@ -1251,7 +1249,6 @@
               do_refresh = true;
             }
           });
-          // console.log('reaching here ' + node_selecter);
 
           links.forEach(function(d) {
             d[attr] = d.target[attr];
