@@ -76,6 +76,8 @@ export function createLargeTree(VIRUSNAME, METADATA, MODE, INDENT, addDataToCart
           var node_label = element.select("text");
           var font_size = parseFloat(node_label.style("font-size"));
 
+          element.style("font-style", node_data['text-italic'] ? "italic" : "normal"); // dpuru
+          element.style("fill", node_data['text-italic'] ? "aquamarine" : "grey"); // dpuru
           var annotation = element
             .selectAll("rect")
             .data(tree_attributes[node_data.name]);
@@ -127,13 +129,15 @@ export function createLargeTree(VIRUSNAME, METADATA, MODE, INDENT, addDataToCart
     
     function my_menu_title(node) {
       if (node['text-italic']) {
-        return "Remove Italics";
+        return "Remove from Cart";
       }
       return "Add to Cart";
     }
     
     function my_style_nodes(element, node) {
+      // console.log(element, node)
       element.style("font-style", node['text-italic'] ? "italic" : "normal");
+      element.style("fill", node['text-italic'] ? "aquamarine" : "grey");
     }
 
     tree.get_nodes()
@@ -142,7 +146,7 @@ export function createLargeTree(VIRUSNAME, METADATA, MODE, INDENT, addDataToCart
       d3.layout.phylotree.add_custom_menu(tree_node, // add to this node
         my_menu_title, // display this text for the menu
         function() {
-          // my_node_style_text(tree_node);
+          my_node_style_text(tree_node);
           addDataToCart(tree_node);
         },
         // on-click callback include a reference to tree_node via transitive closure
@@ -153,7 +157,9 @@ export function createLargeTree(VIRUSNAME, METADATA, MODE, INDENT, addDataToCart
 
     // =======================
     // parse the Newick into a d3 hierarchy object with additional fields
-    tree.style_nodes(my_style_nodes).layout();
+    // tree.style_nodes(my_style_nodes).layout();
+    // tree.style_nodes(my_style_nodes);
+    tree.layout();
 
     // TODO: export this function, provide a button to hide the node (query by name)
     // setTimeout(() => {   main_tree.modify_selection([_nodes[2]], "notshown",

@@ -4,6 +4,7 @@
   import { Cart } from '../stores/Cart';
   import ButtonGroup from '../UI/ButtonGroup.svelte';
   export let virusName;
+  let virusDisplayed;
   import { createLargeTree } from "../scripts/createLargeTree";
   let mode = 'linear'; // mode
   let indent = 'right';
@@ -41,7 +42,10 @@ function addDataToCart(input) {
   });
 
   beforeUpdate(() => {
-    createLargeTree(virusName, metadata, mode, indent, addDataToCart);
+    if (virusName !== virusDisplayed) {
+      virusDisplayed = virusName;
+      createLargeTree(virusName, metadata, mode, indent, addDataToCart);
+    }
   })
 </script>
 
