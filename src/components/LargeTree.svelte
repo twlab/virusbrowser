@@ -6,6 +6,9 @@
   export let virusName;
   let virusDisplayed;
   import { createLargeTree } from "../scripts/createLargeTree";
+  import { saveDataOnWindow } from '../scripts/saveDataOnWindow';
+  import FILESJSON from '../json/pairwise.json';
+
   let mode = 'linear'; // mode
   let indent = 'right';
   export let metadata;
@@ -19,7 +22,7 @@ function addDataToCart(input) {
     let tmp = metadata.filter(d => d.Accession === input.name)
     Cart.addDataItems([...new Set([...$Cart.data, tmp[0]])]);
   }
-  // const tracksWindow = saveDataOnWindow($Cart.data, virusName, FILESJSON, ALIGNMENTSJSON);
+  const tracksWindow = saveDataOnWindow($Cart.data, virusName, FILESJSON);
   // window.TRACKS = tracksWindow;
 }
 
@@ -29,22 +32,22 @@ function addDataToCart(input) {
     } else {
       mode = 'linear'
     }
-    createLargeTree(virusName, metadata, mode, indent, addDataToCart);
+    createLargeTree(virusName, $Cart.data, metadata, mode, indent, addDataToCart);
   }
 
   function handleIndentChange(event) {
     indent = event.detail;
-    createLargeTree(virusName, metadata, mode, indent, addDataToCart);
+    createLargeTree(virusName, $Cart.data, metadata, mode, indent, addDataToCart);
   }
 
-  onMount(() => {
-    createLargeTree(virusName, metadata, mode, indent, addDataToCart);
-  });
+  // onMount(() => {
+  //   createLargeTree(virusName, $Cart.data, metadata, mode, indent, addDataToCart);
+  // });
 
   beforeUpdate(() => {
     if (virusName !== virusDisplayed) {
       virusDisplayed = virusName;
-      createLargeTree(virusName, metadata, mode, indent, addDataToCart);
+      createLargeTree(virusName, $Cart.data, metadata, mode, indent, addDataToCart);
     }
   })
 </script>

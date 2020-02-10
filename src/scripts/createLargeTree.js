@@ -2,7 +2,7 @@ require('./phyloTreeMain');
 import {COLORS} from './colors';
 import { Cart } from '../stores/Cart';
 
-export function createLargeTree(VIRUSNAME, METADATA, MODE, INDENT, addDataToCart) {
+export function createLargeTree(VIRUSNAME, CART_DATA, METADATA, MODE, INDENT, addDataToCart) {
   const metadataList = makeMetadataTerms(METADATA);
   const FILEPATH = `/data/${VIRUSNAME}_align.tree`;
   var main_tree,
@@ -77,7 +77,8 @@ export function createLargeTree(VIRUSNAME, METADATA, MODE, INDENT, addDataToCart
           var font_size = parseFloat(node_label.style("font-size"));
 
           element.style("font-style", node_data['text-italic'] ? "italic" : "normal"); // dpuru
-          element.style("fill", node_data['text-italic'] ? "aquamarine" : "grey"); // dpuru
+          element.style("fill", node_data['text-italic'] || CART_DATA.filter(d => d.Accession === node_data.name).length > 0 ? "#0150A0" : "grey"); // dpuru
+          element.style("cursor", "pointer");
           var annotation = element
             .selectAll("rect")
             .data(tree_attributes[node_data.name]);
