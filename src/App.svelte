@@ -3,7 +3,7 @@
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
   import Button from "@smui/button";
-  import { onMount, afterUpdate } from "svelte";
+  import { onMount, afterUpdate, onDestroy } from "svelte";
   import TreeComponent from "./components/TreeComponent.svelte";
   import CollapsibleTree from "./components/CollapsibleTree.svelte";
   import Footer from "./UI/Footer.svelte";
@@ -59,6 +59,8 @@
         return tmp;
       });
     });
+
+    localStorage.setItem('tracks', '');
   });
 
   let iconTabs = [
@@ -111,8 +113,11 @@
         WashU Virus Genome Browser
       </a>
     </div>
+    <a href="https://youtu.be/cOv8W28GzwM"><Icon class='material-icons'>slideshow</Icon></a>
+    <a href="https://virusgateway.readthedocs.io/en/latest/index.html"><Icon class='material-icons'>description</Icon></a>
+    <a href="https://github.com/debugpoint136/WashU-Virus-Genome-Browser"><Icon class='material-icons'>code</Icon></a>
 
-    <div class="flex flex-col m-2">
+    <div class="flex flex-col m-2">  
       <Dropdown on:reference-select={handleReferenceSelect} names={virusList} />
       <Label>Reference</Label>
     </div>
