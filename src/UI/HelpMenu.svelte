@@ -1,7 +1,8 @@
 <script>
-  import { createEventDispatcher } from 'svelte'
-  let selected = "2019-nCoV";
-  export let names;
+  import { createEventDispatcher } from 'svelte';
+  import { Icon, Label } from "@smui/tab";
+  let selected = 0;
+  export let items;
 
   const dispatch = createEventDispatcher();
   function updateSelected(input) {
@@ -17,13 +18,12 @@
   }
 </style>
 
-<div class="h-10 w-64">
-
+<div class="h-10 w-32">
   <div class="dropdown inline-block relative">
     <button
       class="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded
       inline-flex items-center">
-      <span class="mr-1">{selected}</span>
+      <span class="mr-1"><Icon class="material-icons">help</Icon></span>
       <svg
         class="fill-current h-4 w-4"
         xmlns="http://www.w3.org/2000/svg"
@@ -34,12 +34,17 @@
       </svg>
     </button>
     <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
-      {#each names as item}
+      {#each items as item}
         <li
           class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block
           whitespace-no-wrap"
-          on:click={updateSelected(item)}>
-          {item}
+          on:click={updateSelected(item.k)}>
+          <a href={item.url}>
+            <Icon class="material-icons">{item.icon}</Icon>
+            <Label>
+              {item.label}
+            </Label>
+          </a>
         </li>
       {/each}
     </ul>

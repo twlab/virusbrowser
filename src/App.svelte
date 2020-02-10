@@ -14,6 +14,7 @@
   import Dropdown from "./UI/Dropdown.svelte";
   import CartIndicator from "./UI/CartIndicator.svelte";
   import CartView from './containers/CartView.svelte';
+  import HelpMenu from './UI/HelpMenu.svelte';
 
   const virusList = ["Ebola", "SARS", "MERS", "2019-nCoV"];
   const virusNameList = ["ebola", "sars", "mers", "ncov"];
@@ -26,7 +27,6 @@
     } else {
       virusName = event.detail.toLowerCase();
     }
-    console.log(virusName);
     Cart.addDataItems([]);
   }
 
@@ -86,6 +86,27 @@
     }
   ];
   let keyedTabsActive = iconTabs[0];
+
+  let helpMenuItems = [
+    {
+      k: 0,
+      icon: "slideshow",
+      label: "Video tutorials",
+      url: "https://youtu.be/cOv8W28GzwM"
+    },
+    {
+      k: 1,
+      icon: "description",
+      label: "Documentation",
+      url: "https://virusgateway.readthedocs.io/en/latest/index.html"
+    },
+    {
+      k: 2,
+      icon: "code",
+      label: "Github",
+      url: "https://github.com/debugpoint136/WashU-Virus-Genome-Browser"
+    }
+  ];
 </script>
 
 <style>
@@ -113,9 +134,9 @@
         WashU Virus Genome Browser
       </a>
     </div>
-    <a href="https://youtu.be/cOv8W28GzwM"><Icon class='material-icons'>slideshow</Icon></a>
-    <a href="https://virusgateway.readthedocs.io/en/latest/index.html"><Icon class='material-icons'>description</Icon></a>
-    <a href="https://github.com/debugpoint136/WashU-Virus-Genome-Browser"><Icon class='material-icons'>code</Icon></a>
+    <div class="m-2">
+      <HelpMenu items={helpMenuItems}/>
+    </div>
 
     <div class="flex flex-col m-2">  
       <Dropdown on:reference-select={handleReferenceSelect} names={virusList} />
