@@ -60,7 +60,7 @@
     </div>
     {#each cartData as item}
       <Item
-        on:SMUI:action={() => ((selectionTwoLine = item._id), Cart.addDataItems($Cart.data.filter(d => d._id !== item._id)))}
+        on:SMUI:action={() => ((selectionTwoLine = item._id), Cart.addDataItems($Cart.data.filter(d => d.Accession !== item.Accession)))}
         selected={selectionTwoLine === item._id}>
         <Graphic
           style="background-image:
