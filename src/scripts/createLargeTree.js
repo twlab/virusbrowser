@@ -72,6 +72,7 @@ export function createLargeTree(VIRUSNAME, CART_DATA, METADATA, MODE, INDENT, ad
       });
 
       tree.style_nodes(function (element, node_data) {
+        
         if (node_data.name in tree_attributes) { // see if the node has attributes
           var node_label = element.select("text");
           var font_size = parseFloat(node_label.style("font-size"));
@@ -90,7 +91,7 @@ export function createLargeTree(VIRUSNAME, CART_DATA, METADATA, MODE, INDENT, ad
             .attr("height", font_size)
             .attr("y", -font_size / 2)
             .style("fill", function (d, i) {
-              return attribute_to_color(d.color);
+              return d.color;
             })
             .on("mouseover", function (d) {
               div
@@ -117,7 +118,6 @@ export function createLargeTree(VIRUSNAME, CART_DATA, METADATA, MODE, INDENT, ad
             .attr("x", function (d, i) {
               return x_shift + font_size * i;
             });
-
         }
       });
     }
@@ -196,9 +196,10 @@ function fetchMetadataColors(accession, METADATA, metadataTermsSet) {
   let metadataTerms = [...metadataTermsSet];
 
   let colorsResult = [];
-
   const element = METADATA.filter(d => d.Accession === accession)[0];
+
   const {Organism, Molecule_Type, Isolate, country, year} = sanitizeMetadataItem(element);
+
   colorsResult.push({
     color: COLORS[metadataTerms.indexOf(Organism)],
     metadata: Organism
@@ -220,6 +221,7 @@ function fetchMetadataColors(accession, METADATA, metadataTermsSet) {
     metadata: year
   });
 
+  
   return colorsResult;
 
 }

@@ -1,6 +1,6 @@
 <script>
   import SvelteTable from "./SvelteTable.svelte";
-  import { afterUpdate } from 'svelte';
+  import { onMount, afterUpdate } from 'svelte';
   import { Cart } from "../stores/Cart.js";
   import { saveDataOnWindow } from '../scripts/saveDataOnWindow';
   export let virusName;
@@ -11,14 +11,14 @@
 
 
   function updateCart(input) {
-    let found = $Cart.data.filter(d => d._id === input.detail.row._id);
+    let found = $Cart.data.filter(d => d.Accession === input.detail.row.Accession);
     if (found.length > 0) {
-      Cart.addDataItems($Cart.data.filter(d => d._id !== input.detail.row._id));
+      Cart.addDataItems($Cart.data.filter(d => d.Accession !== input.detail.row.Accession));
     } else {
       Cart.addDataItems([...new Set([...$Cart.data, input.detail.row])]);
     }
     const tracksWindow = saveDataOnWindow($Cart.data, virusName, FILESJSON, ALIGNMENTSJSON);
-    window.TRACKS = tracksWindow;
+    // window.TRACKS = tracksWindow;
   }
 
   let example = 0;

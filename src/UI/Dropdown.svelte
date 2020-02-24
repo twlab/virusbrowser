@@ -1,19 +1,37 @@
 <script>
-  import { createEventDispatcher } from 'svelte'
-  let selected = "2019-nCoV";
+  import { createEventDispatcher, onMount } from 'svelte'
+  let selected = "SARS-CoV-2";
   export let names;
 
   const dispatch = createEventDispatcher();
   function updateSelected(input) {
-    selected = input
+    if (input === 'SARS-CoV-2') {
+      input = 'ncov';
+    }
+    selected = input;
     dispatch('reference-select', selected);
+    // window.BROWSER_DATA.reference = input;
+    localStorage.setItem('tracks', JSON.stringify([]));
+    localStorage.setItem('reference', JSON.stringify(input.toLowerCase()));
   }
+
+  onMount(() => {
+    let referenceLS = localStorage.getItem('reference');
+    let parsedReference = JSON.parse(referenceLS);
+    if (parsedReference) {
+      selected = parsedReference;
+      if (parsedReference === 'ncov') {
+        selected = 'SARS-CoV-2';
+      }
+    }
+  })
   
 </script>
 
 <style>
   .dropdown:hover .dropdown-menu {
     display: block;
+    z-index: 100;
   }
 </style>
 
@@ -23,7 +41,7 @@
     <button
       class="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded
       inline-flex items-center">
-      <span class="mr-1">{selected}</span>
+      <span class="mr-1">{(selected === 'ncov') ? 'SARS-CoV-2' : selected}</span>
       <svg
         class="fill-current h-4 w-4"
         xmlns="http://www.w3.org/2000/svg"

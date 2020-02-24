@@ -13,22 +13,34 @@
   import { Cart } from "./stores/Cart.js";
   import Dropdown from "./UI/Dropdown.svelte";
   import CartIndicator from "./UI/CartIndicator.svelte";
-  import CartView from './containers/CartView.svelte';
-  import HelpMenu from './UI/HelpMenu.svelte';
+  import CartView from "./containers/CartView.svelte";
+  import HelpMenu from "./UI/HelpMenu.svelte";
+  // import LikeButton from './UI/LikeButton.svelte';
+  import BrowserView from './components/BrowserView.svelte';
 
-  const virusList = ["Ebola", "SARS", "MERS", "2019-nCoV"];
+  const virusList = ["Ebola", "SARS", "MERS", "SARS-CoV-2"];
   const virusNameList = ["ebola", "sars", "mers", "ncov"];
   let DATA = {};
-  let virusName = 'ncov';
+  let virusName = "ncov";
 
   function handleReferenceSelect(event) {
-    if (event.detail === '2019-nCoV') {
-      virusName = 'ncov';
+    if (event.detail === "SARS-CoV-2") {
+      virusName = "ncov";
     } else {
       virusName = event.detail.toLowerCase();
     }
     Cart.addDataItems([]);
+    keyedTabsActive = iconTabs[2];
   }
+
+  const unsubscribe = Cart.subscribe(async store => {
+    const { data } = store;
+		// window.BROWSER_DATA.a = data;
+  });
+	
+	onDestroy(() => {
+		unsubscribe();
+	});
 
   onMount(() => {
     virusNameList.forEach(reference => {
@@ -60,7 +72,18 @@
       });
     });
 
-    localStorage.setItem('tracks', '');
+    // localStorage.setItem("tracks", "");
+    const TRACKS = localStorage.getItem('tracks');
+    if (TRACKS !== '') {
+      let parsedTracks = JSON.parse(TRACKS);
+      Cart.addDataItems(parsedTracks.filter(d => d.type === 'pairwise').map(d => d.metadata));
+    }
+
+    let referenceLS = localStorage.getItem('reference');
+    let parsedReference = JSON.parse(referenceLS);
+    if (parsedReference) {
+      virusName = parsedReference;
+    }
   });
 
   let iconTabs = [
@@ -83,6 +106,11 @@
       k: 3,
       icon: "shopping_cart",
       label: "Cart"
+    },
+    {
+      k: 4,
+      icon: "web",
+      label: "Browser View"
     }
   ];
   let keyedTabsActive = iconTabs[0];
@@ -116,11 +144,12 @@
 <!-- <div class="bg-right bg-cover" style="background-image:url('/images/bg.svg');"> -->
 <div>
   <!-- <Nav/> -->
-  <div class="w-full container mx-auto flex justify-between">
-    <div class="w-full flex items-center justify-between">
+  
+  <div class="w-full mx-auto flex justify-start">
+    <div class="w-full xl:w-1/5 xl:flex xl:items-center lg:justify-start">
       <a
-        class="flex items-center text-indigo-400 no-underline hover:no-underline
-        font-bold text-2xl lg:text-4xl"
+        class="flex ml-4 items-center text-indigo-400 no-underline
+        hover:no-underline font-bold text-2xl"
         href="/">
         <svg
           class="h-8 fill-current text-indigo-600 pr-2"
@@ -134,60 +163,64 @@
         WashU Virus Genome Browser
       </a>
     </div>
-    <div class="m-2">
-      <HelpMenu items={helpMenuItems}/>
+    <div class="w-full xl:w-3/5 xl:flex lg:items-start">
+      <div class="m-2">
+        <HelpMenu items={helpMenuItems} />
+      </div>
+
+      <div class="flex flex-col m-2">
+        <Dropdown
+          on:reference-select={handleReferenceSelect}
+          names={virusList} />
+        <Label>Reference</Label>
+      </div>
+
+      <TabBar
+        tabs={iconTabs}
+        let:tab
+        key={tab => tab.k}
+        bind:active={keyedTabsActive}>
+        <Tab
+          {tab}
+          stacked={true}
+          indicatorSpanOnlyContent={true}
+          tabIndicator$transition="fade">
+          <Icon class="material-icons">{tab.icon}</Icon>
+          <Label>
+            {#if tab.k === 3}
+              <CartIndicator />
+            {:else}{tab.label}{/if}
+          </Label>
+        </Tab>
+      </TabBar>
     </div>
-
-    <div class="flex flex-col m-2">  
-      <Dropdown on:reference-select={handleReferenceSelect} names={virusList} />
-      <Label>Reference</Label>
-    </div>
-
-    <TabBar
-      tabs={iconTabs}
-      let:tab
-      key={tab => tab.k}
-      bind:active={keyedTabsActive}>
-      <Tab
-        {tab}
-        stacked={true}
-        indicatorSpanOnlyContent={true}
-        tabIndicator$transition="fade">
-
-        <Icon class="material-icons">{tab.icon}</Icon>
-        <Label>
-          {#if tab.k === 3}
-            <CartIndicator />
-          {:else}{tab.label}{/if}
-        </Label>
-      </Tab>
-    </TabBar>
-    <div class="w-1/5" />
-
   </div>
   <div id="main-wrapper" class="mx-16">
     <div>
       {#if keyedTabsActive.k === 0}
         <div style="height: 800px;">
-          <SplashBanner on:start={() => keyedTabsActive = iconTabs[2]}/>
+          <SplashBanner on:start={() => (keyedTabsActive = iconTabs[2])} />
         </div>
-
       {:else if keyedTabsActive.k === 1}
         <div style="height: 800px;" class="container">
           <LargeTreeContainer {virusName} DATA={DATA[virusName]} />
         </div>
-
       {:else if keyedTabsActive.k === 2}
         <div style="height: 800px;">
           <DataTable {virusName} DATA={DATA[virusName]} />
         </div>
-     
       {:else if keyedTabsActive.k === 3}
         <div style="height: 800px;" class="container">
           <CartView />
-        </div>
+          </div>
+      {:else if keyedTabsActive.k === 4}
+        <div></div>
       {/if}
     </div>
+    <div class="w-full xl:w-1/5 lg:items-start"></div>
+  </div>
+  <div class:hidden={keyedTabsActive.k !== 4}>
+    <BrowserView {virusName} active={keyedTabsActive.k}/>
   </div>
 
   <!-- <TreeComponent /> -->

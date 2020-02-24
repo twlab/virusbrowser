@@ -2,13 +2,17 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "devDependencies": {
+    "@smui/snackbar": "^1.0.0-beta.20",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
     "mini-css-extract-plugin": "^0.6.0",
     "serve": "^11.0.0",
+    "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
     "svelte": "^3.0.0",
     "svelte-loader": "2.13.3",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1"
@@ -28,9 +32,12 @@
     "@smui/switch": "^1.0.0-beta.20",
     "@smui/tab": "^1.0.0-beta.20",
     "@smui/tab-bar": "^1.0.0-beta.20",
+    "axios": "^0.19.2",
     "d3": "^5.15.0",
     "js-file-download": "^0.4.9",
     "node-sass": "^4.13.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "sass-loader": "^8.0.2",
     "svelte-watch-resize": "^1.0.3"
   }

@@ -81,10 +81,41 @@
         /* /* width: 80%; */
         height: 95%;
       }
+
+      .spinner {
+        position: relative;
+        /* color: transparent !important; */
+        pointer-events: none;
+      }
+
+      .spinner::after {
+        content: '';
+        position: absolute !important;
+        top: calc(50% - (1em / 2));
+        left: calc(50% - (1em / 2));
+        display: block;
+        width: 1em;
+        height: 1em;
+        border: 2px solid currentColor;
+        border-radius: 9999px;
+        border-right-color: transparent;
+        border-top-color: transparent;
+        animation: spinAround 500ms infinite linear;
+      }
+
+      @keyframes spinAround {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
     </style>
-    <script>
+    <!-- <script>
       window.onload = function() {
         var refresherButton = document.getElementById('iframeRefresher');
+
         if (refresherButton.addEventListener)
           refresherButton.addEventListener('click', refreshIframe, false);
         else refresherButton.attachEvent('click', refreshIframe);
@@ -92,7 +123,43 @@
 
       function refreshIframe() {
         let browserDOMHandle = document.getElementById('browser-embed');
-        browserDOMHandle.contentDocument.location.reload(true);
+        let reference_ = BROWSER_DATA.reference.toLowerCase();
+            if (reference_ === '2019_ncov') {
+              reference_ = 'ncov';
+            }
+
+        localStorage.setItem('reference', JSON.stringify(reference_));
+
+        if (window.BROWSER_DATA.a.length === 0) {
+          if (JSON.parse(localStorage.getItem('tracks')).length === 0) {
+            // if (document.getElementById('browser-wrapper').style.display === 'none') {
+            // document.getElementById('popup-message-2').style.display =
+            //       'block';
+            //     setTimeout(() => {
+            //       document.getElementById('popup-message-2').style.display =
+            //         'none';
+            //     }, 1000);
+            //   }
+          } else {
+            
+
+            const referenceLocalStorage = localStorage.getItem('reference');
+            if (referenceLocalStorage !== '') {
+              if (reference_ !== JSON.parse(referenceLocalStorage)) {
+                document.getElementById('popup-message').style.display =
+                  'block';
+                setTimeout(() => {
+                  document.getElementById('popup-message').style.display =
+                    'none';
+                }, 2000);
+
+                localStorage.setItem('tracks', JSON.stringify([]));
+                // localStorage.setItem('reference', JSON.stringify(reference_));
+                browserDOMHandle.contentDocument.location.reload(true);
+              }
+            }
+          }
+        }
 
         let browserDOMWrapper = document.getElementById('browser-wrapper');
         if (browserDOMWrapper.style.display === 'none') {
@@ -124,7 +191,71 @@
           }
         }
       });
-    </script>
+    </script> -->
+
+    <!-- <script>
+      let x = {
+        aInternal: [],
+        aListener: function(val) {},
+        set a(val) {
+          this.aInternal = val;
+          this.aListener(val);
+        },
+        get a() {
+          return this.aInternal;
+        },
+        registerListener: function(listener) {
+          this.aListener = listener;
+        },
+        referenceInternal: 'ncov',
+        set reference(val) {
+          this.referenceInternal = val;
+        },
+        get reference() {
+          return this.referenceInternal;
+        }
+      };
+
+      x.registerListener(function(val) {
+        // const BROWSER_ACTION = aInternal ? ' open ' : ' close ';
+        // alert('Do you want to' + BROWSER_ACTION + ' Browser?');
+        // alert('Cart data changed, browser will refresh!')
+        let browserDOMHandle = document.getElementById('browser-embed');
+        browserDOMHandle.contentDocument.location.reload(true);
+      });
+
+      // x.a = 43;
+
+      window.BROWSER_DATA = x;
+    </script> -->
+
+    <div class="flex justify-end">
+      <div id="popup-message" style="display: none; width: 45%;">
+        <div class="flex">
+        <div
+          class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3"
+          role="alert"
+        >
+          <p class="font-bold">Browser View will be refreshed</p>
+          <p class="text-sm">Selected reference is not same as local cache</p>
+        </div>
+        <div class="spinner"></div>
+      </div>
+      </div>
+    </div>
+    <div class="flex justify-end">
+      <div id="popup-message-2" style="display: none; width: 45%;">
+        <div class="flex">
+        <div
+          class="bg-yellow-100 border-t border-b border-yellow-500 text-yellow-700 px-4 py-3"
+          role="alert"
+        >
+          <p class="font-bold">No data selected</p>
+          <p class="text-sm">Browser loaded with no tracks</p>
+        </div>
+      </div>
+      </div>
+    </div>
   </head>
 
   <body
@@ -148,17 +279,17 @@
     <script src="bundle.js"></script>
     <!-- <div id="svelte_app">
 		here
-	</div> -->
-    <button
+  </div> -->
+
+    <!-- <button
       style="position:absolute; top:0; right: 0; padding: 2ch; margin-top: 2ch; margin-right: 12ch;"
       class="bg-gray-300"
       id="iframeRefresher"
     >
       Show Browser View
-    </button>
+    </button> -->
 
-    <div id="browser-wrapper" style="display: none;">
-      <!-- <iframe width="1560" height="315" src="browser.html" frameborder="0" allowfullscreen></iframe>  -->
+    <!-- <div id="browser-wrapper" style="display: none;">
 
       <iframe
         id="browser-embed"
@@ -169,7 +300,6 @@
         frameborder="50"
         allowfullscreen
       ></iframe>
-      <!-- <iframe width="1560" height="1315" src="give.html" frameborder="0" allowfullscreen></iframe>  -->
-    </div>
+    </div> -->
   </body>
 </html>

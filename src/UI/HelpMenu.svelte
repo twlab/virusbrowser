@@ -15,6 +15,7 @@
 <style>
   .dropdown:hover .dropdown-menu {
     display: block;
+    z-index: 100;
   }
 </style>
 
