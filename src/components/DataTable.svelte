@@ -1,23 +1,31 @@
 <script>
   import SvelteTable from "./SvelteTable.svelte";
-  import { onMount, afterUpdate } from 'svelte';
+  import { onMount, afterUpdate } from "svelte";
   import { Cart } from "../stores/Cart.js";
-  import { saveDataOnWindow } from '../scripts/saveDataOnWindow';
+  import { saveDataOnWindow } from "../scripts/saveDataOnWindow";
   export let virusName;
   export let DATA;
   // import FILESJSON from '../json/database.json';
-  import FILESJSON from '../json/pairwise.json';
-  import ALIGNMENTSJSON from '../json/alignment_bed.json';
-
+  import FILESJSON from "../json/pairwise.json";
+  import ALIGNMENTSJSON from "../json/alignment_bed.json";
 
   function updateCart(input) {
-    let found = $Cart.data.filter(d => d.Accession === input.detail.row.Accession);
+    let found = $Cart.data.filter(
+      d => d.Accession === input.detail.row.Accession
+    );
     if (found.length > 0) {
-      Cart.addDataItems($Cart.data.filter(d => d.Accession !== input.detail.row.Accession));
+      Cart.addDataItems(
+        $Cart.data.filter(d => d.Accession !== input.detail.row.Accession)
+      );
     } else {
       Cart.addDataItems([...new Set([...$Cart.data, input.detail.row])]);
     }
-    const tracksWindow = saveDataOnWindow($Cart.data, virusName, FILESJSON, ALIGNMENTSJSON);
+    const tracksWindow = saveDataOnWindow(
+      $Cart.data,
+      virusName,
+      FILESJSON,
+      ALIGNMENTSJSON
+    );
     // window.TRACKS = tracksWindow;
   }
 
@@ -153,7 +161,8 @@
         let letrs = {};
         rows.forEach(row => {
           let splitStr = row.Collection_Date.split("-");
-          let year = (splitStr.length !== 0) ? splitStr[splitStr.length - 1] : "N/A";
+          let year =
+            splitStr.length !== 0 ? splitStr[splitStr.length - 1] : "N/A";
           let letr = year;
           if (letrs[letr] === undefined)
             letrs[letr] = {
@@ -177,14 +186,15 @@
       }
     }
   ];
-  
 </script>
 
 {#if DATA !== undefined}
   <div class="overflow-y-scroll border-2 p-2 m-4" style="height: 80%;">
-    <div class="w-full pt-6 pb-6 text-sm text-center md:text-left fade-in flex justify-center">
+    <div
+      class="w-full pt-6 pb-6 text-sm text-center md:text-left fade-in flex
+      justify-center">
       <div class="text-gray-500 no-underline hover:no-underline">
-        Click on rows to add to Cart
+        Use header row to filter data, click on rows to add to Cart
       </div>
     </div>
     <SvelteTable on:clickRow={updateCart} columns={COLS} rows={DATA} />
