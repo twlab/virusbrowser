@@ -1,118 +1,97 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf8" />
-    <meta name="viewport" content="width=device-width" />
+    <head>
+        <meta charset="utf8" />
+        <meta name="viewport" content="width=device-width" />
 
-    <title>WashU Viral Gateway</title>
+        <title>WashU Virus Genome Browser</title>
 
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="global.css" />
-    <link rel="stylesheet" href="bundle.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto+Mono"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/tailwindcss/dist/tailwind.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700"
-      rel="stylesheet"
-    />
-    <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
-    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
-    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
-    <link href="/phylotree.css" rel="stylesheet" />
+        <link rel="icon" type="image/png" href="favicon.png" />
+        <link rel="stylesheet" href="global.css" />
+        <link rel="stylesheet" href="bundle.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono" />
+        <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+        <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+        <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+        <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
+        <link href="/phylotree.css" rel="stylesheet" />
 
-    <script src="//code.jquery.com/jquery.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="//d3js.org/d3.v3.min.js"></script>
-    <!-- <script src="/phylotree/phylotree.js"></script> -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"
-      charset="utf-8"
-    ></script>
-    <script>
-      function parseNewick(a) {
-        for (
-          var e = [], r = {}, s = a.split(/\s*(;|\(|\)|,|:)\s*/), t = 0;
-          t < s.length;
-          t++
-        ) {
-          var n = s[t];
-          switch (n) {
-            case '(':
-              var c = {};
-              (r.branchset = [c]), e.push(r), (r = c);
-              break;
-            case ',':
-              var c = {};
-              e[e.length - 1].branchset.push(c), (r = c);
-              break;
-            case ')':
-              r = e.pop();
-              break;
-            case ':':
-              break;
-            default:
-              var h = s[t - 1];
-              ')' == h || '(' == h || ',' == h
-                ? (r.name = n)
-                : ':' == h && (r.length = parseFloat(n));
-          }
-        }
-        return r;
-      }
-    </script>
+        <script src="//code.jquery.com/jquery.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="//d3js.org/d3.v3.min.js"></script>
+        <!-- <script src="/phylotree/phylotree.js"></script> -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"
+            charset="utf-8"
+        ></script>
+        <script>
+            function parseNewick(a) {
+                for (var e = [], r = {}, s = a.split(/\s*(;|\(|\)|,|:)\s*/), t = 0; t < s.length; t++) {
+                    var n = s[t];
+                    switch (n) {
+                        case "(":
+                            var c = {};
+                            (r.branchset = [c]), e.push(r), (r = c);
+                            break;
+                        case ",":
+                            var c = {};
+                            e[e.length - 1].branchset.push(c), (r = c);
+                            break;
+                        case ")":
+                            r = e.pop();
+                            break;
+                        case ":":
+                            break;
+                        default:
+                            var h = s[t - 1];
+                            ")" == h || "(" == h || "," == h ? (r.name = n) : ":" == h && (r.length = parseFloat(n));
+                    }
+                }
+                return r;
+            }
+        </script>
 
-    <style>
-      #browser-embed {
-        margin-top: 5%;
-        /* /* width: 80%; */
-        height: 95%;
-      }
+        <style>
+            #browser-embed {
+                margin-top: 5%;
+                /* /* width: 80%; */
+                height: 95%;
+            }
 
-      .spinner {
-        position: relative;
-        /* color: transparent !important; */
-        pointer-events: none;
-      }
+            .spinner {
+                position: relative;
+                /* color: transparent !important; */
+                pointer-events: none;
+            }
 
-      .spinner::after {
-        content: '';
-        position: absolute !important;
-        top: calc(50% - (1em / 2));
-        left: calc(50% - (1em / 2));
-        display: block;
-        width: 1em;
-        height: 1em;
-        border: 2px solid currentColor;
-        border-radius: 9999px;
-        border-right-color: transparent;
-        border-top-color: transparent;
-        animation: spinAround 500ms infinite linear;
-      }
+            .spinner::after {
+                content: "";
+                position: absolute !important;
+                top: calc(50% - (1em / 2));
+                left: calc(50% - (1em / 2));
+                display: block;
+                width: 1em;
+                height: 1em;
+                border: 2px solid currentColor;
+                border-radius: 9999px;
+                border-right-color: transparent;
+                border-top-color: transparent;
+                animation: spinAround 500ms infinite linear;
+            }
 
-      @keyframes spinAround {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
-      }
-    </style>
-    <!-- <script>
+            @keyframes spinAround {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+        <!-- <script>
       window.onload = function() {
         var refresherButton = document.getElementById('iframeRefresher');
 
@@ -193,7 +172,7 @@
       });
     </script> -->
 
-    <!-- <script>
+        <!-- <script>
       let x = {
         aInternal: [],
         aListener: function(val) {},
@@ -229,59 +208,50 @@
       window.BROWSER_DATA = x;
     </script> -->
 
-    <div class="flex justify-end">
-      <div id="popup-message" style="display: none; width: 45%;">
-        <div class="flex">
-        <div
-          class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3"
-          role="alert"
-        >
-          <p class="font-bold">Browser View will be refreshed</p>
-          <p class="text-sm">Selected reference is not same as local cache</p>
+        <div class="flex justify-end">
+            <div id="popup-message" style="display: none; width: 45%;">
+                <div class="flex">
+                    <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
+                        <p class="font-bold">Browser View will be refreshed</p>
+                        <p class="text-sm">Selected reference is not same as local cache</p>
+                    </div>
+                    <div class="spinner"></div>
+                </div>
+            </div>
         </div>
-        <div class="spinner"></div>
-      </div>
-      </div>
-    </div>
-    <div class="flex justify-end">
-      <div id="popup-message-2" style="display: none; width: 45%;">
-        <div class="flex">
-        <div
-          class="bg-yellow-100 border-t border-b border-yellow-500 text-yellow-700 px-4 py-3"
-          role="alert"
-        >
-          <p class="font-bold">No data selected</p>
-          <p class="text-sm">Browser loaded with no tracks</p>
+        <div class="flex justify-end">
+            <div id="popup-message-2" style="display: none; width: 45%;">
+                <div class="flex">
+                    <div
+                        class="bg-yellow-100 border-t border-b border-yellow-500 text-yellow-700 px-4 py-3"
+                        role="alert"
+                    >
+                        <p class="font-bold">No data selected</p>
+                        <p class="text-sm">Browser loaded with no tracks</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      </div>
-    </div>
-  </head>
+    </head>
 
-  <body
-    class="leading-normal tracking-normal text-gray-900"
-    style="font-family: 'Source Sans Pro', sans-serif;"
-  >
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-157959055-1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
+    <body class="leading-normal tracking-normal text-gray-900" style="font-family: 'Source Sans Pro', sans-serif;">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157959055-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-      gtag('config', 'UA-157959055-1');
-    </script>
-    <script src="bundle.js"></script>
-    <!-- <div id="svelte_app">
+            gtag("config", "UA-157959055-1");
+        </script>
+        <script src="bundle.js"></script>
+        <!-- <div id="svelte_app">
 		here
   </div> -->
 
-    <!-- <button
+        <!-- <button
       style="position:absolute; top:0; right: 0; padding: 2ch; margin-top: 2ch; margin-right: 12ch;"
       class="bg-gray-300"
       id="iframeRefresher"
@@ -289,7 +259,7 @@
       Show Browser View
     </button> -->
 
-    <!-- <div id="browser-wrapper" style="display: none;">
+        <!-- <div id="browser-wrapper" style="display: none;">
 
       <iframe
         id="browser-embed"
@@ -301,5 +271,5 @@
         allowfullscreen
       ></iframe>
     </div> -->
-  </body>
+    </body>
 </html>

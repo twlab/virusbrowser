@@ -36,6 +36,28 @@
 
   const virusList = ["Ebola", "SARS", "MERS", "SARS-CoV-2"];
   const virusNameList = ["ebola", "sars", "mers", "ncov"];
+  const fullNames = {
+    ebola: {
+      name: "Ebola",
+      desc:
+        "Ebola is a rare but deadly virus that causes fever, body aches, and diarrhea, and sometimes bleeding inside and outside the body. As the virus spreads through the body, it damages the immune system and organs. Ultimately, it causes levels of blood-clotting cells to drop. This leads to severe, uncontrollable bleeding."
+    },
+    sars: {
+      name: "SARS",
+      desc:
+        "Severe acute respiratory syndrome (SARS) is a viral respiratory illness caused by a coronavirus called SARS-associated coronavirus (SARS-CoV). SARS was first reported in Asia in February 2003. The illness spread to more than two dozen countries in North America, South America, Europe, and Asia before the SARS global outbreak of 2003 was contained."
+    },
+    mers: {
+      name: "MERS",
+      desc:
+        "Middle East Respiratory Syndrome (MERS) is viral respiratory illness that is new to humans. It was first reported in Saudi Arabia in 2012 and has since spread to several other countries, including the United States. Most people infected with MERS-CoV developed severe respiratory illness, including fever, cough, and shortness of breath. Many of them have died."
+    },
+    ncov: {
+      name: "SARS-CoV-2",
+      desc:
+        "Since its debut in mid-December, 2019, the zoonotic SARS-CoV-2 has rapidly spread from its origin in Wuhan, China, to several countries across the globe, leading to a global health crisis. Research efforts have begun sequencing the 29 kb virus genome, allowing for comparisons between the novel virus and close relatives. The WashU Virus Genome Browser is home to the genomic sequences of 45 SARS-CoV-2 strains, as well as hundreds of related viruses, including severe acute respiratory syndrome coronavirus (SARS-CoV), Middle East respiratory syndrome coronavirus (MERS-CoV), and Ebola virus. In addition to included data tracks, the browser supports user-uploaded sequences, as well as two visualization platforms: a genomic track view and a phylogenetic tree view. Our hope is that the WashU Virus Genome Browser will serve as an efficient tool, aiding researchers in better understanding the disease."
+    }
+  };
   let DATA = {};
   let virusName = "ncov";
 
@@ -91,7 +113,7 @@
     // localStorage.setItem("tracks", "");
     const TRACKS = localStorage.getItem("tracks");
     if (TRACKS !== "") {
-      let parsedTracks = JSON.parse(TRACKS);
+      let parsedTracks = JSON.parse(TRACKS) || [];
       Cart.addDataItems(
         parsedTracks.filter(d => d.type === "pairwise").map(d => d.metadata)
       );
@@ -181,11 +203,40 @@
     height: 100%;
     box-sizing: border-box;
   }
+  .ref {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+  }
 </style>
 
 <div class="drawer-container">
   <Drawer bind:this={myDrawer} bind:open={myDrawerOpen}>
     <Content>
+      <div class="w-full xl:flex xl:items-center lg:justify-start">
+        <a
+          class="flex ml-4 items-center text-indigo-400 no-underline
+          hover:no-underline font-bold text-2xl"
+          href="/">
+          <svg
+            class="h-8 fill-current text-indigo-600 pr-2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20">
+            <path
+              d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm-5.6-4.29a9.95 9.95 0
+              0 1 11.2 0 8 8 0 1 0-11.2 0zm6.12-7.64l3.02-3.02 1.41 1.41-3.02
+              3.02a2 2 0 1 1-1.41-1.41z" />
+          </svg>
+          WashU Virus Genome Browser
+        </a>
+      </div>
+      <label for="ref" class="ref">Choose a Virus Reference:</label>
+      <div class="flex flex-col justify-start mx-2 h-48">
+        <Dropdown
+          on:reference-select={handleReferenceSelect}
+          names={virusList} />
+      </div>
       <List>
         <Item
           href="javascript:void(0)"
@@ -219,15 +270,6 @@
         </Item>
 
         <Separator nav />
-        <Header>
-          <Subtitle>Reference</Subtitle>
-        </Header>
-        <div class="flex flex-col justify-start mx-2 h-48">
-          <Dropdown
-            on:reference-select={handleReferenceSelect}
-            names={virusList} />
-        </div>
-        <Separator nav />
         <Subheader component={H6}>Resources</Subheader>
         {#each helpMenuItems as item}
           <Item href={item.url}>
@@ -243,36 +285,14 @@
   <Scrim />
   <AppContent class="app-content">
     <main class="main-content">
-      <!-- <Button on:click={() => (myDrawerOpen = !myDrawerOpen)}>
-        <Icon class="material-icons">menu</Icon>
-      </Button> -->
-      <div class:hidden={active === 4}>
-        <div class="w-full xl:w-1/5 xl:flex xl:items-center lg:justify-start">
-          <a
-            class="flex ml-4 items-center text-indigo-400 no-underline
-            hover:no-underline font-bold text-2xl"
-            href="/">
-            <!-- <svg
-          class="h-8 fill-current text-indigo-600 pr-2"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20">
-          <path
-            d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm-5.6-4.29a9.95 9.95 0 0
-            1 11.2 0 8 8 0 1 0-11.2 0zm6.12-7.64l3.02-3.02 1.41 1.41-3.02 3.02a2
-            2 0 1 1-1.41-1.41z" />
-        </svg> -->
-            WashU Virus Genome Browser
-          </a>
-        </div>
-      </div>
-      <br />
-      <!-- <pre class="status">Active: {active}</pre> -->
-
       <div id="main-wrapper" class="mx-16">
         <div>
           {#if active === 0}
             <div style="height: 800px;">
-              <SplashBanner on:start={() => setActive(2)} />
+              <SplashBanner
+                on:start={() => setActive(2)}
+                {virusName}
+                {fullNames} />
             </div>
           {:else if active === 1}
             <div style="height: 800px;" class="container">
