@@ -3,7 +3,7 @@
 </script>
 <div class="flex justify-center">
 <span
-  class="p-4">
+  class="">
   {$Cart.data.length} files
 </span>
 </div>

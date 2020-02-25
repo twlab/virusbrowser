@@ -1,0 +1,300 @@
+<script>
+  import { onMount, afterUpdate, onDestroy } from "svelte";
+  import Tab, { Icon, Label } from "@smui/tab";
+  import TabBar from "@smui/tab-bar";
+  import Button from "@smui/button";
+  import Drawer, {
+    AppContent,
+    Content,
+    Header,
+    Title,
+    Subtitle,
+    Scrim
+  } from "@smui/drawer";
+  import List, { Item, Text, Graphic, Separator, Subheader } from "@smui/list";
+  import H6 from "@smui/common/H6.svelte";
+  import LargeTreeContainer from "./containers/LargeTreeContainer.svelte";
+  import DataTable from "./components/DataTable.svelte";
+  import { Cart } from "./stores/Cart.js";
+  import Dropdown from "./UI/Dropdown.svelte";
+  import CartIndicator from "./UI/CartIndicator.svelte";
+  import CartView from "./containers/CartView.svelte";
+  import HelpMenu from "./UI/HelpMenu.svelte";
+  // import LikeButton from './UI/LikeButton.svelte';
+  import BrowserView from "./components/BrowserView.svelte";
+  import SplashBanner from "./UI/SplashBanner.svelte";
+
+  let clicked = "nothing yet";
+  let myDrawer;
+  let myDrawerOpen = true;
+  // let active = "Gray Kittens";
+  let active = 0;
+  function setActive(value) {
+    active = value;
+    // myDrawerOpen = false;
+  }
+
+  const virusList = ["Ebola", "SARS", "MERS", "SARS-CoV-2"];
+  const virusNameList = ["ebola", "sars", "mers", "ncov"];
+  let DATA = {};
+  let virusName = "ncov";
+
+  function handleReferenceSelect(event) {
+    if (event.detail === "SARS-CoV-2") {
+      virusName = "ncov";
+    } else {
+      virusName = event.detail.toLowerCase();
+    }
+    Cart.addDataItems([]);
+    keyedTabsActive = iconTabs[2];
+  }
+
+  const unsubscribe = Cart.subscribe(async store => {
+    const { data } = store;
+    // window.BROWSER_DATA.a = data;
+  });
+
+  onDestroy(() => {
+    unsubscribe();
+  });
+
+  onMount(() => {
+    virusNameList.forEach(reference => {
+      let fileHandle = require(`./metadata/${reference}_all_skinny.json`);
+      DATA[reference] = fileHandle.map((d, i) => {
+        const {
+          accession,
+          organism,
+          isolate,
+          mol_type,
+          strain,
+          db_xref,
+          collection_date,
+          country,
+          host
+        } = d;
+        let tmp = { _id: i + 1 };
+        tmp.Accession = accession;
+        tmp.Organism = organism[0] || "";
+        tmp.Molecule_Type = mol_type !== undefined ? mol_type[0] : "N/A";
+        tmp.Strain = strain !== undefined ? strain[0] : "N/A";
+        tmp.Isolate = isolate !== undefined ? isolate[0] : "N/A";
+        tmp.Collection_Date =
+          collection_date !== undefined ? collection_date[0] : "N/A";
+        tmp.Country = country !== undefined ? country[0] : "N/A";
+        tmp.db_xref = db_xref !== undefined ? db_xref[0] : "N/A";
+        tmp.Host = host !== undefined ? host[0] : "N/A";
+        return tmp;
+      });
+    });
+
+    // localStorage.setItem("tracks", "");
+    const TRACKS = localStorage.getItem("tracks");
+    if (TRACKS !== "") {
+      let parsedTracks = JSON.parse(TRACKS);
+      Cart.addDataItems(
+        parsedTracks.filter(d => d.type === "pairwise").map(d => d.metadata)
+      );
+    }
+
+    let referenceLS = localStorage.getItem("reference");
+    let parsedReference = JSON.parse(referenceLS);
+    if (parsedReference) {
+      virusName = parsedReference;
+    }
+  });
+
+  let iconTabs = [
+    {
+      k: 0,
+      icon: "",
+      label: ""
+    },
+    {
+      k: 1,
+      icon: "leaf",
+      label: "Tree View"
+    },
+    {
+      k: 2,
+      icon: "data",
+      label: "Data"
+    },
+    {
+      k: 3,
+      icon: "shopping_cart",
+      label: "Cart"
+    },
+    {
+      k: 4,
+      icon: "web",
+      label: "Browser View"
+    }
+  ];
+  let keyedTabsActive = iconTabs[0];
+
+  let helpMenuItems = [
+    {
+      k: 0,
+      icon: "slideshow",
+      label: "Video tutorials",
+      url: "https://youtu.be/cOv8W28GzwM"
+    },
+    {
+      k: 1,
+      icon: "description",
+      label: "Documentation",
+      url: "https://virusgateway.readthedocs.io/en/latest/index.html"
+    },
+    {
+      k: 2,
+      icon: "code",
+      label: "Github",
+      url: "https://github.com/debugpoint136/WashU-Virus-Genome-Browser"
+    }
+  ];
+</script>
+
+<style>
+  .drawer-container {
+    position: relative;
+    display: flex;
+    height: 100%;
+    max-width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 0;
+  }
+  * :global(.mdc-drawer--modal, .mdc-drawer-scrim) {
+    /* This is not needed for a page-wide modal. */
+    position: absolute;
+  }
+  * :global(.app-content) {
+    flex: auto;
+    overflow: auto;
+    position: relative;
+    flex-grow: 1;
+  }
+  .main-content {
+    overflow: auto;
+    padding: 16px;
+    height: 100%;
+    box-sizing: border-box;
+  }
+</style>
+
+<div class="drawer-container">
+  <Drawer bind:this={myDrawer} bind:open={myDrawerOpen}>
+    <Content>
+      <List>
+        <Item
+          href="javascript:void(0)"
+          on:click={() => setActive(1)}
+          activated={active === 1}>
+          <Graphic class="material-icons" aria-hidden="true">star</Graphic>
+          <Text>Tree View</Text>
+        </Item>
+        <Item
+          href="javascript:void(0)"
+          on:click={() => setActive(2)}
+          activated={active === 2}>
+          <Graphic class="material-icons" aria-hidden="true">inbox</Graphic>
+          <Text>Data Table</Text>
+        </Item>
+        <Item
+          href="javascript:void(0)"
+          on:click={() => setActive(3)}
+          activated={active === 3}>
+          <Graphic class="material-icons" aria-hidden="true">
+            shopping_cart
+          </Graphic>
+          <CartIndicator />
+        </Item>
+        <Item
+          href="javascript:void(0)"
+          on:click={() => setActive(4)}
+          activated={active === 4}>
+          <Graphic class="material-icons" aria-hidden="true">web</Graphic>
+          <Text>Browser View</Text>
+        </Item>
+
+        <Separator nav />
+        <Header>
+          <Subtitle>Reference</Subtitle>
+        </Header>
+        <div class="flex flex-col justify-start mx-2 h-48">
+          <Dropdown
+            on:reference-select={handleReferenceSelect}
+            names={virusList} />
+        </div>
+        <Separator nav />
+        <Subheader component={H6}>Resources</Subheader>
+        {#each helpMenuItems as item}
+          <Item href={item.url}>
+            <Graphic class="material-icons" aria-hidden="true">
+              bookmark
+            </Graphic>
+            <Text>{item.label}</Text>
+          </Item>
+        {/each}
+      </List>
+    </Content>
+  </Drawer>
+  <Scrim />
+  <AppContent class="app-content">
+    <main class="main-content">
+      <!-- <Button on:click={() => (myDrawerOpen = !myDrawerOpen)}>
+        <Icon class="material-icons">menu</Icon>
+      </Button> -->
+      <div class:hidden={active === 4}>
+        <div class="w-full xl:w-1/5 xl:flex xl:items-center lg:justify-start">
+          <a
+            class="flex ml-4 items-center text-indigo-400 no-underline
+            hover:no-underline font-bold text-2xl"
+            href="/">
+            <!-- <svg
+          class="h-8 fill-current text-indigo-600 pr-2"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20">
+          <path
+            d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm-5.6-4.29a9.95 9.95 0 0
+            1 11.2 0 8 8 0 1 0-11.2 0zm6.12-7.64l3.02-3.02 1.41 1.41-3.02 3.02a2
+            2 0 1 1-1.41-1.41z" />
+        </svg> -->
+            WashU Virus Genome Browser
+          </a>
+        </div>
+      </div>
+      <br />
+      <!-- <pre class="status">Active: {active}</pre> -->
+
+      <div id="main-wrapper" class="mx-16">
+        <div>
+          {#if active === 0}
+            <div style="height: 800px;">
+              <SplashBanner on:start={() => setActive(2)} />
+            </div>
+          {:else if active === 1}
+            <div style="height: 800px;" class="container">
+              <LargeTreeContainer {virusName} DATA={DATA[virusName]} />
+            </div>
+          {:else if active === 2}
+            <div style="height: 800px;">
+              <DataTable {virusName} DATA={DATA[virusName]} />
+            </div>
+          {:else if active === 3}
+            <div style="height: 100%;" class="container">
+              <CartView />
+            </div>
+          {:else if active === 4}
+            <div />
+          {/if}
+        </div>
+        <div class="w-full xl:w-1/5 lg:items-start" />
+      </div>
+      <div style="height: 100%;" class:hidden={active !== 4}>
+        <BrowserView {virusName} {active} />
+      </div>
+    </main>
+  </AppContent>
+</div>

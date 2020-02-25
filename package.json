@@ -20,13 +20,14 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "dev": "webpack-dev-server --content-base public",
-    "deploy": "aws s3 sync public s3://virus-browser",
-    "deployaws": "aws s3 sync public s3://virusgateway.wustl.edu",
+    "deploy": "aws s3 sync public s3://virus-browser --delete",
+    "deployaws": "aws s3 sync public s3://virusgateway.wustl.edu --delete",
     "deployprod": "scp -r public/* target.wustl.edu:/var/www/html/virusgateway"
   },
   "dependencies": {
     "@material/typography": "^4.0.0",
     "@smui/button": "^1.0.0-beta.20",
+    "@smui/drawer": "^1.0.0-beta.20",
     "@smui/form-field": "^1.0.0-beta.20",
     "@smui/list": "^1.0.0-beta.20",
     "@smui/switch": "^1.0.0-beta.20",

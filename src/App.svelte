@@ -17,6 +17,7 @@
   import HelpMenu from "./UI/HelpMenu.svelte";
   // import LikeButton from './UI/LikeButton.svelte';
   import BrowserView from './components/BrowserView.svelte';
+  import Drawer from './UI/Drawer.svelte';
 
   const virusList = ["Ebola", "SARS", "MERS", "SARS-CoV-2"];
   const virusNameList = ["ebola", "sars", "mers", "ncov"];
@@ -167,7 +168,7 @@
       <div class="m-2">
         <HelpMenu items={helpMenuItems} />
       </div>
-
+      <Drawer/>
       <div class="flex flex-col m-2">
         <Dropdown
           on:reference-select={handleReferenceSelect}

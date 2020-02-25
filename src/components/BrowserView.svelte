@@ -1,6 +1,7 @@
 <script>
   import { onDestroy, afterUpdate, onMount } from "svelte";
-  import { Cart } from "../stores/Cart.js";
+	import { Cart } from "../stores/Cart.js";
+	import Button, { Label } from "@smui/button";
   import { saveDataOnWindow } from "../scripts/saveDataOnWindow";
   import { createDatahub } from "../scripts/createDatahub";
   import FILESJSON from "../json/pairwise.json";
@@ -57,7 +58,7 @@
           let resBody = JSON.parse(res.data.body);
           if (resBody.hasOwnProperty("id")) {
             uploaded = true;
-            DATAHUB_URL = `/browser/?genome=${GENOME_NAME_MAP[virusName]}&hub=${POST_DATAHUB_URL}/${UUID}`;
+            DATAHUB_URL = `/browser/?genome=${GENOME_NAME_MAP[virusName]}&hub=${POST_DATAHUB_URL}/${UUID}&virusBrowserMode=1`;
             console.log("Created datahub:", DATAHUB_URL);
 
             content = `<iframe
@@ -98,18 +99,18 @@
 
 <style>
   .iframe-container {
-    border-top: 1px solid #ccc;
+    /* border-top: 1px solid #ccc; */
     background-color: white;
-    margin-top: 5vh;
+    margin-top: -5vh;
   }
 
   :global(iframe) {
     width: 100%;
-    height: calc(100vh - 3em);
+    height: calc(100vh);
     border: none;
     display: block;
     position: absolute;
-    top: 1;
+    top: 0;
     left: 0;
   }
 </style>
@@ -117,7 +118,9 @@
 <div class="test">
   
   {#if uploaded && DATA.length > 0}
-    <a href={DATAHUB_URL} target="_blank">View in new tab</a>
+		<div class="float-right">
+    <a href={DATAHUB_URL} target="_blank"><Button><Label>View in new tab</Label></Button></a>
+		</div>
 		<div class="iframe-container">
 			{@html content}
 		</div>
