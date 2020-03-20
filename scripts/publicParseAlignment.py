@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[2]:
 
 
 import sys
@@ -14,12 +14,16 @@ import pandas as pd
 
 
 def parse_mark3x (alignment): 
+    t = []
+    for i in alignment:
+        t.append(i.upper())
+    alignment = t
     j = 0
     i = 0
     mismatch = [""]
     insertion = [""]
     deletion = [""]
-    for i in range(0, alignment.get_alignment_length()):
+    for i in range(0, len(alignment[0])):
         if alignment[0][i] == "-" and alignment[1][i] == "-":
             continue 
         if alignment[0][i] != "-":
@@ -36,9 +40,9 @@ def parse_mark3x (alignment):
             insertion[j] = insertion[j]+alignment[1][i]
 
     alignDF = pd.DataFrame({
-        "mismatch": mismatch,
-        "insertion": insertion,
-        "deletion": deletion
+        "mismatch": [x.upper() for x in mismatch],
+        "insertion": [x.upper() for x in insertion],
+        "deletion": [x.upper() for x in deletion]
     })
     return alignDF
 
