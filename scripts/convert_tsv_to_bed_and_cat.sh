@@ -16,6 +16,7 @@ tail -n +2 $input_file > $output_bed_file".temp"
 # Create a bed file with mutation type and nucleotide change	
 awk -F'\t' -v var=$reference '{OFS="\t"; if ($1 && $2=="" && $3=="") {print var, NR-1, NR, "mismatch: "$1} else if ($1=="" && $2 && $3=="") {print var, NR-1, NR, "insertion: "$2} else if ($1=="" && $2=="" && $3) {print var, NR-1, NR, "deletion: "$3} else if ($1 && $2 && $3=="") {print var, NR-1, NR, "mismatch and insertion: "$1"/"$2}}' $output_bed_file".temp" > $output_bed_file".bed.temp"
 sort -k1,1 -k2,2n $output_bed_file".bed.temp" > $output_bed_file
+bash `dirname "$0"`/merge_deletion.sh $output_bed_file
 bgzip $output_bed_file
 tabix -p bed $output_bed_file".gz"
 
