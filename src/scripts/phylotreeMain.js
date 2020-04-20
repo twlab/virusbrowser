@@ -2561,6 +2561,7 @@
             return shown_font_size * 0.33;
           })
           .text(function(d) {
+            console.log(d)
             return node_label(d);
           })
           .style("font-size", function(d) {

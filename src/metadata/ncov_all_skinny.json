@@ -1,1320 +1,1825 @@
 [
   {
-    "accession": "NC_045512.2",
+    "accession": "LC529905.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "Wuhan-Hu-1"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China"
-    ],
-    "collection_date": [
-      "Dec-2019"
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["TKYE6182_2020"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Japan"],
+    "collection_date": ["2020-01"]
+  },
+  {
+    "accession": "MT163721.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/WA9-UW6/human/2020/USA"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: WA"],
+    "collection_date": ["01-Mar-2020"]
+  },
+  {
+    "accession": "MT163720.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/WA8-UW5/human/2020/USA"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: WA"],
+    "collection_date": ["01-Mar-2020"]
+  },
+  {
+    "accession": "MT163719.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/WA7-UW4/human/2020/USA"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: WA"],
+    "collection_date": ["01-Mar-2020"]
+  },
+  {
+    "accession": "MT163718.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/WA6-UW3/human/2020/USA"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: WA"],
+    "collection_date": ["29-Feb-2020"]
+  },
+  {
+    "accession": "MT163717.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/WA4-UW2/human/2020/USA"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: WA"],
+    "collection_date": ["28-Feb-2020"]
+  },
+  {
+    "accession": "MT163716.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/WA3-UW1/human/2020/USA"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: WA"],
+    "collection_date": ["27-Feb-2020"]
+  },
+  {
+    "accession": "MT163712.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/mehr1/human/2020/IRN"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Iran"],
+    "collection_date": ["29-Feb-2020"]
+  },
+  {
+    "accession": "MT163738.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/MHKN-4/human/2020/IRN"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Iran"],
+    "collection_date": ["29-Feb-2020"],
+    "collected_by": ["Dr. Mohammad Hadi Karbalaie Niya"]
+  },
+  {
+    "accession": "MT163737.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/MHKN-2/human/2020/IRN"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Iran"],
+    "collection_date": ["29-Feb-2020"],
+    "collected_by": ["Dr. Mohammad Hadi Karbalaie Niya"]
+  },
+  {
+    "accession": "MT163715.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/341/human/2020/IND"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["India"],
+    "collection_date": ["29-Feb-2020"],
+    "PCR_primers": [
+      "fwd_name: WCN-IF2, fwd_seq:gctggcaatggcggtgatgc, rev_name: WCN-IR2, rev_seq:agaacgctgaagcgctgggg"
     ]
   },
   {
-    "accession": "MN938384.1",
+    "accession": "MT163714.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV_HKU-SZ-002a_2020"
-    ],
-    "isolation_source": [
-      "nasopharyngeal swab"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China: Shenzhen"
-    ],
-    "collection_date": [
-      "10-Jan-2020"
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/341/human/2020/IND"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["India"],
+    "collection_date": ["29-Feb-2020"],
+    "PCR_primers": [
+      "fwd_name: WCN-OF1, fwd_seq:agaagggagcagaggcggca, rev_name: WCN-OR1, rev_seq:agaacgctgaagcgctgggg"
     ]
   },
   {
-    "accession": "MN975262.1",
+    "accession": "LR757998.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV_HKU-SZ-005b_2020"
-    ],
-    "isolation_source": [
-      "sputum"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China"
-    ],
-    "collection_date": [
-      "11-Jan-2020"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "chromosome": ["whole_genome"],
+    "country": ["China:Wuhan"],
+    "collection_date": ["2019-12-26"]
   },
   {
-    "accession": "MN985325.1",
+    "accession": "LR757997.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV/USA-WA1/2020"
-    ],
-    "isolation_source": [
-      "oropharyngeal swab"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "USA"
-    ],
-    "collection_date": [
-      "19-Jan-2020"
-    ],
-    "note": [
-      "5' end is primer sequence used"
-    ]
-  },
-  {
-    "accession": "MN988713.1",
-    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV/USA-IL1/2020"
-    ],
-    "isolation_source": [
-      "sputum"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "USA: Illinois"
-    ],
-    "collection_date": [
-      "21-Jan-2020"
-    ],
-    "note": [
-      "5' sequence is the primer sequence used"
-    ]
-  },
-  {
-    "accession": "MN994467.1",
-    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV/USA-CA1/2020"
-    ],
-    "isolation_source": [
-      "nasopharyngeal swab"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "USA: CA"
-    ],
-    "collection_date": [
-      "23-Jan-2020"
-    ],
-    "note": [
-      "5' sequence is the primer sequence used"
-    ]
-  },
-  {
-    "accession": "MN994468.1",
-    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV/USA-CA2/2020"
-    ],
-    "isolation_source": [
-      "nasopharyngeal swab"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "USA: CA"
-    ],
-    "collection_date": [
-      "22-Jan-2020"
-    ],
-    "note": [
-      "5' sequence is the primer sequence used"
-    ]
-  },
-  {
-    "accession": "MN997409.1",
-    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV/USA-AZ1/2020"
-    ],
-    "isolation_source": [
-      "buccal swab"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "USA: AZ"
-    ],
-    "collection_date": [
-      "22-Jan-2020"
-    ],
-    "note": [
-      "5' sequence is the primer sequence used"
-    ]
-  },
-  {
-    "accession": "MN988668.1",
-    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV WHU01"
-    ],
-    "isolation_source": [
-      "BALF sample of 2019 Wuhan peumoniapatient 01"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China"
-    ],
-    "collection_date": [
-      "02-Jan-2020"
-    ],
-    "note": [
-      "genome sequence collected on Jan 7, 2020"
-    ]
-  },
-  {
-    "accession": "MN988669.1",
-    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV WHU02"
-    ],
-    "isolation_source": [
-      "BALF sample of 2019 Wuhan peumoniapatient 02"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China"
-    ],
-    "collection_date": [
-      "02-Jan-2020"
-    ],
-    "note": [
-      "genome sequence collected on Jan 7, 2020"
-    ]
-  },
-  {
-    "accession": "MN996527.1",
-    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "WIV02"
-    ],
-    "isolation_source": [
-      "bronchoalveolar lavage fluid"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China: Wuhan"
-    ],
-    "collection_date": [
-      "30-Dec-2019"
-    ],
-    "collected_by": [
-      "Wuhan Jinyintan Hospital"
-    ]
-  },
-  {
-    "accession": "MN996528.1",
-    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "WIV04"
-    ],
-    "isolation_source": [
-      "bronchoalveolar lavage fluid"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China: Wuhan"
-    ],
-    "collection_date": [
-      "30-Dec-2019"
-    ],
-    "collected_by": [
-      "Wuhan Jinyintan Hospital"
-    ]
-  },
-  {
-    "accession": "MN996529.1",
-    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "WIV05"
-    ],
-    "isolation_source": [
-      "bronchoalveolar lavage fluid"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China: Wuhan"
-    ],
-    "collection_date": [
-      "30-Dec-2019"
-    ],
-    "collected_by": [
-      "Wuhan Jinyintan Hospital"
-    ]
-  },
-  {
-    "accession": "MN996530.1",
-    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "WIV06"
-    ],
-    "isolation_source": [
-      "bronchoalveolar lavage fluid"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China: Wuhan"
-    ],
-    "collection_date": [
-      "30-Dec-2019"
-    ],
-    "collected_by": [
-      "Wuhan Jinyintan Hospital"
-    ]
-  },
-  {
-    "accession": "MN996531.1",
-    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "WIV07"
-    ],
-    "isolation_source": [
-      "bronchoalveolar lavage fluid"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China: Wuhan"
-    ],
-    "collection_date": [
-      "30-Dec-2019"
-    ],
-    "collected_by": [
-      "Wuhan Jinyintan Hospital"
-    ]
-  },
-  {
-    "accession": "MT007544.1",
-    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "Australia/VIC01/2020"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "Australia: Victoria"
-    ],
-    "collection_date": [
-      "25-Jan-2020"
-    ]
-  },
-  {
-    "accession": "LR757995.1",
-    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "chromosome": [
-      "whole_genome"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "chromosome": ["whole_genome"],
+    "country": ["China:Wuhan"],
+    "collection_date": ["2019-12-31"]
   },
   {
     "accession": "LR757996.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "chromosome": [
-      "whole_genome"
-    ]
-  },
-
-  {
-    "accession": "LR757998.1",
-    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "chromosome": [
-      "whole_genome"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "chromosome": ["whole_genome"],
+    "country": ["China:Wuhan"],
+    "collection_date": ["2020-01-01"]
   },
   {
-    "accession": "MT019529.1",
+    "accession": "LR757995.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "BetaCoV/Wuhan/IPBCAMS-WH-01/2019"
-    ],
-    "isolation_source": [
-      "bronchoalveolar lavage fluid"
-    ],
-    "host": [
-      "Homo sapiens; male; age 65"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China: Hubei, Wuhan"
-    ],
-    "lat_lon": [
-      "30.59 N 114.3 E"
-    ],
-    "collection_date": [
-      "23-Dec-2019"
-    ],
-    "collected_by": [
-      "Institute of Pathogen Biology, ChineseAcademy of Medical Sciences & Peking Union MedicalCollege"
-    ],
-    "note": [
-      "host_disease: nCov Pneumonia"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "chromosome": ["whole_genome"],
+    "country": ["China:Wuhan"],
+    "collection_date": ["2019-12-26"]
   },
   {
-    "accession": "MT019530.1",
+    "accession": "MT161607.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "BetaCoV/Wuhan/IPBCAMS-WH-02/2019"
-    ],
-    "isolation_source": [
-      "bronchoalveolar lavage fluid"
-    ],
-    "host": [
-      "Homo sapiens; female; age 49"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China: Hubei, Wuhan"
-    ],
-    "lat_lon": [
-      "30.59 N 114.3 E"
-    ],
-    "collection_date": [
-      "30-Dec-2019"
-    ],
-    "collected_by": [
-      "Institute of Pathogen Biology, ChineseAcademy of Medical Sciences & Peking Union MedicalCollege"
-    ],
-    "note": [
-      "host_disease: nCov Pneumonia"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/NIAA05032020/human/2020/ITA"],
+    "isolation_source": ["pharyngeal swab"],
+    "host": ["Homo sapiens; hospitalized patient"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Italy"],
+    "collection_date": ["05-Mar-2020"]
   },
   {
-    "accession": "MT019531.1",
+    "accession": "MT159722.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "BetaCoV/Wuhan/IPBCAMS-WH-03/2019"
-    ],
-    "isolation_source": [
-      "bronchoalveolar lavage fluid"
-    ],
-    "host": [
-      "Homo sapiens; male; age 41"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China: Hubei, Wuhan"
-    ],
-    "lat_lon": [
-      "30.59 N 114.3 E"
-    ],
-    "collection_date": [
-      "30-Dec-2019"
-    ],
-    "collected_by": [
-      "Institute of Pathogen Biology, ChineseAcademy of Medical Sciences & Peking Union MedicalCollege"
-    ],
-    "note": [
-      "host_disease: nCov Pneumonia"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-6/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["21-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
   },
   {
-    "accession": "MT019532.1",
+    "accession": "MT159721.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "BetaCoV/Wuhan/IPBCAMS-WH-04/2019"
-    ],
-    "isolation_source": [
-      "bronchoalveolar lavage fluid"
-    ],
-    "host": [
-      "Homo sapiens; female; age 52"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China: Hubei, Wuhan"
-    ],
-    "lat_lon": [
-      "30.59 N 114.3 E"
-    ],
-    "collection_date": [
-      "30-Dec-2019"
-    ],
-    "collected_by": [
-      "Institute of Pathogen Biology, ChineseAcademy of Medical Sciences & Peking Union MedicalCollege"
-    ],
-    "note": [
-      "host_disease: nCov Pneumonia"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-5/2020"],
+    "isolation_source": ["oropharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["21-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
   },
   {
-    "accession": "MT019533.1",
+    "accession": "MT159720.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "BetaCoV/Wuhan/IPBCAMS-WH-05/2020"
-    ],
-    "isolation_source": [
-      "bronchoalveolar lavage fluid"
-    ],
-    "host": [
-      "Homo sapiens; male; age 61"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China: Hubei, Wuhan"
-    ],
-    "lat_lon": [
-      "30.59 N 114.3 E"
-    ],
-    "collection_date": [
-      "01-Jan-2020"
-    ],
-    "collected_by": [
-      "Institute of Pathogen Biology, ChineseAcademy of Medical Sciences & Peking Union MedicalCollege"
-    ],
-    "note": [
-      "host_disease: nCov Pneumonia"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-4/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["21-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
   },
   {
-    "accession": "MT020880.1",
+    "accession": "MT159719.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV/USA-WA1-A12/2020"
-    ],
-    "isolation_source": [
-      "nasopharyngeal swab"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "USA: WA"
-    ],
-    "collection_date": [
-      "25-Jan-2020"
-    ],
-    "note": [
-      "passage details: A12 Vero p1; 5' sequence is theprimer sequence used"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-3/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["18-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
+  },
+  {
+    "accession": "MT159718.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-2/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["18-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
+  },
+  {
+    "accession": "MT159717.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-1/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["17-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
+  },
+  {
+    "accession": "MT159716.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-18/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["24-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
+  },
+  {
+    "accession": "MT159715.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-17/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["24-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
+  },
+  {
+    "accession": "MT159714.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-16/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["18-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
+  },
+  {
+    "accession": "MT159713.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-15/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["18-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
+  },
+  {
+    "accession": "MT159712.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-14/2020"],
+    "isolation_source": ["oropharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["25-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
+  },
+  {
+    "accession": "MT159711.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-13/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["20-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
+  },
+  {
+    "accession": "MT159710.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-9/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["17-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
+  },
+  {
+    "accession": "MT159709.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-12/2020"],
+    "isolation_source": ["oropharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["20-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
+  },
+  {
+    "accession": "MT159708.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-11/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["17-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
+  },
+  {
+    "accession": "MT159707.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-10/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["17-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
+  },
+  {
+    "accession": "MT159706.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-8/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["17-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
+  },
+  {
+    "accession": "MT159705.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CruiseA-7/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["17-Feb-2020"],
+    "note": ["5' sequence is sequencing primer"]
+  },
+  {
+    "accession": "MT159778.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/NG01/human/2020/NGA"],
+    "isolation_source": ["sputum"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Nigeria: Lagos"],
+    "collection_date": ["27-Feb-2020"]
+  },
+  {
+    "accession": "MT121215.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/SH01/human/2020/CHN"],
+    "isolation_source": ["throat swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Shanghai"],
+    "collection_date": ["02-Feb-2020"],
+    "note": ["passage details: Vero"]
+  },
+  {
+    "accession": "MT066156.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/INMI1/human/2020/ITA"],
+    "isolation_source": ["sputum"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Italy"],
+    "collection_date": ["30-Jan-2020"]
+  },
+  {
+    "accession": "MT050493.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/166/human/2020/IND"],
+    "isolation_source": ["throat swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["India: Kerala State"],
+    "collection_date": ["31-Jan-2020"]
+  },
+  {
+    "accession": "MT012098.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/29/human/2020/IND"],
+    "isolation_source": ["throat swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["India: Kerala State"],
+    "collection_date": ["27-Jan-2020"]
+  },
+  {
+    "accession": "MT152824.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/WA2/human/2020/USA"],
+    "isolation_source": ["mid-nasal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: Snohomish County, WA"],
+    "collection_date": ["24-Feb-2020"]
+  },
+  {
+    "accession": "MT152900.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/MHKN-1/human/2020/IRN"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Iran"],
+    "collection_date": ["26-Feb-2020"],
+    "collected_by": ["Dr. Mohammad Hadi Karbalaie Niya"],
+    "identified_by": ["Dr. Azadeh Laali"]
+  },
+  {
+    "accession": "MT135044.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/235/human/2020/CHN"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Beijing"],
+    "lat_lon": ["39.54 N 116.23 E"],
+    "collection_date": ["28-Jan-2020"]
+  },
+  {
+    "accession": "MT135043.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/233/human/2020/CHN"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Beijing"],
+    "lat_lon": ["39.54 N 116.23 E"],
+    "collection_date": ["28-Jan-2020"]
+  },
+  {
+    "accession": "MT135042.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/231/human/2020/CHN"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Beijing"],
+    "lat_lon": ["39.54 N 116.23 E"],
+    "collection_date": ["28-Jan-2020"]
+  },
+  {
+    "accession": "MT135041.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/105/human/2020/CHN"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Beijing"],
+    "lat_lon": ["39.54 N 116.23 E"],
+    "collection_date": ["26-Jan-2020"]
+  },
+  {
+    "accession": "MT126808.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/SP02/human/2020/BRA"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Brazil"],
+    "collection_date": ["28-Feb-2020"],
+    "note": ["patient traveled from Switzerland and Italy (Milan)to Brazil"]
+  },
+  {
+    "accession": "MT127116.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome-relatedcoronavirus"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/NIHE/human/2020/VIE"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:694009"],
+    "country": ["Viet Nam"],
+    "collection_date": ["10-Feb-2020"]
+  },
+  {
+    "accession": "MT127115.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome-relatedcoronavirus"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/NIHE/human/2020/VIE"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:694009"],
+    "country": ["Viet Nam"],
+    "collection_date": ["10-Feb-2020"]
+  },
+  {
+    "accession": "MT127114.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome-relatedcoronavirus"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/NIHE/human/2020/VIE"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:694009"],
+    "country": ["Viet Nam"],
+    "collection_date": ["10-Feb-2020"]
+  },
+  {
+    "accession": "MT127113.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome-relatedcoronavirus"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/NIHE/human/2020/VIE"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:694009"],
+    "country": ["Viet Nam"],
+    "collection_date": ["10-Feb-2020"]
+  },
+  {
+    "accession": "LC528233.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "strain": ["SARS-CoV-2/Hu/DP/Kng/19-027"],
+    "isolation_source": ["throat swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "collection_date": ["2020-02-10"]
+  },
+  {
+    "accession": "LC528232.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "strain": ["SARS-CoV-2/Hu/DP/Kng/19-020"],
+    "isolation_source": ["throat swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "collection_date": ["2020-02-10"]
+  },
+  {
+    "accession": "MT123293.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/IQTC03/human/2020/CHN"],
+    "isolation_source": ["stool"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Guangzhou"],
+    "collection_date": ["29-Jan-2020"],
+    "note": ["passage details: Vero E6"]
+  },
+  {
+    "accession": "MT123292.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/IQTC04/human/2020/CHN"],
+    "isolation_source": ["sputum"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Guangzhou"],
+    "collection_date": ["27-Jan-2020"],
+    "note": ["Guangzhou;passage details: Vero E6"]
+  },
+  {
+    "accession": "MT123291.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/IQTC02/human/2020/CHN"],
+    "isolation_source": ["bronchoalveolar lavage fluid"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Guangzhou"],
+    "collection_date": ["29-Jan-2020"],
+    "note": ["passage details: Vero"]
+  },
+  {
+    "accession": "MT123290.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/IQTC01/human/2020/CHN"],
+    "isolation_source": ["oropharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Guangdong, Guangzhou"],
+    "collection_date": ["05-Feb-2020"],
+    "note": ["passage details: Vero E6"]
+  },
+  {
+    "accession": "MT111896.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/QLD05/human/2020_FSS918/AUS"],
+    "isolation_source": ["sputum"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Australia: Queensland"],
+    "collection_date": ["Feb-2020"]
+  },
+  {
+    "accession": "MT111895.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/QLD05/human/2020_FSS918/AUS"],
+    "isolation_source": ["sputum"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Australia: Queensland"],
+    "collection_date": ["Feb-2020"]
+  },
+  {
+    "accession": "MT118835.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CA9/2020"],
+    "isolation_source": ["bronchoalveolar lavage"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: CA"],
+    "collection_date": ["23-Feb-2020"],
+    "note": ["5' sequence is the primer sequence used"]
+  },
+  {
+    "accession": "MT106054.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-TX1/2020"],
+    "isolation_source": ["sputum"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: TX"],
+    "collection_date": ["11-Feb-2020"],
+    "note": ["5' sequence is the primer sequence used"]
+  },
+  {
+    "accession": "MT106053.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CA8/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: CA"],
+    "collection_date": ["10-Feb-2020"],
+    "note": ["5' sequence is the primer sequence used"]
+  },
+  {
+    "accession": "MT106052.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CA7/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: CA"],
+    "collection_date": ["06-Feb-2020"],
+    "note": ["5' sequence is the primer sequence used"]
+  },
+  {
+    "accession": "MT093631.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/WH-09/human/2020/CHN"],
+    "isolation_source": ["throat swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China"],
+    "collection_date": ["08-Jan-2020"],
+    "note": ["passage details: VERO-E6"]
+  },
+  {
+    "accession": "MT093571.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/01/human/2020/SWE"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Sweden"],
+    "collection_date": ["2020-02-07"]
+  },
+  {
+    "accession": "MT081068.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/HS_194/human/2020/CHN"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: HuaShang"],
+    "collection_date": ["06-Feb-2020"]
+  },
+  {
+    "accession": "MT081067.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/HS_92/human/2020/CHN"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: HuaShang"],
+    "collection_date": ["31-Jan-2020"]
+  },
+  {
+    "accession": "MT081066.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/HS_86/human/2020/CHN"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: HuaShang"],
+    "collection_date": ["30-Jan-2020"]
+  },
+  {
+    "accession": "MT081065.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/HS_84/human/2020/CHN"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: HuaShang"],
+    "collection_date": ["30-Jan-2020"]
+  },
+  {
+    "accession": "MT081064.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/HS_64/human/2020/CHN"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: HuaShang"],
+    "collection_date": ["28-Jan-2020"]
+  },
+  {
+    "accession": "MT081063.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/HS_46/human/2020/CHN"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: HuaShang"],
+    "collection_date": ["26-Jan-2020"]
+  },
+  {
+    "accession": "MT081062.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/HS_38/human/2020/CHN"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: HuaShang"],
+    "collection_date": ["25-Jan-2020"]
+  },
+  {
+    "accession": "MT081061.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/HS_18/human/2020/CHN"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: HuaShang"],
+    "collection_date": ["23-Jan-2020"]
+  },
+  {
+    "accession": "MT081060.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/HS_17/human/2020/CHN"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: HuaShang"],
+    "collection_date": ["23-Jan-2020"]
+  },
+  {
+    "accession": "MT081059.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/HS_8/human/2020/CHN"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: HuaShang"],
+    "collection_date": ["22-Jan-2020"]
+  },
+  {
+    "accession": "MT072667.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/GHB-03021/human/2020/BEL"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Belgium"],
+    "collection_date": ["03-Feb-2020"]
+  },
+  {
+    "accession": "MT072668.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/GHB-03021/human/2020/BEL"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Belgium"],
+    "collection_date": ["03-Feb-2020"]
+  },
+  {
+    "accession": "MT072688.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS0CoV-2/61-TW/human/2020/ NPL"],
+    "isolation_source": ["oropharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Nepal"],
+    "collection_date": ["2020-01-13"]
+  },
+  {
+    "accession": "MT066176.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/NTU02/2020/TWN"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Taiwan"],
+    "collection_date": ["05-Feb-2020"]
+  },
+  {
+    "accession": "MT066175.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/NTU01/2020/TWN"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Taiwan"],
+    "collection_date": ["31-Jan-2020"]
+  },
+  {
+    "accession": "MT066159.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/CL5049/human/2020/MYS"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Malaysia"],
+    "collection_date": ["24-Jan-2020"]
+  },
+  {
+    "accession": "MT066158.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/CL5047/human/2020/MYS"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Malaysia"],
+    "collection_date": ["24-Jan-2020"]
+  },
+  {
+    "accession": "MT066157.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/CL5045/human/2020/MYS"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Malaysia"],
+    "collection_date": ["24-Jan-2020"]
+  },
+  {
+    "accession": "LC523809.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_PH_nCOV_20_022"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Philippines"],
+    "collection_date": ["2020-01-23"]
+  },
+  {
+    "accession": "LC523808.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_PH_nCOV_20_025"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Philippines"],
+    "collection_date": ["2020-01-26"]
+  },
+  {
+    "accession": "LC523807.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_PH_nCOV_20_026"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Philippines"],
+    "collection_date": ["2020-02-06"]
+  },
+  {
+    "accession": "MT050417.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/QLD05/human/2020_FSS918/AUS"],
+    "isolation_source": ["sputum"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Australia"],
+    "collection_date": ["Feb-2020"]
+  },
+  {
+    "accession": "MT050416.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/QLD03/human/2020_FSS917/AUS"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Australia"],
+    "collection_date": ["Feb-2020"]
+  },
+  {
+    "accession": "MT050415.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/QLD02/human/2020_FSS916/AUS"],
+    "isolation_source": ["aspirate"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Australia"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MT050414.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/QLD01/human/2020_FSS915/AUS"],
+    "isolation_source": ["pharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Australia"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MT049951.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/Yunnan-01/human/2020/CHN"],
+    "isolation_source": ["sputum"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Yunnan"],
+    "collection_date": ["17-Jan-2020"]
+  },
+  {
+    "accession": "MT044258.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CA6/2020"],
+    "isolation_source": ["respiratory swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: CA"],
+    "collection_date": ["27-Jan-2020"],
+    "note": ["5' sequence is primer used for sequencing"]
+  },
+  {
+    "accession": "MT044257.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-IL2/2020"],
+    "isolation_source": ["sputum"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: IL"],
+    "collection_date": ["28-Jan-2020"],
+    "note": ["5' sequence is primer used"]
+  },
+  {
+    "accession": "MT042778.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/Tongji-06/human/2020/Wuhan"],
+    "isolation_source": ["swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Wuhan"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MT042777.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/Tongji-05/human/2020/Wuhan"],
+    "isolation_source": ["swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Wuhan"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MT042776.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/Tongji-04/human/2020/Wuhan"],
+    "isolation_source": ["swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Wuhan"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MT042775.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/Tongji-03/human/2020/Wuhan"],
+    "isolation_source": ["swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Wuhan"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MT042774.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/Tongji-02/human/2020/Wuhan"],
+    "isolation_source": ["swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Wuhan"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MT042773.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SARS-CoV-2/Tongji-01/human/2020/CHN"],
+    "isolation_source": ["swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Wuhan"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MT039888.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-MA1/2020"],
+    "isolation_source": ["oropharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: MA"],
+    "collection_date": ["29-Jan-2020"],
+    "note": ["5' sequence is primer used"]
+  },
+  {
+    "accession": "MT039887.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-WI1/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: WI"],
+    "collection_date": ["31-Jan-2020"],
+    "note": ["5' sequence is the primer sequence used"]
+  },
+  {
+    "accession": "MT039890.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SNU01"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["South Korea"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MT039873.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["HZ-1"],
+    "isolation_source": ["sputum"],
+    "host": ["Homo sapiens; male"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Hangzhou"],
+    "collection_date": ["20-Jan-2020"]
+  },
+  {
+    "accession": "LC522350.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_PH_nCOV_20_026"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Philippines"],
+    "collection_date": ["2020-01-26"]
+  },
+  {
+    "accession": "MT027064.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CA5/2020"],
+    "isolation_source": ["oropharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: CA"],
+    "collection_date": ["29-Jan-2020"],
+    "note": ["5' sequence is the primer sequence used"]
+  },
+  {
+    "accession": "MT027063.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CA4/2020"],
+    "isolation_source": ["oropharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: CA"],
+    "collection_date": ["29-Jan-2020"],
+    "note": ["5' sequence is the primer sequence used"]
+  },
+  {
+    "accession": "MT027062.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CA3/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: CA"],
+    "collection_date": ["29-Jan-2020"],
+    "note": ["5' sequence is the primer sequence used"]
   },
   {
     "accession": "MT020881.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV/USA-WA1-F6/2020"
-    ],
-    "isolation_source": [
-      "oropharyngeal swab"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "USA: WA"
-    ],
-    "collection_date": [
-      "25-Jan-2020"
-    ],
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-WA1-F6/2020"],
+    "isolation_source": ["oropharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: WA"],
+    "collection_date": ["25-Jan-2020"],
     "note": [
       "passage details: F6 Vero p1; 5' sequence is theprimer sequence used"
     ]
   },
   {
-    "accession": "MT027062.1",
+    "accession": "MT020880.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV/USA-CA3/2020"
-    ],
-    "isolation_source": [
-      "nasopharyngeal swab"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "USA: CA"
-    ],
-    "collection_date": [
-      "29-Jan-2020"
-    ],
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-WA1-A12/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: WA"],
+    "collection_date": ["25-Jan-2020"],
     "note": [
-      "5' sequence is the primer sequence used"
+      "passage details: A12 Vero p1; 5' sequence is theprimer sequence used"
     ]
   },
   {
-    "accession": "MT027063.1",
+    "accession": "MT020781.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV/USA-CA4/2020"
-    ],
-    "isolation_source": [
-      "oropharyngeal swab"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "USA: CA"
-    ],
-    "collection_date": [
-      "29-Jan-2020"
-    ],
-    "note": [
-      "5' sequence is the primer sequence used"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["nCoV-FIN-29-Jan-2020"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Finland"],
+    "collection_date": ["29-Jan-2020"]
   },
   {
-    "accession": "MT027064.1",
+    "accession": "MT019533.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["BetaCoV/Wuhan/IPBCAMS-WH-05/2020"],
+    "isolation_source": ["bronchoalveolar lavage fluid"],
+    "host": ["Homo sapiens; male; age 61"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Hubei, Wuhan"],
+    "lat_lon": ["30.59 N 114.3 E"],
+    "collection_date": ["01-Jan-2020"],
+    "collected_by": [
+      "Institute of Pathogen Biology, ChineseAcademy of Medical Sciences & Peking Union MedicalCollege"
     ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV/USA-CA5/2020"
-    ],
-    "isolation_source": [
-      "oropharyngeal swab"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "USA: CA"
-    ],
-    "collection_date": [
-      "29-Jan-2020"
-    ],
-    "note": [
-      "5' sequence is the primer sequence used"
-    ]
+    "note": ["host_disease: nCov Pneumonia"]
   },
   {
-    "accession": "MT039873.1",
+    "accession": "MT019532.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["BetaCoV/Wuhan/IPBCAMS-WH-04/2019"],
+    "isolation_source": ["bronchoalveolar lavage fluid"],
+    "host": ["Homo sapiens; female; age 52"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Hubei, Wuhan"],
+    "lat_lon": ["30.59 N 114.3 E"],
+    "collection_date": ["30-Dec-2019"],
+    "collected_by": [
+      "Institute of Pathogen Biology, ChineseAcademy of Medical Sciences & Peking Union MedicalCollege"
     ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "HZ-1"
-    ],
-    "isolation_source": [
-      "sputum"
-    ],
-    "host": [
-      "Homo sapiens; male"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China: Hangzhou"
-    ],
-    "collection_date": [
-      "20-Jan-2020"
-    ]
+    "note": ["host_disease: nCov Pneumonia"]
   },
   {
-    "accession": "MT039887.1",
+    "accession": "MT019531.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["BetaCoV/Wuhan/IPBCAMS-WH-03/2019"],
+    "isolation_source": ["bronchoalveolar lavage fluid"],
+    "host": ["Homo sapiens; male; age 41"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Hubei, Wuhan"],
+    "lat_lon": ["30.59 N 114.3 E"],
+    "collection_date": ["30-Dec-2019"],
+    "collected_by": [
+      "Institute of Pathogen Biology, ChineseAcademy of Medical Sciences & Peking Union MedicalCollege"
     ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV/USA-WI1/2020"
-    ],
-    "isolation_source": [
-      "nasopharyngeal swab"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "USA: WI"
-    ],
-    "collection_date": [
-      "31-Jan-2020"
-    ],
-    "note": [
-      "5' sequence is the primer sequence used"
-    ]
+    "note": ["host_disease: nCov Pneumonia"]
   },
   {
-    "accession": "MT039888.1",
+    "accession": "MT019530.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["BetaCoV/Wuhan/IPBCAMS-WH-02/2019"],
+    "isolation_source": ["bronchoalveolar lavage fluid"],
+    "host": ["Homo sapiens; female; age 49"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Hubei, Wuhan"],
+    "lat_lon": ["30.59 N 114.3 E"],
+    "collection_date": ["30-Dec-2019"],
+    "collected_by": [
+      "Institute of Pathogen Biology, ChineseAcademy of Medical Sciences & Peking Union MedicalCollege"
     ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV/USA-MA1/2020"
-    ],
-    "isolation_source": [
-      "oropharyngeal swab"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "USA: MA"
-    ],
-    "collection_date": [
-      "29-Jan-2020"
-    ],
-    "note": [
-      "5' sequence is primer used"
-    ]
+    "note": ["host_disease: nCov Pneumonia"]
   },
   {
-    "accession": "MT039890.1",
+    "accession": "MT019529.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["BetaCoV/Wuhan/IPBCAMS-WH-01/2019"],
+    "isolation_source": ["bronchoalveolar lavage fluid"],
+    "host": ["Homo sapiens; male; age 65"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Hubei, Wuhan"],
+    "lat_lon": ["30.59 N 114.3 E"],
+    "collection_date": ["23-Dec-2019"],
+    "collected_by": [
+      "Institute of Pathogen Biology, ChineseAcademy of Medical Sciences & Peking Union MedicalCollege"
     ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "SNU01"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "South Korea"
-    ],
-    "collection_date": [
-      "Jan-2020"
-    ]
+    "note": ["host_disease: nCov Pneumonia"]
   },
   {
-    "accession": "LC522972.1",
+    "accession": "MT008023.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "strain": [
-      "2019-nCoV/Japan/KY/V-029/2020"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "lab_host": [
-      "Chlorocebus sp. VeroE6/TMPRSS2 cell line"
-    ],
-    "country": [
-      "Japan"
-    ],
-    "collection_date": [
-      "2020-01"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019 nCoV/Italy-INMI2"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Italy: Rome"],
+    "collection_date": ["Jan-2020"],
+    "note": ["ex China"]
   },
   {
-    "accession": "LC522973.1",
+    "accession": "MT008022.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "strain": [
-      "2019-nCoV/Japan/TY/WK-012/2020"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "lab_host": [
-      "Chlorocebus sp. VeroE6/TMPRSS2 cell line"
-    ],
-    "country": [
-      "Japan"
-    ],
-    "collection_date": [
-      "2020-01"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019 nCoV/Italy-INMI1"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Italy: Rome"],
+    "collection_date": ["Jan-2020"],
+    "note": ["ex China"]
   },
   {
-    "accession": "LC522974.1",
+    "accession": "MT007544.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "strain": [
-      "2019-nCoV/Japan/TY/WK-501/2020"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "lab_host": [
-      "Chlorocebus sp. VeroE6/TMPRSS2 cell line"
-    ],
-    "country": [
-      "Japan"
-    ],
-    "collection_date": [
-      "2020-01"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["Australia/VIC01/2020"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Australia: Victoria"],
+    "collection_date": ["25-Jan-2020"]
   },
   {
-    "accession": "LC522975.1",
+    "accession": "MN996531.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "strain": [
-      "2019-nCoV/Japan/TY/WK-521/2020"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "lab_host": [
-      "Chlorocebus sp. VeroE6/TMPRSS2 cell line"
-    ],
-    "country": [
-      "Japan"
-    ],
-    "collection_date": [
-      "2020-01"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["WIV07"],
+    "isolation_source": ["bronchoalveolar lavage fluid"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Wuhan"],
+    "collection_date": ["30-Dec-2019"],
+    "collected_by": ["Wuhan Jinyintan Hospital"]
   },
   {
-    "accession": "MT044257.1",
+    "accession": "MN996530.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV/USA-IL2/2020"
-    ],
-    "isolation_source": [
-      "sputum"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "USA: IL"
-    ],
-    "collection_date": [
-      "28-Jan-2020"
-    ],
-    "note": [
-      "5' sequence is primer used"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["WIV06"],
+    "isolation_source": ["bronchoalveolar lavage fluid"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Wuhan"],
+    "collection_date": ["30-Dec-2019"],
+    "collected_by": ["Wuhan Jinyintan Hospital"]
   },
   {
-    "accession": "MT044258.1",
+    "accession": "MN996529.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "2019-nCoV/USA-CA6/2020"
-    ],
-    "isolation_source": [
-      "respiratory swab"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "USA: CA"
-    ],
-    "collection_date": [
-      "27-Jan-2020"
-    ],
-    "note": [
-      "5' sequence is primer used for sequencing"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["WIV05"],
+    "isolation_source": ["bronchoalveolar lavage fluid"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Wuhan"],
+    "collection_date": ["30-Dec-2019"],
+    "collected_by": ["Wuhan Jinyintan Hospital"]
   },
   {
-    "accession": "MT049951.1",
+    "accession": "MN996528.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "SARS-CoV-2/Yunnan-01/human/2020/CHN"
-    ],
-    "isolation_source": [
-      "sputum"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China: Yunnan"
-    ],
-    "collection_date": [
-      "17-Jan-2020"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["WIV04"],
+    "isolation_source": ["bronchoalveolar lavage fluid"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Wuhan"],
+    "collection_date": ["30-Dec-2019"],
+    "collected_by": ["Wuhan Jinyintan Hospital"]
   },
   {
-    "accession": "MT066175.1",
+    "accession": "MN996527.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "SARS-CoV-2/NTU01/2020/TWN"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "Taiwan"
-    ],
-    "collection_date": [
-      "31-Jan-2020"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["WIV02"],
+    "isolation_source": ["bronchoalveolar lavage fluid"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Wuhan"],
+    "collection_date": ["30-Dec-2019"],
+    "collected_by": ["Wuhan Jinyintan Hospital"]
   },
   {
-    "accession": "MT066176.1",
+    "accession": "MN997409.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "SARS-CoV-2/NTU02/2020/TWN"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "Taiwan"
-    ],
-    "collection_date": [
-      "05-Feb-2020"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-AZ1/2020"],
+    "isolation_source": ["buccal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: AZ"],
+    "collection_date": ["22-Jan-2020"],
+    "note": ["5' sequence is the primer sequence used"]
   },
   {
-    "accession": "MT072688.1",
+    "accession": "MN994468.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "SARS0CoV-2/61-TW/human/2020/ NPL"
-    ],
-    "isolation_source": [
-      "oropharyngeal swab"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "Nepal"
-    ],
-    "collection_date": [
-      "2020-01-13"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CA2/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: CA"],
+    "collection_date": ["22-Jan-2020"],
+    "note": ["5' sequence is the primer sequence used"]
   },
   {
-    "accession": "MT093571.1",
+    "accession": "MN994467.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "SARS-CoV-2/01/human/2020/SWE"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "Sweden"
-    ],
-    "collection_date": [
-      "2020-02-07"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-CA1/2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: CA"],
+    "collection_date": ["23-Jan-2020"],
+    "note": ["5' sequence is the primer sequence used"]
   },
   {
-    "accession": "MT093631.1",
+    "accession": "MN988713.1",
     "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
-    "organism": [
-      "Severe acute respiratory syndrome coronavirus2"
-    ],
-    "mol_type": [
-      "genomic RNA"
-    ],
-    "isolate": [
-      "SARS-CoV-2/WH-09/human/2020/CHN"
-    ],
-    "isolation_source": [
-      "throat swab"
-    ],
-    "host": [
-      "Homo sapiens"
-    ],
-    "db_xref": [
-      "taxon:2697049"
-    ],
-    "country": [
-      "China"
-    ],
-    "collection_date": [
-      "08-Jan-2020"
-    ],
-    "note": [
-      "passage details: VERO-E6"
-    ]
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-IL1/2020"],
+    "isolation_source": ["sputum"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA: Illinois"],
+    "collection_date": ["21-Jan-2020"],
+    "note": ["5' sequence is the primer sequence used"]
+  },
+  {
+    "accession": "MN988669.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV WHU02"],
+    "isolation_source": ["BALF sample of 2019 Wuhan peumoniapatient 02"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China"],
+    "collection_date": ["02-Jan-2020"],
+    "note": ["genome sequence collected on Jan 7, 2020"]
+  },
+  {
+    "accession": "MN988668.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV WHU01"],
+    "isolation_source": ["BALF sample of 2019 Wuhan peumoniapatient 01"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China"],
+    "collection_date": ["02-Jan-2020"],
+    "note": ["genome sequence collected on Jan 7, 2020"]
+  },
+  {
+    "accession": "MN985325.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV/USA-WA1/2020"],
+    "isolation_source": ["oropharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["USA"],
+    "collection_date": ["19-Jan-2020"],
+    "note": ["5' end is primer sequence used"]
+  },
+  {
+    "accession": "MN975268.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_HKU-SZ-007c_2020"],
+    "isolation_source": ["sputum"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MN975267.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_HKU-SZ-007b_2020"],
+    "isolation_source": ["throat swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MN975266.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_HKU-SZ-007a_2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MN975265.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_HKU-SZ-007c_2020"],
+    "isolation_source": ["sputum"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MN975264.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_HKU-SZ-007b_2020"],
+    "isolation_source": ["throat swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MN975263.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_HKU-SZ-007a_2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MN975262.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_HKU-SZ-005b_2020"],
+    "isolation_source": ["sputum"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China"],
+    "collection_date": ["11-Jan-2020"]
+  },
+  {
+    "accession": "MN938390.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_HKU-SZ-005_2020"],
+    "isolation_source": ["throat swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Shenzhen"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MN938389.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_HKU-SZ-004_2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Shenzhen"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MN938388.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_HKU-SZ-002b_2020"],
+    "isolation_source": ["serum"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Shenzhen"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MN938387.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_HKU-SZ-001_2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Shenzhen"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MN938386.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_HKU-SZ-004_2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Shenzhen"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MN938385.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_HKU-SZ-001_2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Shenzhen"],
+    "collection_date": ["Jan-2020"]
+  },
+  {
+    "accession": "MN938384.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["2019-nCoV_HKU-SZ-002a_2020"],
+    "isolation_source": ["nasopharyngeal swab"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China: Shenzhen"],
+    "collection_date": ["10-Jan-2020"]
+  },
+  {
+    "accession": "MN970004.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SI200121-SP"],
+    "isolation_source": ["sputum"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Thailand"],
+    "collection_date": ["13-Jan-2020"]
+  },
+  {
+    "accession": "MN970003.1",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["SI200040-SP"],
+    "isolation_source": ["sputum"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["Thailand"],
+    "collection_date": ["08-Jan-2020"]
+  },
+  {
+    "accession": "MN908947.3",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["Wuhan-Hu-1"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China"],
+    "collection_date": ["Dec-2019"]
+  },
+  {
+    "accession": "NC_045512.2",
+    "lineage": "Viruses; Riboviria; Nidovirales; Cornidovirineae; Coronaviridae;",
+    "organism": ["Severe acute respiratory syndrome coronavirus2"],
+    "mol_type": ["genomic RNA"],
+    "isolate": ["Wuhan-Hu-1"],
+    "host": ["Homo sapiens"],
+    "db_xref": ["taxon:2697049"],
+    "country": ["China"],
+    "collection_date": ["Dec-2019"]
   }
 ]

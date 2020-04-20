@@ -3,8 +3,16 @@ import {COLORS} from './colors';
 import { Cart } from '../stores/Cart';
 
 export function createLargeTree(VIRUSNAME, CART_DATA, METADATA, MODE, INDENT, addDataToCart) {
+  console.log(METADATA)
   const metadataList = makeMetadataTerms(METADATA);
-  const FILEPATH = `/data/${VIRUSNAME}_align.tree`;
+  console.log(metadataList);
+  let FILEPATH;
+  if (VIRUSNAME === 'ncov') {
+    // FILEPATH = 'https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/latest/strain_updated.fa.tree'
+    FILEPATH = 'https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/strain_updated.fa.tree' // TEST
+  } else {
+    FILEPATH = `/data/${VIRUSNAME}_align.tree`;
+  }
   var main_tree,
     guide_tree,
     parsed;
@@ -176,14 +184,15 @@ function makeMetadataTerms(list) {
 
   let allItems = [];
   list.forEach(item => {
+    // console.log(item)
+    // const {Organism, Molecule_Type, Isolate, country, year} = sanitizeMetadataItem(item);
+    const {Organism, Molecule_Type, Isolate, Country, Collection_Date} = item;
 
-    const {Organism, Molecule_Type, Isolate, country, year} = sanitizeMetadataItem(item);
-
-    allItems.push(Organism);
-    allItems.push(Molecule_Type);
-    allItems.push(Isolate);
-    allItems.push(country);
-    allItems.push(year);
+    // allItems.push(Organism);
+    // allItems.push(Molecule_Type);
+    // allItems.push(Isolate);
+    allItems.push(Country);
+    allItems.push(Collection_Date);
 
   })
 
@@ -197,28 +206,31 @@ function fetchMetadataColors(accession, METADATA, metadataTermsSet) {
 
   let colorsResult = [];
   const element = METADATA.filter(d => d.Accession === accession)[0];
+  if (!element) {
+    console.log(accession)
+  }
+  // const {Organism, Molecule_Type, Isolate, country, year} = sanitizeMetadataItem(element);
+  const {Organism, Molecule_Type, Isolate, Country, Collection_Date} = element;
 
-  const {Organism, Molecule_Type, Isolate, country, year} = sanitizeMetadataItem(element);
-
+  // colorsResult.push({
+  //   color: COLORS[metadataTerms.indexOf(Organism)],
+  //   metadata: Organism
+  // });
+  // colorsResult.push({
+  //   color: COLORS[metadataTerms.indexOf(Molecule_Type)],
+  //   metadata: Molecule_Type
+  // });
+  // colorsResult.push({
+  //   color: COLORS[metadataTerms.indexOf(Isolate)],
+  //   metadata: Isolate
+  // });
   colorsResult.push({
-    color: COLORS[metadataTerms.indexOf(Organism)],
-    metadata: Organism
+    color: COLORS[metadataTerms.indexOf(Country)],
+    metadata: Country
   });
   colorsResult.push({
-    color: COLORS[metadataTerms.indexOf(Molecule_Type)],
-    metadata: Molecule_Type
-  });
-  colorsResult.push({
-    color: COLORS[metadataTerms.indexOf(Isolate)],
-    metadata: Isolate
-  });
-  colorsResult.push({
-    color: COLORS[metadataTerms.indexOf(country)],
-    metadata: country
-  });
-  colorsResult.push({
-    color: COLORS[metadataTerms.indexOf(year)],
-    metadata: year
+    color: COLORS[metadataTerms.indexOf(Collection_Date)],
+    metadata: Collection_Date
   });
 
   
@@ -227,6 +239,7 @@ function fetchMetadataColors(accession, METADATA, metadataTermsSet) {
 }
 
 function sanitizeMetadataItem(item) {
+  console.log(item)
   const {Organism, Molecule_Type, Isolate, Country, Collection_Date} = item;
   let splitStr = Collection_Date.split("-");
   let year = (splitStr.length !== 0)

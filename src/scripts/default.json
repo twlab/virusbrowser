@@ -1,0 +1,108 @@
+[
+  {
+    "name": "ncbiGene",
+    "type": "geneannotation",
+    "label": "NCBI genes",
+    "options": { "label": "NCBI genes" },
+    "url": "",
+    "metadata": { "Track type": "geneannotation" },
+    "isSelected": false,
+    "fileObj": "",
+    "files": [],
+    "tracks": [],
+    "isText": false,
+    "textConfig": {},
+    "genome": "SARS-CoV-2"
+  },
+  {
+    "name": "Ruler",
+    "type": "ruler",
+    "label": "Ruler",
+    "options": { "label": "Ruler" },
+    "url": "",
+    "metadata": { "Track type": "ruler" },
+    "isSelected": false,
+    "fileObj": "",
+    "files": [],
+    "tracks": [],
+    "isText": false,
+    "textConfig": {}
+  },
+  {
+    "name": "Sequence diversity (Shannon Entropy)",
+    "type": "bedgraph",
+    "label": "Sequence diversity (Shannon Entropy)",
+    "options": {
+      "aggregateMethod": "MAX",
+      "label": "Sequence diversity (Shannon Entropy)"
+    },
+    "url": "https://wangftp.wustl.edu/~cfan/updates/latest/diversity/ncov_entropy.bedgraph.sort.gz",
+    "metadata": { "Track type": "bedgraph" },
+    "isSelected": false,
+    "fileObj": "",
+    "files": [],
+    "tracks": [],
+    "isText": false,
+    "textConfig": {}
+  },
+  {
+    "name": "Viral RNA expression (nanopore)",
+    "type": "bigwig",
+    "label": "Viral RNA expression (nanopore)",
+    "options": { "zoomLevel": "0", "label": "Viral RNA expression (nanopore)" },
+    "url": "https://wangftp.wustl.edu/~xzhuo/bat_genomes/VeroInf24h.bw",
+    "metadata": { "Track type": "bigwig" },
+    "isSelected": false,
+    "fileObj": "",
+    "files": [],
+    "tracks": [],
+    "isText": false,
+    "textConfig": {}
+  },
+  {
+    "name": "TRS-L-dependent recombination",
+    "type": "longrange",
+    "label": "TRS-L-dependent recombination",
+    "options": {
+      "yScale": "fixed",
+      "yMax": 7000000,
+      "yMin": 0,
+      "displayMode": "arc",
+      "lineWidth": 5,
+      "height": 370,
+      "label": "TRS-L-dependent recombination"
+    },
+    "url": "https://wangftp.wustl.edu/~gmatt/viralBrowser/TRS-L-dependent_recombinationEvents_sorted.bed.gz",
+    "metadata": { "Track type": "longrange" },
+    "isSelected": false,
+    "fileObj": "",
+    "files": [],
+    "tracks": [],
+    "isText": false,
+    "textConfig": {}
+  },
+  {
+    "name": "Transcription regulatory sequences (TRSs)",
+    "type": "categorical",
+    "label": "Transcription regulatory sequences (TRSs)",
+    "options": {
+      "height": 20,
+      "alwaysDrawLabel": true,
+      "maxRows": 20,
+      "hiddenPixels": 0,
+      "category": {
+        "TRS-L": { "name": "TRS-L", "color": "#000000" },
+        "TRS-B": { "name": "TRS-B", "color": "#FF0000" }
+      },
+      "label": "Transcription regulatory sequences (TRSs)"
+    },
+    "url": "https://wangftp.wustl.edu/~gmatt/viralBrowser/sars-cov-2_trs_sorted.bed.gz",
+    "metadata": { "Track type": "categorical" },
+    "isSelected": false,
+    "fileObj": "",
+    "files": [],
+    "tracks": [],
+    "isText": false,
+    "textConfig": {}
+  }
+]

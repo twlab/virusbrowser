@@ -12,7 +12,7 @@
     SecondaryText
   } from "@smui/list";
   import { Cart } from "../stores/Cart.js";
-  import { onDestroy } from "svelte";
+  import { onDestroy, onMount } from "svelte";
 
   let selectionIndex = null;
   let selectionTwoLine = "Stephen Hawking";

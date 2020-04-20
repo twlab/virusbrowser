@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-157959055-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="The WashU Virus Genome Browser is a publicly available resource for efficient visualization of viral sequencing data. In response to SARS-CoV-2’s rapid global spread and resulting pandemic health crisis, research efforts have been underway sequencing the 29 kb virus genome and transcriptome, mapping RNA-seq modifications, and predicting locations of antigenic peptide sequences, providing the research community with an abundance of data resources to better understand the virus’s pathology. As these data become available to the public, they are being integrated into the WashU Virus Genome Browser platform." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://virusgateway.wustl.edu/about/" />
+
+
+
+<meta name="description" content="Hardcoded description; the author should update :)" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>WashU Virus Genome Browser</title>
+    
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link href="https://fonts.googleapis.com/css?family=Lato:400,600,700" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/fresh/css/style.min.8460712a437f899491d4d8177e4183b435653ed6f497a2bf7a1ebb39c31fe31b.css" integrity="sha256-hGBxKkN/iZSR1NgXfkGDtDVlPtb0l6K/eh67OcMf4xs=">
+<link rel="stylesheet" type="text/css" href="/fresh/css/icons.css">
+
+  </head>
+  <body>
+    
+    <!-- <div id="preloader">
+      <div id="status"></div>
+    </div> -->
+
+    
+
+    
+
+<nav class="navbar is-fresh is-transparent no-shadow" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/fresh/images/logos/virus-browser-logo.svg" alt="" width="112" height="28">
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+      <div id="navbar-menu" class="navbar-menu is-static">
+
+        <div class="navbar-end">
+          <a href="/about" class="navbar-item is-secondary">
+            About
+          </a>
+          <!-- <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Dropdown
+            </a>
+
+            <div class="navbar-dropdown">
+              <a href="/" class="navbar-item">
+                Dropdown item
+              </a>
+              <a href="/" class="navbar-item">
+                Dropdown item
+              </a>
+              <a href="/" class="navbar-item">
+                Dropdown item
+              </a>
+            </div>
+          </div> -->
+        </div>
+      </div>
+  </div>
+</nav>
+
+
+
+<nav id="navbar-clone" class="navbar is-fresh is-transparent" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/images/logos/virus-browser-logo.svg" alt="" width="112" height="28">
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="cloned-navbar-menu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="cloned-navbar-menu" class="navbar-menu is-fixed">
+
+      <div class="navbar-end">
+        <a href="/about" class="navbar-item is-secondary">
+          About
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Dropdown
+          </a>
+
+          <div class="navbar-dropdown">
+            <a href="/" class="navbar-item">
+              Dropdown item
+            </a>
+            <a href="/" class="navbar-item">
+              Dropdown item
+            </a>
+            <a href="/" class="navbar-item">
+              Dropdown item
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</nav>
+
+<section class="section is-medium">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-centered-tablet-portrait">
+        <h1 class="title section-title"></h1>
+        <h5 class="subtitle is-5 is-muted"></h5>
+        <div class="divider"></div>
+      </div>
+    </div>
+    <p>The WashU Virus Genome Browser is a publicly available resource for efficient visualization of viral sequencing data. In response to SARS-CoV-2’s rapid global spread and resulting pandemic health crisis, research efforts have been underway sequencing the 29 kb virus genome and transcriptome, mapping RNA-seq modifications, and predicting locations of antigenic peptide sequences, providing the research community with an abundance of data resources to better understand the virus’s pathology. As these data become available to the public, they are being integrated into the WashU Virus Genome Browser platform. Details regarding specific datasets available on the browser are outlined below as they become available. In addition to included data tracks, the browser supports user-uploaded sequences, as well as two visualization platforms: a genomic track view and a phylogenetic tree view. Our hope is that the WashU Virus Genome Browser will serve as an efficient tool, aiding researchers in better understanding the disease.</p>
+<hr>
+<p>NCBI Database:
+SARS-CoV-2 strains hosted on NCBI Genbank are continuously added to the browser in a SNV track format after alignment to the reference strain (NC_045512.2) using EMBL ‘stretcher’. In this view, the user can easily identify sequence deviation from the reference by colored bars indicating individual mutations, insertions, and deletions. Both complete genomes and partial genomes are available for viewing.
+Data source: <a href="https://www.ncbi.nlm.nih.gov/nuccore">https://www.ncbi.nlm.nih.gov/nuccore</a></p>
+<hr>
+<p>Nextstrain Database:</p>
+<p>SARS-CoV 2 strains hosted on Nextstrain are continuously added to the browser in a SNV track format, as outlined above. Both complete genomes and partial genomes are available for viewing. Completed genomes are also available to view in an interactive phylogenetic tree view. Data source: <a href="http://data.Nextstrain.org/ncov.json">http://data.Nextstrain.org/ncov.json</a></p>
+<hr>
+<p>GISAID Database:
+SARS-CoV 2 strains provided by GISAID are continuously added to the browser in a SNV track format, after alignment to the reference strain (NC_045512.2) using EMBL ‘stretcher’, as outlined above. Both complete genomes and partial genomes are available for viewing.
+Data source: <a href="https://www.gisaid.org/">https://www.gisaid.org/</a></p>
+<hr>
+<p>Related Viral Genomic Sequences:
+In addition to SARS-CoV-2, the browser is home to hundreds of genomic sequences from related virus species, all downloaded from NCBI Genbank. Specifically, there are 332  severe acute respiratory syndrome coronavirus (SARS-CoV) genomes, 551 Middle East respiratory syndrome coronavirus (MERS-CoV) genomes, and 1574 Ebola virus sequences.
+Data source: <a href="https://www.ncbi.nlm.nih.gov/nuccore">https://www.ncbi.nlm.nih.gov/nuccore</a></p>
+<hr>
+<p>Primers:
+The locations of CDC and WHO non-CDC primers for detecting SARS-CoV-2, along with associated metadata including country, are available for viewing.
+Data source: <a href="https://www.ncbi.nlm.nih.gov/nuccore">https://www.ncbi.nlm.nih.gov/nuccore</a></p>
+<hr>
+<p>Epitope Predictions:
+SARS-CoV-2 epitope predictions across class 1 HLA alleles are provided. Predicted antigenic peptide sequences originating from Campbell, et. al, 2020 were downloaded and blasted (tblastn, V2.3.0+) with the SARS-CoV-2 reference (NC_045512.2). Sequence locations retaining 100% identity with SARS-CoV-2 are displayed (with the exception of one negative-strand hit, which is likely a false positive as there is no indication the sequence is transcribed).
+Data source: <a href="https://www.biorxiv.org/content/10.1101/2020.03.30.016931v1">https://www.biorxiv.org/content/10.1101/2020.03.30.016931v1</a></p>
+<hr>
+<h3 id="recombination-events">Recombination Events:</h3>
+<p>Visualize recombination events detected by junction-spanning RNA-seq reads generated by Kim et al., 2020.
+Data source: Kim et al., 2020 (DOI: 10.1016/j.cell.2020.04.011)</p>
+<h3 id="viral-rna-modifications">Viral RNA Modifications:</h3>
+<p>Visualize RNA modifications detected using Nanopore direct RNA sequencing performed by Kim et al., 2020.
+Data source: Kim et al., 2020 (DOI: 10.1016/j.cell.2020.04.011)</p>
+<h3 id="viral-rna-expression">Viral RNA Expression:</h3>
+<p>Visualize viral RNA expression measured by Nanopore direct RNA sequencing performed by Kim et al., 2020.
+Data source: Kim et al., 2020 (DOI: 10.1016/j.cell.2020.04.011)</p>
+<hr>
+<p>Feedback, suggestions, or bug reports are welcome here: <a href="https://github.com/debugpoint136/WashU-Virus-Genome-Browser/issues">https://github.com/debugpoint136/WashU-Virus-Genome-Browser/issues</a></p>
+<h3 id="current-sars-cov-2-and-related-data-statistics-in-washu-virus-genome-browser">Current SARS-CoV-2 (and related) data statistics in WashU Virus Genome Browser:</h3>
+<p>(last updated: Apr 19 2020)</p>
+<div class='table'>
+<table>
+<thead>
+<tr>
+<th>Hub name</th>
+<th align="center">Number of tracks</th>
+<th align="right">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NCBI database</td>
+<td align="center">838</td>
+<td align="right">SNV tracks of all SARS-CoV-2 strains on NCBI Genbank displaying their sequence variation from reference</td>
+</tr>
+<tr>
+<td>Nextstrain database</td>
+<td align="center">3123</td>
+<td align="right">SNV tracks of all SARS-CoV-2 strains from Nextstrain, displaying their sequence variation from the reference</td>
+</tr>
+<tr>
+<td>GISAID database</td>
+<td align="center">9284</td>
+<td align="right">SNV tracks of SARS-CoV-2 strains from GISAID, displaying their sequence variation from the reference</td>
+</tr>
+<tr>
+<td>Primers</td>
+<td align="center">9</td>
+<td align="right">CDC/non-CDC primers for detecting SARS-CoV-2</td>
+</tr>
+<tr>
+<td>Epitope predictions</td>
+<td align="center">1</td>
+<td align="right">SARS-CoV-2 Epitope Predictions Across HLA-1 Alleles</td>
+</tr>
+<tr>
+<td>Recombination events</td>
+<td align="center">3</td>
+<td align="right">Recombination events detected by junction-spanning RNA-seq</td>
+</tr>
+<tr>
+<td>Viral RNA modifications</td>
+<td align="center">10</td>
+<td align="right">RNA modifications detected using Nanopore direct RNA sequencing</td>
+</tr>
+<tr>
+<td>Viral RNA expression</td>
+<td align="center">1</td>
+<td align="right">Viral RNA expression measured by Nanopore</td>
+</tr>
+<tr>
+<td>SARS-CoV-2 Host Transcriptional Responses (human hg38)</td>
+<td align="center">195</td>
+<td align="right">Human Transcriptional Responses to SARS-CoV-2 and Other Respiratory Infections, data from Blanco-Melo, et al. 2020</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+  </div>
+</section>
+
+    
+<footer class="footer footer-dark">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="footer-logo">
+          <img src="/fresh/images/logos/virus-browser-logo.svg">
+        </div>
+        <ul class="link-list">
+          <li>
+        <a href="http://wang.wustl.edu" class="">
+          The Wang Lab @ Washington University in St. Louis
+        </a>
+      </li>
+      </ul>
+      </div>
+        <div class="column">
+          <div class="footer-column">
+            <div class="footer-header">
+                <h3>Docs</h3>
+            </div>
+            <ul class="link-list">
+              <li>
+                <a href="/manuscript/WashU_Virus_Genome_Browser.pdf">
+                  Manuscript
+                </a>
+              </li>
+              <li>
+                <a href="https://virusgateway.readthedocs.io/en/latest/index.html">
+                  User guides
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+            <h3>Follow Us</h3>
+            <nav class="level is-mobile">
+              <div class="level-left">
+                <a class="level-item" href="https://github.com/debugpoint136/WashU-Virus-Genome-Browser">
+                  <span class="icon"><i class="fa fa-github"></i></span>
+                </a>
+                <a class="level-item" href="https://www.youtube.com/channel/UCuIQetcmC5h1h_LXmhrlKrA">
+                  <span class="icon"><i class="fa fa-youtube"></i></span>
+                </a>
+                <!-- <a class="level-item" href="https://www.facebook.com/groups/346647445406639">
+                  <span class="icon"><i class="fa fa-facebook"></i></span>
+                </a> -->
+                <a class="level-item" href="https://twitter.com/wuepgg">
+                  <span class="icon"><i class="fa fa-twitter"></i></span>
+                </a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+    
+    <div id="backtotop"><a href="#"></a></div>
+
+    
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="/js/fresh.js"></script>
+<script src="/js/jquery.panelslider.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  </body>
+</html>

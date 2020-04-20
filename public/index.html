@@ -91,147 +91,19 @@
                 }
             }
         </style>
-        <!-- <script>
-      window.onload = function() {
-        var refresherButton = document.getElementById('iframeRefresher');
 
-        if (refresherButton.addEventListener)
-          refresherButton.addEventListener('click', refreshIframe, false);
-        else refresherButton.attachEvent('click', refreshIframe);
-      };
+        <!-- ALL things Fresh -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="/fresh/js/fresh.js"></script>
+<script src="/fresh/js/jquery.panelslider.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
-      function refreshIframe() {
-        let browserDOMHandle = document.getElementById('browser-embed');
-        let reference_ = BROWSER_DATA.reference.toLowerCase();
-            if (reference_ === '2019_ncov') {
-              reference_ = 'ncov';
-            }
+<link href="https://fonts.googleapis.com/css?family=Lato:400,600,700" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/fresh/css/style.min.8460712a437f899491d4d8177e4183b435653ed6f497a2bf7a1ebb39c31fe31b.css" integrity="sha256-hGBxKkN/iZSR1NgXfkGDtDVlPtb0l6K/eh67OcMf4xs=">
+<link rel="stylesheet" type="text/css" href="/fresh/css/icons.css">
 
-        localStorage.setItem('reference', JSON.stringify(reference_));
-
-        if (window.BROWSER_DATA.a.length === 0) {
-          if (JSON.parse(localStorage.getItem('tracks')).length === 0) {
-            // if (document.getElementById('browser-wrapper').style.display === 'none') {
-            // document.getElementById('popup-message-2').style.display =
-            //       'block';
-            //     setTimeout(() => {
-            //       document.getElementById('popup-message-2').style.display =
-            //         'none';
-            //     }, 1000);
-            //   }
-          } else {
-            
-
-            const referenceLocalStorage = localStorage.getItem('reference');
-            if (referenceLocalStorage !== '') {
-              if (reference_ !== JSON.parse(referenceLocalStorage)) {
-                document.getElementById('popup-message').style.display =
-                  'block';
-                setTimeout(() => {
-                  document.getElementById('popup-message').style.display =
-                    'none';
-                }, 2000);
-
-                localStorage.setItem('tracks', JSON.stringify([]));
-                // localStorage.setItem('reference', JSON.stringify(reference_));
-                browserDOMHandle.contentDocument.location.reload(true);
-              }
-            }
-          }
-        }
-
-        let browserDOMWrapper = document.getElementById('browser-wrapper');
-        if (browserDOMWrapper.style.display === 'none') {
-          document.getElementById('iframeRefresher').innerHTML =
-            'Hide Browser View';
-          browserDOMWrapper.style.display = 'block';
-        } else {
-          browserDOMWrapper.style.display = 'none';
-          document.getElementById('iframeRefresher').innerHTML =
-            'Show Browser View';
-        }
-      }
-
-      window.addEventListener('click', function(e) {
-        let browserDOMWrapper = document.getElementById('browser-wrapper');
-        if (
-          document.getElementById('browser-wrapper').contains(e.target) ||
-          document.getElementById('iframeRefresher').contains(e.target)
-        ) {
-          // Clicked in required area
-          // that's ok, keep it
-        } else {
-          // Clicked outside the box
-          if (browserDOMWrapper.style.display === 'block') {
-            browserDOMWrapper.style.display = 'none';
-            var refresherButton = document.getElementById('iframeRefresher');
-            document.getElementById('iframeRefresher').innerHTML =
-              'Show Browser View';
-          }
-        }
-      });
-    </script> -->
-
-        <!-- <script>
-      let x = {
-        aInternal: [],
-        aListener: function(val) {},
-        set a(val) {
-          this.aInternal = val;
-          this.aListener(val);
-        },
-        get a() {
-          return this.aInternal;
-        },
-        registerListener: function(listener) {
-          this.aListener = listener;
-        },
-        referenceInternal: 'ncov',
-        set reference(val) {
-          this.referenceInternal = val;
-        },
-        get reference() {
-          return this.referenceInternal;
-        }
-      };
-
-      x.registerListener(function(val) {
-        // const BROWSER_ACTION = aInternal ? ' open ' : ' close ';
-        // alert('Do you want to' + BROWSER_ACTION + ' Browser?');
-        // alert('Cart data changed, browser will refresh!')
-        let browserDOMHandle = document.getElementById('browser-embed');
-        browserDOMHandle.contentDocument.location.reload(true);
-      });
-
-      // x.a = 43;
-
-      window.BROWSER_DATA = x;
-    </script> -->
-
-        <div class="flex justify-end">
-            <div id="popup-message" style="display: none; width: 45%;">
-                <div class="flex">
-                    <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
-                        <p class="font-bold">Browser View will be refreshed</p>
-                        <p class="text-sm">Selected reference is not same as local cache</p>
-                    </div>
-                    <div class="spinner"></div>
-                </div>
-            </div>
-        </div>
-        <div class="flex justify-end">
-            <div id="popup-message-2" style="display: none; width: 45%;">
-                <div class="flex">
-                    <div
-                        class="bg-yellow-100 border-t border-b border-yellow-500 text-yellow-700 px-4 py-3"
-                        role="alert"
-                    >
-                        <p class="font-bold">No data selected</p>
-                        <p class="text-sm">Browser loaded with no tracks</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- END Fresh things -->
     </head>
 
     <body class="leading-normal tracking-normal text-gray-900" style="font-family: 'Source Sans Pro', sans-serif;">
@@ -247,29 +119,6 @@
             gtag("config", "UA-157959055-1");
         </script>
         <script src="bundle.js"></script>
-        <!-- <div id="svelte_app">
-		here
-  </div> -->
 
-        <!-- <button
-      style="position:absolute; top:0; right: 0; padding: 2ch; margin-top: 2ch; margin-right: 12ch;"
-      class="bg-gray-300"
-      id="iframeRefresher"
-    >
-      Show Browser View
-    </button> -->
-
-        <!-- <div id="browser-wrapper" style="display: none;">
-
-      <iframe
-        id="browser-embed"
-        width="100%"
-        height="100%"
-        style="position:absolute; top:0; left: 0"
-        src="/browser"
-        frameborder="50"
-        allowfullscreen
-      ></iframe>
-    </div> -->
     </body>
 </html>

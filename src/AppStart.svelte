@@ -20,23 +20,27 @@
   import CartIndicator from "./UI/CartIndicator.svelte";
   import CartView from "./containers/CartView.svelte";
   import HelpMenu from "./UI/HelpMenu.svelte";
-  // import LikeButton from './UI/LikeButton.svelte';
   import BrowserView from "./components/BrowserView.svelte";
-  import SplashBanner from "./UI/SplashBanner.svelte";
+  // import SplashBanner from "./UI/SplashBanner.svelte";
+  import LandingPage from "./UI/LandingPage.svelte";
 
   let clicked = "nothing yet";
   let myDrawer;
-  let myDrawerOpen = true;
-  // let active = "Gray Kittens";
+  let myDrawerOpen = false;
   let active = 0;
   let FILESJSON = [];
   function setActive(value) {
     active = value;
     // myDrawerOpen = false;
   }
-
   const virusList = ["Ebola", "SARS", "MERS", "SARS-CoV-2"];
   const virusNameList = ["ebola", "sars", "mers", "ncov"];
+  const GENOME_NAME_MAP = {
+    ncov: "SARS-CoV-2",
+    mers: "MERS",
+    sars: "SARS",
+    ebola: "Ebola"
+  };
   let fullNames = {
     "Ebola": {
       name: "Ebola",
@@ -59,25 +63,18 @@
     "SARS-CoV-2": {
       name: "SARS-CoV-2",
       id: "ncov",
-      desc:
-        "Since its debut in mid-December, 2019, the zoonotic SARS-CoV-2 has rapidly spread from its origin in Wuhan, China, to several countries across the globe, leading to a global health crisis. Research efforts have begun sequencing the 29 kb virus genome, allowing for comparisons between the novel virus and close relatives. The WashU Virus Genome Browser is home to the genomic sequences of 45 SARS-CoV-2 strains, as well as hundreds of related viruses, including severe acute respiratory syndrome coronavirus (SARS-CoV), Middle East respiratory syndrome coronavirus (MERS-CoV), and Ebola virus. In addition to included data tracks, the browser supports user-uploaded sequences, as well as two visualization platforms: a genomic track view and a phylogenetic tree view. Our hope is that the WashU Virus Genome Browser will serve as an efficient tool, aiding researchers in better understanding the disease."
+      desc:"Since its debut in mid-December, 2019, the zoonotic SARS-CoV-2 has rapidly spread from its origin in Wuhan, China, to several countries across the globe, leading to a global health crisis. Research efforts have begun sequencing the 29 kb virus genome, allowing for comparisons between the novel virus and close relatives. The WashU Virus Genome Browser is home to the genomic sequences of 45 SARS-CoV-2 strains, as well as hundreds of related viruses, including severe acute respiratory syndrome coronavirus (SARS-CoV), Middle East respiratory syndrome coronavirus (MERS-CoV), and Ebola virus. In addition to included data tracks, the browser supports user-uploaded sequences, as well as two visualization platforms: a genomic track view and a phylogenetic tree view. Our hope is that the WashU Virus Genome Browser will serve as an efficient tool, aiding researchers in better understanding the disease."
     }
-  };
+  }
   let DATA = {};
-  let virusName = "SARS-CoV-2";
-  let virusId;
+  let virusName='ncov';
+  let virusFullName = "SARS-CoV-2";
   let GENOMES_DICT;
 
   function handleReferenceSelect(event) {
-    // if (event.detail === "SARS-CoV-2") {
-    //   virusName = "SARS-CoV-2";
-    // } else {
-    //   virusName = event.detail.toLowerCase();
-    // }
-    virusName = event.detail;
-    virusId = fullNames[event.detail].id;
-    console.log(virusName);
-    console.log(virusId);
+    virusFullName = event.detail;
+    virusName = fullNames[event.detail].id;
+  
     Cart.addDataItems([]);
     keyedTabsActive = iconTabs[2];
   }
@@ -92,14 +89,10 @@
 
   onMount(async () => {
     let FILESJSON_not_ncov = require("./json/pairwise.json");
-    // GENOMES_DICT = require("./genomes.json");
-    // console.log(FILESJSON_not_ncov.length)
-    // const pairwise_ncov_res = await fetch('https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/latest/updated.json');
     const pairwise_ncov_res = await fetch('https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/updated.json'); // TEST
     const pairwise_ncov_json = await pairwise_ncov_res.json();
     FILESJSON = [...FILESJSON_not_ncov, ...pairwise_ncov_json];
-    
-    // await virusNameList.forEach(async reference => {
+
     await virusList.forEach(async reference => {
       let fileHandle;
       if (reference === 'SARS-CoV-2') {
@@ -134,28 +127,34 @@
         tmp.Host = host !== undefined ? host[0] : "N/A";
         return tmp;
       });
-    });
+    })
+  })
 
-    const TRACKS = sessionStorage.getItem("tracks");
-    if (TRACKS !== "") {
-      let parsedTracks = JSON.parse(TRACKS) || [];
-      Cart.addDataItems(
-        parsedTracks.filter(d => d.type === "pairwise").map(d => d.metadata)
-      );
-    }
+  const TRACKS = sessionStorage.getItem("tracks");
+      if (TRACKS !== "") {
+        let parsedTracks = JSON.parse(TRACKS) || [];
+        Cart.addDataItems(
+          parsedTracks.filter(d => d.type === "pairwise").map(d => d.metadata)
+        );
+      }
 
-    let referenceLS = sessionStorage.getItem("reference");
-    let parsedReference;
-    console.log(referenceLS);
-    if (referenceLS !== undefined && referenceLS !== 'undefined' ) {
-      parsedReference = JSON.parse(referenceLS);
-    }
-    console.log(parsedReference);
-    if (parsedReference) {
-      console.log('reaching here')
-      virusName = parsedReference;
-    }
-  });
+      let referenceLS = sessionStorage.getItem("reference");
+      let parsedReference;
+      if (referenceLS !== undefined && referenceLS !== 'undefined' ) {
+        parsedReference = JSON.parse(referenceLS);
+      }
+      if (parsedReference) {
+        if (GENOME_NAME_MAP[parsedReference]) {
+          // ncov
+          virusName = parsedReference;
+          console.log(parsedReference);
+          virusFullName = GENOME_NAME_MAP[parsedReference];
+        } else {
+          virusFullName = parsedReference;
+          console.log(parsedReference);
+          virusName = fullNames[parsedReference].id;
+        }
+      }
 
   let iconTabs = [
     {
@@ -208,13 +207,14 @@
   ];
 </script>
 
+
 <style>
   .drawer-container {
     position: relative;
     display: flex;
     height: 100%;
     max-width: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
     overflow: hidden;
     z-index: 0;
   }
@@ -242,28 +242,15 @@
   }
 </style>
 
+
 <div class="drawer-container">
   <Drawer bind:this={myDrawer} bind:open={myDrawerOpen}>
     <Content>
-      <div class="w-full xl:flex xl:items-center lg:justify-start">
-        <a
-          class="flex ml-4 items-center text-indigo-400 no-underline
-          hover:no-underline font-bold text-2xl"
-          href="/">
-          <svg
-            class="h-8 fill-current text-indigo-600 pr-2"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20">
-            <path
-              d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm-5.6-4.29a9.95 9.95 0
-              0 1 11.2 0 8 8 0 1 0-11.2 0zm6.12-7.64l3.02-3.02 1.41 1.41-3.02
-              3.02a2 2 0 1 1-1.41-1.41z" />
-          </svg>
-          WashU Virus Genome Browser
-        </a>
+      <div class="w-full xl:flex xl:items-center lg:justify-center my-8">
+        <img src="/fresh/images/logos/virus-browser-logo.svg" alt="" width="112" height="28">
       </div>
-      <label for="ref" class="ref">Choose a Virus Reference:</label>
-      <div class="flex flex-col justify-start mx-2 h-48">
+      <label for="ref" class="ref w-full xl:flex xl:items-center lg:justify-center">Choose a Virus Reference:</label>
+      <div class="w-full xl:flex xl:items-start lg:justify-center h-64">
         <Dropdown
           on:reference-select={handleReferenceSelect}
           names={virusList} />
@@ -315,23 +302,25 @@
   </Drawer>
   <Scrim />
   <AppContent class="app-content">
+    <!-- <Button on:click={() => myDrawerOpen = !myDrawerOpen}>Toggle Sidebar</Button> -->
     <main class="main-content">
       <div id="main-wrapper" class="mx-16">
         <div>
           {#if active === 0}
             <div style="height: 800px;">
-              <SplashBanner
+              <!-- <SplashBanner
                 on:start={() => setActive(2)}
                 {virusName}
-                {fullNames} />
+                {fullNames} /> -->
+                <LandingPage on:start={() => setActive(4)}/>
             </div>
           {:else if active === 1}
             <div style="height: 800px;" class="container">
-              <LargeTreeContainer virusName={virusId} FILESJSON={FILESJSON} DATA={DATA[virusId]} />
+              <LargeTreeContainer {virusName} DATA={DATA[virusName]} {FILESJSON}/>
             </div>
           {:else if active === 2}
             <div style="height: 800px;">
-              <DataTable virusName={virusId} FILESJSON={FILESJSON} DATA={DATA[virusId]} />
+              <DataTable {virusName} DATA={DATA[virusName]} {FILESJSON}/>
             </div>
           {:else if active === 3}
             <div style="height: 100%;" class="container">
@@ -344,7 +333,7 @@
         <div class="w-full xl:w-1/5 lg:items-start" />
       </div>
       <div style="height: 100%;" class:hidden={active !== 4}>
-        <BrowserView virusName={virusId} {active} {FILESJSON}/>
+        <BrowserView {virusName} {active} {FILESJSON}/>
       </div>
     </main>
   </AppContent>
