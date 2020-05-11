@@ -103,7 +103,7 @@
     <div class="columns is-vcentered">
       <div class="column is-10 is-offset-1 landing-caption">
         <h1 class="title is-1 is-bold is-spaced">
-          WashU virus Genome Browser
+          WashU Virus Genome Browser
         </h1>
         
         <h2 class="subtitle is-10">
@@ -216,7 +216,7 @@
     <div class="tabs is-centered">
       <ul>
       <p class="has-text-centered mb-10 section-feature-grey">
-      <a class="button cta is-large rounded secondary-btn raised" href="https://www.youtube.com/watch?v=_Ewwwd3N0q0">
+      <a class="button cta is-large rounded secondary-btn raised" href="https://www.youtube.com/watch?v=C-124zMbeto">
         Quick walkthrough
       </a>
     </p>
@@ -411,18 +411,18 @@
     
 
     
-    <section class="section section-light-grey is-medium">
+    <!-- <section class="section section-light-grey is-medium">
   <div class="container">
     <div class="title-wrapper has-text-centered">
       <h2 class="title is-2 is-spaced">Drop us a line or two </h2>
       <h3 class="subtitle is-5 is-muted">We'd love to hear from you</h3>
       <div class="divider is-centered"></div>
-    </div>
+    </div> 
 
     <div class="content-wrapper">
       <div class="columns">
         <div class="column is-6 is-offset-3">
-          <form action="mailto:dpurushotham136@gmail.com" method="post" enctype="text/plain">
+          <form action="mailto:dpurushotham136@gmail.com" method="post" enctype="application/x-www-form-urlencoded">
             <div class="columns is-multiline">
               <div class="column is-6">
                 <input class="input is-medium" type="text" placeholder="Enter your name">
@@ -440,9 +440,9 @@
           </form>
         </div>
       </div>
-    </div>
+    </div> 
   </div>
-</section>
+</section>-->
     
 
     

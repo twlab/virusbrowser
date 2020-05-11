@@ -14,6 +14,7 @@
   import List, { Item, Text, Graphic, Separator, Subheader } from "@smui/list";
   import H6 from "@smui/common/H6.svelte";
   import LargeTreeContainer from "./containers/LargeTreeContainer.svelte";
+  import TreeView from "./tree-view/CompressedTreeView.svelte";
   import DataTable from "./components/DataTable.svelte";
   import { Cart } from "./stores/Cart.js";
   import Dropdown from "./UI/Dropdown.svelte";
@@ -247,7 +248,7 @@
   <Drawer bind:this={myDrawer} bind:open={myDrawerOpen}>
     <Content>
       <div class="w-full xl:flex xl:items-center lg:justify-center my-8">
-        <img src="/fresh/images/logos/virus-browser-logo.svg" alt="" width="112" height="28">
+        <a href="/"><img src="/fresh/images/logos/virus-browser-logo.svg" alt="" width="112" height="28"></a>
       </div>
       <label for="ref" class="ref w-full xl:flex xl:items-center lg:justify-center">Choose a Virus Reference:</label>
       <div class="w-full xl:flex xl:items-start lg:justify-center h-64">
@@ -316,7 +317,12 @@
             </div>
           {:else if active === 1}
             <div style="height: 800px;" class="container">
-              <LargeTreeContainer {virusName} DATA={DATA[virusName]} {FILESJSON}/>
+              <!-- {#if virusFullName === 'SARS-CoV-2'}
+                <TreeView virusName={virusFullName}/>
+              {:else}
+                <LargeTreeContainer {virusName} DATA={DATA[virusName]} {FILESJSON}/>
+              {/if}               -->
+              <TreeView virusName={virusFullName}/>
             </div>
           {:else if active === 2}
             <div style="height: 800px;">

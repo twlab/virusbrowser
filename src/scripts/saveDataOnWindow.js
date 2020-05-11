@@ -37,7 +37,8 @@ export const saveDataOnWindow = function (FILES, virusName, FILESJSON) {
   if (virusName !== 'ncov') {
     DEFAULT[0].genome = virusName;
   }
-  let toReturn = DEFAULT.concat(tracks);
+  // let toReturn = DEFAULT.concat(tracks);
+  let toReturn = tracks;
 
   console.log(virusName);
   sessionStorage.setItem('tracks', JSON.stringify(tracks));

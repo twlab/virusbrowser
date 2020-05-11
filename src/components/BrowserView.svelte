@@ -11,7 +11,7 @@
   export let active; // 4 if tab is active
   export let FILESJSON;
   let DATA;
-  let uploaded = false;
+  let uploaded = true;
   let error;
   let content;
   let DATAHUB_URL;
@@ -21,7 +21,7 @@
   const POST_DATAHUB_URL =
     "https://5dum6c4ytb.execute-api.us-east-1.amazonaws.com/dev/datahub";
   const BROWSER_URL =
-    "http://eg-react.s3-website-us-east-1.amazonaws.com/browser";
+    "https://eg-react.s3-website-us-east-1.amazonaws.com/browser";
 
   const GENOME_NAME_MAP = {
     ncov: "SARS-CoV-2",
@@ -31,9 +31,10 @@
 	};
 	
 	onMount(() => {
+    console.log(JSON.parse(sessionStorage.getItem('eg-react-session')));
 		content = `<iframe
 																id="browser-embed"
-																src="/browser"
+																src="https://epigenomegateway.wustl.edu/browser"
 																allowfullscreen>
                               </iframe>`;
   })
@@ -44,7 +45,7 @@
       uploaded = false;
       const UUID = uuid.v4();
       // let { tracks } = saveDataOnWindow($Cart.data, virusName, FILESJSON);
-      console.log($Cart.data);
+      // console.log($Cart.data);
       let generatedDatahub = saveDataOnWindow($Cart.data, GENOME_NAME_MAP[virusName], FILESJSON);
       console.log(generatedDatahub);
       // let generatedDatahub = createDatahub(content.tracks);
@@ -67,6 +68,7 @@
             uploaded = true;
             // DATAHUB_URL = `/browser/?genome=${GENOME_NAME_MAP[virusName]}&hub=${POST_DATAHUB_URL}/${UUID}&virusBrowserMode=1`;
             DATAHUB_URL = `https://epigenomegateway.wustl.edu/browser/?genome=${GENOME_NAME_MAP[virusName]}&hub=${POST_DATAHUB_URL}/${UUID}`;
+            // DATAHUB_URL = `https://epigenomegateway.wustl.edu/browser`;
             console.log("Created datahub:", DATAHUB_URL);
 
             content = `<iframe

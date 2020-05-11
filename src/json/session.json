@@ -1,0 +1,210 @@
+{
+  "genomeName": "SARS-CoV-2",
+  "viewInterval": { "start": 0, "end": 29903 },
+  "tracks": [
+    {
+      "name": "ncbiGene",
+      "type": "geneannotation",
+      "label": "NCBI genes",
+      "options": { "label": "NCBI genes" },
+      "url": "",
+      "metadata": { "Track type": "geneannotation" },
+      "isSelected": false,
+      "fileObj": "",
+      "files": [],
+      "tracks": [],
+      "isText": false,
+      "textConfig": {},
+      "genome": "SARS-CoV-2"
+    },
+    {
+      "name": "Ruler",
+      "type": "ruler",
+      "label": "Ruler",
+      "options": { "label": "Ruler" },
+      "url": "",
+      "metadata": { "Track type": "ruler" },
+      "isSelected": false,
+      "fileObj": "",
+      "files": [],
+      "tracks": [],
+      "isText": false,
+      "textConfig": {}
+    },
+    {
+      "name": "Sequence diversity (Shannon Entropy)",
+      "type": "bedgraph",
+      "label": "Sequence diversity (Shannon Entropy)",
+      "options": {
+        "aggregateMethod": "MAX",
+        "label": "Sequence diversity (Shannon Entropy)"
+      },
+      "url": "https://wangftp.wustl.edu/~cfan/updates/latest/diversity/ncov_entropy.bedgraph.sort.gz",
+      "metadata": { "Track type": "bedgraph" },
+      "isSelected": false,
+      "fileObj": "",
+      "files": [],
+      "tracks": [],
+      "isText": false,
+      "textConfig": {}
+    },
+    {
+      "name": "Mutation Alert",
+      "type": "pairwise",
+      "label": "Mutation Alert",
+      "options": { "label": "Mutation Alert" },
+      "url": "https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/latest/diversity/ncov_alert.bed.sort.gz",
+      "metadata": { "Track type": "pairwise" },
+      "isSelected": false,
+      "fileObj": "",
+      "files": [],
+      "tracks": [],
+      "isText": false,
+      "textConfig": {}
+    },
+    {
+      "name": "Viral RNA expression (nanopore)",
+      "type": "bigwig",
+      "label": "Viral RNA expression (nanopore)",
+      "options": {
+        "zoomLevel": "0",
+        "label": "Viral RNA expression (nanopore)"
+      },
+      "url": "https://wangftp.wustl.edu/~xzhuo/bat_genomes/VeroInf24h.bw",
+      "metadata": { "Track type": "bigwig" },
+      "isSelected": false,
+      "fileObj": "",
+      "files": [],
+      "tracks": [],
+      "isText": false,
+      "textConfig": {}
+    },
+    {
+      "name": "Transcription regulatory sequences (TRSs)",
+      "type": "categorical",
+      "label": "Transcription regulatory sequences (TRSs)",
+      "options": {
+        "height": 15,
+        "alwaysDrawLabel": true,
+        "maxRows": 20,
+        "hiddenPixels": 0,
+        "category": {
+          "TRS-L": { "name": "TRS-L", "color": "#000000" },
+          "TRS-B": { "name": "TRS-B", "color": "#FF0000" }
+        },
+        "label": "Transcription regulatory sequences (TRSs)"
+      },
+      "url": "https://wangftp.wustl.edu/~gmatt/viralBrowser/sars-cov-2_trs_sorted.bed.gz",
+      "metadata": { "Track type": "categorical" },
+      "isSelected": false,
+      "fileObj": "",
+      "files": [],
+      "tracks": [],
+      "isText": false,
+      "textConfig": {}
+    },
+    {
+      "name": "TRS-L-dependent recombination",
+      "type": "longrange",
+      "label": "TRS-L-dependent recombination",
+      "options": {
+        "yScale": "fixed",
+        "yMax": 7000000,
+        "yMin": 0,
+        "displayMode": "arc",
+        "lineWidth": 5,
+        "height": 305,
+        "greedyTooltip": true,
+        "label": "TRS-L-dependent recombination"
+      },
+      "url": "https://wangftp.wustl.edu/~gmatt/viralBrowser/TRS-L-dependent_recombinationEvents_sorted.bed.gz",
+      "metadata": { "Track type": "longrange" },
+      "isSelected": false,
+      "fileObj": "",
+      "files": [],
+      "tracks": [],
+      "isText": false,
+      "textConfig": {}
+    },
+    {
+      "name": "Viral RNA Modifications",
+      "type": "dbedgraph",
+      "label": "Viral RNA Modifications",
+      "options": {
+        "dynamicLabels": [
+          "gRNA",
+          "S",
+          "3a",
+          "E",
+          "M",
+          "6",
+          "7a",
+          "7b",
+          "8",
+          "N"
+        ],
+        "speed": [3],
+        "label": "Viral RNA Modifications"
+      },
+      "url": "https://wangftp.wustl.edu/~mchoudhary/viralBrowser/studies/kim-2020/Table_S5_frac.dbg.gz",
+      "metadata": { "Track type": "dbedgraph" },
+      "isSelected": false,
+      "showOnHubLoad": true,
+      "fileObj": "",
+      "files": [],
+      "tracks": [],
+      "isText": false,
+      "textConfig": {}
+    },
+    {
+      "name": "LC522350.1_2019-nCoV_PH_nCOV_20_026",
+      "type": "pairwise",
+      "label": "LC522350.1_2019-nCoV_PH_nCOV_20_026",
+      "options": {
+        "maxRows": 1,
+        "label": "LC522350.1_2019-nCoV_PH_nCOV_20_026"
+      },
+      "url": "https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates//4-24//SNV/LC522350.1.bed.gz",
+      "metadata": {
+        "location": ["Philippines"],
+        "collection_date": "2020-01-26",
+        "Track type": "pairwise"
+      },
+      "isSelected": false,
+      "fileObj": "",
+      "files": [],
+      "tracks": [],
+      "isText": false,
+      "textConfig": {},
+      "datahub": "All NCBI SARS-CoV-2 isolates"
+    },
+    {
+      "name": "LC523807.1_2019-nCoV_PH_nCOV_20_026",
+      "type": "pairwise",
+      "label": "LC523807.1_2019-nCoV_PH_nCOV_20_026",
+      "options": {
+        "maxRows": 1,
+        "label": "LC523807.1_2019-nCoV_PH_nCOV_20_026"
+      },
+      "url": "https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates//4-24//SNV/LC523807.1.bed.gz",
+      "metadata": {
+        "location": ["Philippines"],
+        "collection_date": "2020-02-06",
+        "Track type": "pairwise"
+      },
+      "isSelected": false,
+      "fileObj": "",
+      "files": [],
+      "tracks": [],
+      "isText": false,
+      "textConfig": {},
+      "datahub": "All NCBI SARS-CoV-2 isolates"
+    }
+  ],
+  "metadataTerms": [],
+  "regionSets": [],
+  "regionSetViewIndex": -1,
+  "trackLegendWidth": 120,
+  "bundleId": "2ae58e40-901d-11ea-8938-e5b36516ba22",
+  "isShowingNavigator": true
+}
