@@ -67,7 +67,7 @@
           if (resBody.hasOwnProperty("id")) {
             uploaded = true;
             // DATAHUB_URL = `/browser/?genome=${GENOME_NAME_MAP[virusName]}&hub=${POST_DATAHUB_URL}/${UUID}&virusBrowserMode=1`;
-            DATAHUB_URL = `https://epigenomegateway.wustl.edu/browser/?genome=${GENOME_NAME_MAP[virusName]}&hub=${POST_DATAHUB_URL}/${UUID}`;
+            DATAHUB_URL = `https://epigenomegateway.wustl.edu/browser/?genome=${GENOME_NAME_MAP[virusName]}&hubSessionStorage=${POST_DATAHUB_URL}/${UUID}`;
             // DATAHUB_URL = `https://epigenomegateway.wustl.edu/browser`;
             console.log("Created datahub:", DATAHUB_URL);
 
