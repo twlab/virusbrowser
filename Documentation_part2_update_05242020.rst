@@ -201,9 +201,7 @@ The .tsv file that can be converted looks like this:
 Upload json-formatted datahub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To upload a son-formatted data hub, in the browser view, select “Tracks” and then select either “Remote Tracks” or “Local Tracks” (depending on whether the .json file is stored remotely to locally, see above documentation under “Navigating the WashU Virus Genome Browser” for further details). This will lead the user to an upload interface. If the user has selected “Remote Tracks”, as shown below, if he/she then selects the “Add Remove Data Hub” tab the .json file can be uploaded.
-
-.. image:: _static/snv7.png
+To upload a json-formatted data hub, in the browser view, select “Tracks” and then select either “Remote Tracks” or “Local Tracks” (depending on whether the .json file is stored remotely to locally, see above documentation under “Navigating the WashU Virus Genome Browser” for further details.
 
 A .tsv file should have a format similar to that shown below in order for a successful conversion.
 
