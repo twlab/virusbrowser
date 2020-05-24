@@ -1,0 +1,141 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf610
+{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fmodern\fcharset0 Courier-Oblique;\f2\fnil\fcharset0 HelveticaNeue;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red25\green25\blue25;\red255\green255\blue255;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c12941\c12941\c12941;\cssrgb\c100000\c100000\c100000;
+}
+\margl1440\margr1440\vieww25660\viewh12600\viewkind0
+\deftab720
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
+Navigating the WashU Virus Genome Browser\
+=========================================\
+\
+Virus Browser Home Page\
+-----------------------\
+\
+The WashU Virus Genome Browser hosts hundreds to thousands of genomic sequence pairwise alignments to the reference for 4 virus species: SARS-CoV-2, severe acute respiratory syndrome coronavirus (SARS-CoV), Middle East respiratory syndrome coronavirus (MERS-CoV), and Ebola. When users first navigate to the browser landing page (http://virusgateway.wustl.edu/), they are provided with a drop-down menu of the 4 hosted viruses (red arrow below), to select which virus they would like to view as their reference.\
+\
+.. image:: _static/use1.png\
+\
+Upon selecting a reference species and clicking \'93Data Table\'94 (brown arrow above), the user is then taken to a table populated with sortable and searchable metadata for all  available strains of the species. The user can then select strains of interest (examples are highlighted in purple below), and continue to view those particular strains in either our genomic track browser view or see how their selected strains relate to all other available strains of the species in our phylogenetic tree view. Please note that for SARS-CoV-2, only strains housed in Nextstrain (PMID:29790939) are displayed in the data table as well as in the tree view.\
+\
+.. image:: _static/use2.png\
+\
+Genomic Track View\
+-----------------------\
+\
+When users select the \'93Browser View\'94 (orange arrow above), they are taken to our standard browser view layout, adapted from the WashU Epigenome Browser (https://epigenomegateway.wustl.edu/). The WashU Virus Genome Browser maintains the functionality of the Epigenome Browser while also incorporating new features particularly useful for probing virus genomics data.\
+\
+.. image:: _static/use3.png\
+\
+To the right of the WashU Virus Genome Browser logo is a utility bar (circled above in red), similar to the one provided in the WashU Epigenome Browser. From left to right, this bar lists the reference species the user is currently viewing, provides a platform for navigating the genome to particular regions of interest, provides a drop-down menu for selecting data tracks to be viewed on the browser, provides several applications for viewing, sharing, or saving region views and tracks of interest, and provides several customizable options in \'93Settings\'94, such as the ability to highlight a region of interest and change the track length width, among others. Detailed information regarding the use of the region locator can be found within the Epigenome Browser tutorial (https://readthedocs.io/en/latest/usage.html#the-top-menu).\
+\
+Details regarding the default tracks loaded into view for SARS-CoV-2, which include a sequence diversity track, a mutation frequency track, RNA expression, putative SARS immune epitopes, 
+\fs30 transcription regulatory sequence locations, recombinations, RNA modifications, and SNV tracks of any strains in the user\'92s cart, are discussed further below.
+\fs28 \
+\
+Tracks\
+^^^^^^\
+\
+The \'93Tracks\'94 tab lists several functionalities, from loading existing tracks hosted by the browser to user-specified uploads.\
+\
+.. image:: _static/use4.png\
+\
+From this drop-down menu, if the user selects \'93Annotation Tracks:, an expandable menu of pre-existing tracks appears for the user to select from. For SARS-CoV-2, these tracks include gene annotations, genome comparison tracks, a GC density track, as well as a sequence diversity track and a mutation alert track, all of which can be loaded into the current browser session. Of particular clinical importance, the Sequence diversity (Shannon Entropy) track comprehensively displays the divergence across all GISAID strains at each genomic position. Additionally, the \'93Mutation Alter\'94 track displays the number of strains with a mutation at each position. Together, these tracks provide an overview of accumulating mutations and their abundance, aiding in monitoring diagnostic primers for expected effectiveness as the virus evolves. Because of this utility, both the \'93Sequence diversity (Shannon Entropy)\'94 track and the \'93Mutation Alert\'94 track are loaded into view by default.\
+\
+.. image:: _static/use5.png\
+\
+The \'93Remote Tracks\'94 selections allow for user-upload of individual tracks or data hubs from a hosted url. Upon selection, the user is prompted to select whether he/she would like to upload an individual track (default tab) or upload a data hub (right-hand tab). The user can then select the drop-down arrow under \'93Track type\'94 to view all tracks supported by the WashU Virus Browser and select the track type matching their data. \
+\
+\
+\pard\pardeftab720\sl280\partightenfactor0
+\cf2 .. image:: _static/use6.png\cf2 \
+\
+\cf2 A comprehensive list and description of these tracks can be found here: https://eg.readthedocs.io.en/latest/tracks.html.\cf2 \
+\
+To upload a track (in text format, such as a 
+\f1\i .bed.txt, .bedgraph.txt, or .longrange.txt
+\f0\i0 , etc.) directly from one\'92s compute, the user would select \'93Local Text Tracks\'94. Upon selection, the user can select from the drop-down menu the file type that matches their data. In the default view of this pop-up window, the text file format is \'93bed\'94 and an example of the text file format is below. Optionally, the user can configure track options, such as metadata, track height, track color, etc. by filling in the text box below.\
+\
+.. image:: _static/use7.png\
+\
+To upload a track (in binary format, such as 
+\f1\i .bigwig, .hic, .g3d, .bedgraoh.gz(.tbi), .bed.gz, 
+\f0\i0 ect.) directly from one\'92s computer, the user would select \'93Local Tacks\'94. Here, the user can choose whether to upload a track (default tab) or data hub (right-handed tab) from his/her computer directly. After selecting \'93Add Local Tracks\'94, the user can then select the track type matching their file via the drop-down menu shown above. Users can optionally specify in the accompanying text box display preferences for their added track, as demonstrated above by selecting \'93Example\'94. \
+\
+.. image:: _static/use8.png\
+\
+All tracks loaded onto the browser can be easily managed by selecting \'93Track List\'94, as demonstrated below.\
+\
+.. image:: _static/use9.png\
+\
+In addition to pre-existing track types hosted on the WashU Epigenome Browser, the WashU Virus Browser also introduces the user to a new additional track type, called a \'93SNV\'94 track, which displays alignment results in \'93pairwise\'94 format. The SNV track type displays any genomic variations the strain has from the chosen reference (3 such tracks are pictured below). If the variant is a mismatch, the track will display the deviated nucleotide following the same color scheme as the reference. If a user selects a particular sequence variation, a pop-up window will show the details of the variation. A very detailed description and tutorial regarding the SNV tracks are in the section \'93SNV Track\'94 below.\
+\
+.. image:: _static/use10.png\
+\
+In addition to annotation tracks and user-uploaded tracks, our browser hosts genomics data of various types organized according to studies, pre-prints, or data providers, in a effort to rapidly integrate data. Detailed information pertaining to navigating existing data hubs is provided in the section \'93Public Data Hubs\'94 below.\
+\
+Apps\
+^^^^\
+\
+All applications available on the WashU Virus Genome Browser are also available on the WashU Epigenome Browser, and are described in detail in the Epigenome Browser tutorial (https://eg.readthedocs.io/en/latest/usage.html#apps). Of the available apps, \'93Region Set View\'94 allows the user to visualize several distant genomic regions in the same viewing window. Selection \'93Session\'94 allows the user to save their current browser status, generating a session ID that can be shared with collaborators and allowing for easily resuming gat a later time. \'93Fetch Sequence\'94 allows the user to quickly obtain the reference sequence spanning the current view in a fasta format. Selecting \'93Screenshot\'94 allows the user to generate publication-quality SVGs or PDFs of the current frame of view, with the option to highlight genomic regions of interest. Additional apps include \'93Gene Plot\'94, \'93Scatter Plot\'94, and \'93Go Live\'94, which are explained in detail in the Epigenome Browser tutorial.\
+\
+Settings\
+^^^^^^^^\
+\
+Several browser settings have customizable options which the user may define. When selecting the \'93Settings\'94 drop-down menu, several functions are provided as shown below (and as described in the Epigenome Browser tutorial: (https://eg.readthedocs.io/en/latest/usage.html#settings))\
+\
+.. image:: _static/use11.png\
+\
+The first option \'93Show genome-wide navigator\'94 is a toggle option, allowing the user to hid or show the complete genome layout at the top of the browser (circled in red below), highlighting in green the section fo the genome currently being viewed in the browser.\
+\
+.. image:: _static/use12.png\
+\
+Help\
+^^^^\
+\
+The \'93Help\'94 drop-down menu provides several links to browser resources:\
+\
+.. image:: _static/use13.png\
+\
+These resources include a list of keyboard shortcuts for commonly used tools:\
+\
+.. image:: _static/use14.png\
+\
+Additional links include one to our documentation page, with helpful tutorials, examples, and suggestions for customizing your browsing experience, a link to the original or \'91old\'92 Epigenome Browser, a google groups page populated with questions and answers, a link to our Slack page, where users can directly communicate with the WashU Virus Genome Browser team in real time, a link to our Github page, which houses our repository of all available scripts, and a link to our YouTube channel, where walk-through clips can be viewed.\
+\
+Phylogenetic Tree View\
+----------------------\
+\
+When users select the \'93Tree View\'94 (blue arrow in first figure shown above), they are taken to our tree visual representation of the strains from the selected reference species. If the selected reference is SARS-CoV-2, the browser will load in a phylogenetic tree parsed from Nextstrain (http://data.Nextstrain.org/ncov.json), and therefore includes only strains available from Nextstrain. If the user selects any of the remaining three viruses (SARS, MERS, or Ebola), they are directed to an approximately-maximun-likelihood tree consisting of all available strains hosted by NCBI (https://www.ncbi.nlm.nih.gov/nuccore), built using FastTree with the GTR substitution model. \
+\
+Coloring Tree by Metadata\
+^^^^^^^^^^^^^^^^^^^^^^^^^\
+\
+In any of the four trees available, the user is able to organize the tree by color by selecting either \'93Clade\'94 (as is the default):\
+\
+.. image:: _static/use15.png\
+\
+By \'93Location\'94:\
+\
+.. image:: _static/use16.png\
+\
+Or by \'93Collection Date\'94:\
+\
+..image:: _static/use17.png\
+\
+Identifying Strains of Interest\
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+\
+If users pre-select strains and add them to their cart from the data table, they can see where their strains of interest fall within the tree. As an example below, the following tracks have been added to cart:\
+\
+.. image:: _static/use18.png\
+\
+Upon loading in the tree view, all selected strains are enlarged and colored black, as shown below.\
+\
+.. image:: _static/use19.png
+\f2\fs32 \cf3 \cb4 \
+}
