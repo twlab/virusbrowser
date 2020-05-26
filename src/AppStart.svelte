@@ -90,7 +90,8 @@
 
   onMount(async () => {
     let FILESJSON_not_ncov = require("./json/pairwise.json");
-    const pairwise_ncov_res = await fetch('https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/updated.json'); // TEST
+    // const pairwise_ncov_res = await fetch('https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/updated.json'); // TEST
+    const pairwise_ncov_res = await fetch('https://wangftp.wustl.edu/~cfan/gisaid/test/updated.json'); // TEST
     const pairwise_ncov_json = await pairwise_ncov_res.json();
     FILESJSON = [...FILESJSON_not_ncov, ...pairwise_ncov_json];
 
@@ -98,7 +99,8 @@
       let fileHandle;
       if (reference === 'SARS-CoV-2') {
         // const res = await fetch(`https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/latest/metadata.json`);
-        const res = await fetch(`https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/metadata.json`); // TEST
+        // const res = await fetch(`https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/metadata.json`); // TEST
+        const res = await fetch(`https://wangftp.wustl.edu/~cfan/gisaid/test/metadata_v2.json`); // TEST
 		    fileHandle = await res.json();
       } else {
         fileHandle = require(`./metadata/${fullNames[reference].id}_all_skinny.json`);
@@ -128,6 +130,7 @@
         tmp.Host = host !== undefined ? host[0] : "N/A";
         return tmp;
       });
+      console.log(DATA);
     })
   })
 
