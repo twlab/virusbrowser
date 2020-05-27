@@ -4,7 +4,6 @@
   import Phylogram from "./scripts/phylogram-vanilla";
   import { COLORS } from './scripts/colors';
   import { Cart } from '../stores/Cart';
-  console.log($Cart.data);
   // import Phylogram from "../scripts/phylogram";
   let selector;
   export let CRITERIA;
@@ -24,6 +23,13 @@
     terms = [...new Set(metadataByCriteria)];
   }
   const newick = createNewick(tree);
+  // const HARD_CODED_TREE = require(`../json/${virusName}.tree.js`);
+
+  // if(virusName === 'SARS-CoV-2') {
+  //   newick = createNewick(HARD_CODED_TREE); // to circumvent issue caused in Safari
+  // } else {
+  //     newick = createNewick(tree);
+  // }
 
   function drawTree() {
     const selectedData = $Cart.data;

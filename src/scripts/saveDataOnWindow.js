@@ -22,7 +22,7 @@ export const saveDataOnWindow = function (FILES, virusName, FILESJSON) {
       type: 'pairwise',
       showOnHubLoad: true,
       name: file.Accession + " pairwise alignment",
-      url: FILE[0].url,
+      url: FILE[0].url ,
       metadata: {...file}
     }) // PAIRWISE
   });

@@ -24,7 +24,10 @@
   import BrowserView from "./components/BrowserView.svelte";
   // import SplashBanner from "./UI/SplashBanner.svelte";
   import LandingPage from "./UI/LandingPage.svelte";
+  import DataReactiveSearch from './components/DataReactiveSearch.svelte';
 
+  let dataTableSelection = [];
+  let ncov_tree_metadata = [];
   let clicked = "nothing yet";
   let myDrawer;
   let myDrawerOpen = false;
@@ -88,21 +91,50 @@
     unsubscribe();
   });
 
+  function receiveMessage(event) {
+    if (virusName === 'ncov') {
+      dataTableSelection = JSON.parse(event.data);
+      console.log(dataTableSelection);
+      Cart.addDataItems(dataTableSelection);
+    }
+  }
+
+  async function getCovidMetadata() {
+      const TREE_METADATA_URL = 'https://target.wustl.edu/treeview.json';
+
+      const res = await fetch(TREE_METADATA_URL);
+      const response = await res.json();
+
+      if (res.ok) {
+        return response;
+      } else {
+        throw new Error(response);
+      }
+    } 
+
   onMount(async () => {
+
+    window.addEventListener("message", receiveMessage, false); // listen to data selection from Data Table iframe
+    ncov_tree_metadata = await getCovidMetadata();
+
     let FILESJSON_not_ncov = require("./json/pairwise.json");
-    const pairwise_ncov_res = await fetch('https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/updated.json'); // TEST
-    const pairwise_ncov_json = await pairwise_ncov_res.json();
-    FILESJSON = [...FILESJSON_not_ncov, ...pairwise_ncov_json];
+    // const pairwise_ncov_res = await fetch('https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/updated.json'); // TEST
+    // const pairwise_ncov_res = await fetch('https://wangftp.wustl.edu/~cfan/datatable/latest/updated.json'); // TEST
+    // const pairwise_ncov_json = await pairwise_ncov_res.json();
+    // FILESJSON = [...FILESJSON_not_ncov, ...pairwise_ncov_json];
+    FILESJSON = [...FILESJSON_not_ncov];
 
     await virusList.forEach(async reference => {
       let fileHandle;
       if (reference === 'SARS-CoV-2') {
         // const res = await fetch(`https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/latest/metadata.json`);
-        const res = await fetch(`https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/metadata.json`); // TEST
-		    fileHandle = await res.json();
+        // const res = await fetch(`https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/metadata.json`); // TEST
+        // const res = await fetch(`https://wangftp.wustl.edu/~cfan/datatable/latest/metadata_v3.json`); // TEST
+		    // fileHandle = await res.json();
       } else {
         fileHandle = require(`./metadata/${fullNames[reference].id}_all_skinny.json`);
       }
+      
       DATA[fullNames[reference].id] = fileHandle.map((d, i) => {
         const {
           accession,
@@ -126,7 +158,29 @@
         tmp.Country = country !== undefined ? country[0] : "N/A";
         tmp.db_xref = db_xref !== undefined ? db_xref[0] : "N/A";
         tmp.Host = host !== undefined ? host[0] : "N/A";
-        return tmp;
+        /**
+accession: "EPI_ISL_450699"
+clade: "unassigned"
+collection_date: (3) ["2020", "04", "29"]
+database: "GISAID"
+isolate: "hCoV-19/USA/CA-CZB-1195/2020"
+location: (4) ["North America", "USA", "California", "San Francisco"]
+snv: "C1059T, C3037T, C11916T, ..."
+snv.all: (10) ["C241T", "C1059T", "C3037T", "C11916T", "C14408T", "C18998T", "A23403G", "G25563T", "G25947C", "G29540A"]
+treeview: 0
+*/
+        // const { accession, clade, collection_date, database, isolate, treeview,  } = d;
+        // let tmp = { _id: accession };
+        // tmp.Accession = accession;
+        // tmp.Organism = reference || "";
+        // tmp.Molecule_Type = "N/A";
+        // tmp.Strain = reference || "N/A";
+        // tmp.Isolate = isolate;
+        // tmp.Collection_Date = Array.isArray(collection_date) ? collection_date.join('-') : "N/A";
+        // tmp.Country = location[1] || "N/A";
+        // tmp.db_xref = "N/A";
+        // tmp.Host = "Homo sapiens";
+        // return tmp;
       });
     })
   })
@@ -191,7 +245,7 @@
       k: 0,
       icon: "slideshow",
       label: "Video tutorials",
-      url: "https://youtu.be/cOv8W28GzwM"
+      url: "https://www.youtube.com/channel/UCuIQetcmC5h1h_LXmhrlKrA"
     },
     {
       k: 1,
@@ -271,6 +325,7 @@
           <Graphic class="material-icons" aria-hidden="true">inbox</Graphic>
           <Text>Data Table</Text>
         </Item>
+        {#if virusFullName !== 'SARS-CoV-2'}
         <Item
           href="javascript:void(0)"
           on:click={() => setActive(3)}
@@ -280,6 +335,7 @@
           </Graphic>
           <CartIndicator />
         </Item>
+        {/if}
         <Item
           href="javascript:void(0)"
           on:click={() => setActive(4)}
@@ -317,16 +373,20 @@
             </div>
           {:else if active === 1}
             <div style="height: 800px;" class="container">
-              <!-- {#if virusFullName === 'SARS-CoV-2'}
-                <TreeView virusName={virusFullName}/>
+              {#if virusFullName === 'SARS-CoV-2'}
+                <TreeView virusName={virusFullName} treeMetadata={ncov_tree_metadata}/>
               {:else}
-                <LargeTreeContainer {virusName} DATA={DATA[virusName]} {FILESJSON}/>
-              {/if}               -->
-              <TreeView virusName={virusFullName}/>
+                <TreeView virusName={virusFullName}/>
+              {/if}              
             </div>
           {:else if active === 2}
             <div style="height: 800px;">
-              <DataTable {virusName} DATA={DATA[virusName]} {FILESJSON}/>
+              {#if virusFullName !== 'SARS-CoV-2'}
+                <DataTable {virusName} DATA={DATA[virusName]} {FILESJSON}/>
+              {:else}
+                <div/>
+                <!-- <DataTable {virusName} DATA={DATA[virusName]} {FILESJSON}/> -->
+              {/if} 
             </div>
           {:else if active === 3}
             <div style="height: 100%;" class="container">
@@ -338,8 +398,16 @@
         </div>
         <div class="w-full xl:w-1/5 lg:items-start" />
       </div>
+      <!-- <div style="height: 100%;" class:hidden={active !== 1}>
+        <TreeView virusName={virusFullName} dataSelection={dataTableSelection} {covid_metadata}/>
+      </div> -->
+      <div style="height: 100%;" class:hidden={active !== 2}>
+        {#if virusFullName === 'SARS-CoV-2'}
+          <DataReactiveSearch/>
+        {/if}
+      </div>
       <div style="height: 100%;" class:hidden={active !== 4}>
-        <BrowserView {virusName} {active} {FILESJSON}/>
+        <BrowserView {virusName} {active} {FILESJSON} dataSelection={dataTableSelection}/>
       </div>
     </main>
   </AppContent>

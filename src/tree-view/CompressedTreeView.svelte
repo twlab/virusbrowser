@@ -11,11 +11,13 @@
   let TREE_URL = 'https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/strain_updated.fa.tree';
   const WWW_DIR_TREE = 'https://wangftp.wustl.edu/~dpuru/viralGateway/';
   const WWW_DIR_JSON = 'https://wangftp.wustl.edu/~cfan/viralBrowser/sme/datatable_json/';
-  let CRITERIA = { id: 1, text: 'Clade', key: 'clade' };
+  let CRITERIA = { id: 1, text: 'Clade', key: 'Clade' };
+  // let CRITERIA = { id: 2, text: 'Location', key: 'Location' };
   let METADATA = [];
   let TREE;
   let virusDisplayed;
   export let virusName;
+  export let treeMetadata = [];
   let promise = Promise.all([getMetadata(), getTree()]);
 
   function handleCriteriaChange(event) {
@@ -24,6 +26,9 @@
       CRITERIA.leaflet = 0;
     }
   }
+
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
 
   // function metadataByCriteria() {
   //   // metadata should exist
@@ -40,11 +45,16 @@
 
 
   async function getMetadata() {
+    if (virusName === 'SARS-CoV-2') {
+      return treeMetadata;
+    }
+
     if (virusName !== 'SARS-CoV-2') {
       METADATA_URL = WWW_DIR_JSON + virusName + "_v2.json";
-    } else {
-        METADATA_URL = 'https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/metadata_v2.json';
-    }
+    } 
+    // else {
+    //     METADATA_URL = 'https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/metadata_v2.json';
+    // }
       const res = await fetch(METADATA_URL);
       const response = await res.json();
 
@@ -134,6 +144,10 @@
   <main>
 
     <h1>Tree View</h1>
+    {#if isSafari}
+      <p> Please use Chrome Browser for this feature.</p>
+    {:else}
+    
 
     {#await promise}
       <div>
@@ -158,5 +172,6 @@
     {:catch error}
       <p style="color: red">{error.message}</p>
     {/await}
+    {/if}
   </main>
 </div>
