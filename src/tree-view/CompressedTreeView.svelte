@@ -7,18 +7,19 @@
   import Dropdown from "./Dropdown.svelte";
   // import "smelte/src/tailwind.css";
   import { COLORS } from './scripts/colors';
-  let METADATA_URL = 'https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/metadata_v2.json';
-  let TREE_URL = 'https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/strain_updated.fa.tree';
-  const WWW_DIR_TREE = 'https://wangftp.wustl.edu/~dpuru/viralGateway/';
-  const WWW_DIR_JSON = 'https://wangftp.wustl.edu/~cfan/viralBrowser/sme/datatable_json/';
+  // let METADATA_URL = 'https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/metadata_v2.json';
+  // let TREE_URL = 'https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/strain_updated.fa.tree';
+  // const WWW_DIR_TREE = 'https://wangftp.wustl.edu/~dpuru/viralGateway/';
+  // const WWW_DIR_JSON = 'https://wangftp.wustl.edu/~cfan/viralBrowser/sme/datatable_json/';
   let CRITERIA = { id: 1, text: 'Clade', key: 'Clade' };
   // let CRITERIA = { id: 2, text: 'Location', key: 'Location' };
-  let METADATA = [];
+  export let METADATA = [];
   let TREE;
   let virusDisplayed;
   export let virusName;
-  export let treeMetadata = [];
-  let promise = Promise.all([getMetadata(), getTree()]);
+  // export let treeMetadata = [];
+  // let promise = Promise.all([getMetadata(), getTree()]);
+  let promise = Promise.all([getTree()]);
 
   function handleCriteriaChange(event) {
     CRITERIA = event.detail;
@@ -43,56 +44,60 @@
   //   terms = [...new Set(metadataByCriteria)];
   // }
 
-
-  async function getMetadata() {
-    if (virusName === 'SARS-CoV-2') {
-      return treeMetadata;
-    }
-
-    if (virusName !== 'SARS-CoV-2') {
-      METADATA_URL = WWW_DIR_JSON + virusName + "_v2.json";
-    } 
-    // else {
-    //     METADATA_URL = 'https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/metadata_v2.json';
-    // }
-      const res = await fetch(METADATA_URL);
-      const response = await res.json();
-
-      if (res.ok) {
-        return response;
-      } else {
-        throw new Error(response);
-      }
-    } 
-	
   async function getTree() {
-    if (virusName !== 'SARS-CoV-2') {
-      TREE_URL = WWW_DIR_TREE + "tree/" + virusName + ".tree";
-    } else {
-        TREE_URL = 'https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/strain_updated.fa.tree';
-    }
-		const res = await fetch(TREE_URL);
-    const text = await res.text();
-
-		if (res.ok) {
-			return text;
-		} else {
-			throw new Error(text);
-		}
+    console.log('getting tree...');
+    TREE = require(`../json/${virusName}.tree.js`);
+    // console.log(TREE)
   }
 
-  // onMount(() => {
-  //   promise = Promise.all([getMetadata(), getTree()]);
-  //   const [METADATA, TREE] = promise;
-  // })
+  // async function getMetadata() {
+  //   if (virusName === 'SARS-CoV-2') {
+  //     return treeMetadata;
+  //   }
+
+  //   if (virusName !== 'SARS-CoV-2') {
+  //     METADATA_URL = WWW_DIR_JSON + virusName + "_v2.json";
+  //   } 
+  //   // else {
+  //   //     METADATA_URL = 'https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/metadata_v2.json';
+  //   // }
+  //     const res = await fetch(METADATA_URL);
+  //     const response = await res.json();
+
+  //     if (res.ok) {
+  //       return response;
+  //     } else {
+  //       throw new Error(response);
+  //     }
+  //   } 
+	
+  // async function getTree() {
+  //   if (virusName !== 'SARS-CoV-2') {
+  //     TREE_URL = WWW_DIR_TREE + "tree/" + virusName + ".tree";
+  //   } else {
+  //       TREE_URL = 'https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/strain_updated.fa.tree';
+  //   }
+	// 	const res = await fetch(TREE_URL);
+  //   const text = await res.text();
+
+	// 	if (res.ok) {
+	// 		return text;
+	// 	} else {
+	// 		throw new Error(text);
+	// 	}
+  // }
+
   beforeUpdate(async () => {
     if (virusName !== virusDisplayed) {
-      CRITERIA = { id: 1, text: 'Clade', key: 'clade' };
+      CRITERIA = { id: 1, text: 'Clade', key: 'Clade' };
       virusDisplayed = virusName;
-      promise = Promise.all([getMetadata(), getTree()]);
-      const [metadata_response, tree_response] = await promise;
-      METADATA = metadata_response;
-      TREE = tree_response;
+      console.log('and working here..');
+      TREE = require(`../json/${virusName}.tree.js`)
+      console.log(METADATA);
+      // promise = Promise.all([getMetadata(), getTree()]);
+      // const [metadata_response, tree_response] = await promise;
+      // METADATA = metadata_response;
+      // TREE = tree_response;
     }
   })
   
@@ -144,10 +149,10 @@
   <main>
 
     <h1>Tree View</h1>
-    {#if isSafari}
+    <!-- {#if isSafari}
       <p> Please use Chrome Browser for this feature.</p>
     {:else}
-    
+     -->
 
     {#await promise}
       <div>
@@ -172,6 +177,6 @@
     {:catch error}
       <p style="color: red">{error.message}</p>
     {/await}
-    {/if}
+    <!-- {/if} -->
   </main>
 </div>

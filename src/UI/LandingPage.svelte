@@ -216,7 +216,8 @@
     <div class="tabs is-centered">
       <ul>
       <p class="has-text-centered mb-10 section-feature-grey">
-      <a class="button cta is-large rounded secondary-btn raised" href="https://www.youtube.com/watch?v=C-124zMbeto">
+      <!-- <a class="button cta is-large rounded secondary-btn raised" href="https://www.youtube.com/watch?v=C-124zMbeto"> -->
+      <a class="button cta is-large rounded secondary-btn raised" href="https://youtu.be/-DdH3mxBBK0">
         Quick walkthrough
       </a>
     </p>
@@ -291,7 +292,7 @@
                 <p>Completed genomes available to view in an interactive phylogenetic tree view</p>
             </div>
             <div class="card-action">
-              <a href="http://data.Nextstrain.org/ncov.json" class="button btn-align-md frost-btn raised">Learn more</a>
+              <a href="http://nextstrain.org" class="button btn-align-md frost-btn raised">Learn more</a>
             </div>
           </div>
         </div>

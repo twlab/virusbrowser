@@ -1,64 +1,14 @@
-# svelte app
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template-webpack.
+## The WashU Virus Genome Browser
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+This Github repository hosts all of our publicly available scripts, such as those for generating json files and converting your pairwise alignment results into SNV tracks for upload onto the browser. 
 
-```bash
-npx degit sveltejs/template-webpack svelte-app
-cd svelte-app
-```
+This is also where users can submit issues and feedback.
 
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
+- [Documentation for the WashU Virus Genome Browser](https://virusgateway.readthedocs.io/en/latest/index.html)
+- [A series of short tutorial videos is available](https://www.youtube.com/channel/UCuIQetcmC5h1h_LXmhrlKrA)
 
-
-## Get started
-
-Install the dependencies...
-
-```bash
-cd svelte-app
-npm install
-```
-
-...then start webpack:
-
-```bash
-npm run dev
-```
-
-Navigate to [localhost:8080](http://localhost:8080). You should see your app running. Edit a component file in `src`, save it, and the page should reload with your changes.
+Please keep in mind that we are actively updating the browser, adding new data tracks as data are released to the public. 
 
 
-## Deploying to the web
-
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-now
-```
-
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public
-```
+Any comments or suggestions for additional tracks can be directed to jflynn@wustl.edu or dpurushotham@wustl.edu

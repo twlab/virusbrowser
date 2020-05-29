@@ -10,6 +10,7 @@
   export let virusName;
   export let active; // 4 if tab is active
   export let FILESJSON;
+  export let virusFullName;
   let DATA;
   let uploaded = true;
   let error;
@@ -31,8 +32,17 @@
 	// };
 	
 	onMount(() => {
-    console.log(JSON.parse(sessionStorage.getItem('eg-react-session')));
-    const SOURCE="https://virusgateway-data-table.now.sh";
+    const SOURCE=`https://virusgateway-data-table.now.sh/?VirusName=%5B%22${virusFullName}%22%5D`;
+    // const SOURCE="http://localhost:3000";
+
+		content = `<iframe
+																id="data-search-embed"
+																src="${SOURCE}"
+																allowfullscreen>
+                              </iframe>`;
+  })
+	afterUpdate(() => {
+    const SOURCE=`https://virusgateway-data-table.now.sh/?VirusName=%5B%22${virusFullName}%22%5D`;
     // const SOURCE="http://localhost:3000";
 
 		content = `<iframe

@@ -33,6 +33,7 @@
   let myDrawerOpen = false;
   let active = 0;
   let FILESJSON = [];
+  let TREEVIEW_METADATA = {};
   function setActive(value) {
     active = value;
     // myDrawerOpen = false;
@@ -79,7 +80,7 @@
     virusFullName = event.detail;
     virusName = fullNames[event.detail].id;
   
-    Cart.addDataItems([]);
+    Cart.addDataItems([]); // reset cart
     keyedTabsActive = iconTabs[2];
   }
 
@@ -92,11 +93,9 @@
   });
 
   function receiveMessage(event) {
-    if (virusName === 'ncov') {
       dataTableSelection = JSON.parse(event.data);
       console.log(dataTableSelection);
       Cart.addDataItems(dataTableSelection);
-    }
   }
 
   async function getCovidMetadata() {
@@ -113,76 +112,77 @@
     } 
 
   onMount(async () => {
-
     window.addEventListener("message", receiveMessage, false); // listen to data selection from Data Table iframe
-    ncov_tree_metadata = await getCovidMetadata();
+    TREEVIEW_METADATA = require("./json/treeview.metadata.json"); // /Users/dpuru/WashU-COVID-Research-Commons/ES-upload, node print_treeview_records.js --notest | jq . > treeview.metadata.json
 
-    let FILESJSON_not_ncov = require("./json/pairwise.json");
-    // const pairwise_ncov_res = await fetch('https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/updated.json'); // TEST
-    // const pairwise_ncov_res = await fetch('https://wangftp.wustl.edu/~cfan/datatable/latest/updated.json'); // TEST
-    // const pairwise_ncov_json = await pairwise_ncov_res.json();
-    // FILESJSON = [...FILESJSON_not_ncov, ...pairwise_ncov_json];
-    FILESJSON = [...FILESJSON_not_ncov];
+    // ncov_tree_metadata = await getCovidMetadata();
 
-    await virusList.forEach(async reference => {
-      let fileHandle;
-      if (reference === 'SARS-CoV-2') {
-        // const res = await fetch(`https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/latest/metadata.json`);
-        // const res = await fetch(`https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/metadata.json`); // TEST
-        // const res = await fetch(`https://wangftp.wustl.edu/~cfan/datatable/latest/metadata_v3.json`); // TEST
-		    // fileHandle = await res.json();
-      } else {
-        fileHandle = require(`./metadata/${fullNames[reference].id}_all_skinny.json`);
-      }
+//     let FILESJSON_not_ncov = require("./json/pairwise.json");
+//     // const pairwise_ncov_res = await fetch('https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/updated.json'); // TEST
+//     // const pairwise_ncov_res = await fetch('https://wangftp.wustl.edu/~cfan/datatable/latest/updated.json'); // TEST
+//     // const pairwise_ncov_json = await pairwise_ncov_res.json();
+//     // FILESJSON = [...FILESJSON_not_ncov, ...pairwise_ncov_json];
+//     FILESJSON = [...FILESJSON_not_ncov];
+
+//     await virusList.forEach(async reference => {
+//       let fileHandle;
+//       if (reference === 'SARS-CoV-2') {
+//         // const res = await fetch(`https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/latest/metadata.json`);
+//         // const res = await fetch(`https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/metadata.json`); // TEST
+//         // const res = await fetch(`https://wangftp.wustl.edu/~cfan/datatable/latest/metadata_v3.json`); // TEST
+// 		    // fileHandle = await res.json();
+//       } else {
+//         fileHandle = require(`./metadata/${fullNames[reference].id}_all_skinny.json`);
+//       }
       
-      DATA[fullNames[reference].id] = fileHandle.map((d, i) => {
-        const {
-          accession,
-          organism,
-          isolate,
-          mol_type,
-          strain,
-          db_xref,
-          collection_date,
-          country,
-          host
-        } = d;
-        let tmp = { _id: i + 1 };
-        tmp.Accession = accession;
-        tmp.Organism = organism[0] || "";
-        tmp.Molecule_Type = mol_type !== undefined ? mol_type[0] : "N/A";
-        tmp.Strain = strain !== undefined ? strain[0] : "N/A";
-        tmp.Isolate = isolate !== undefined ? isolate[0] : "N/A";
-        tmp.Collection_Date =
-          collection_date !== undefined ? collection_date[0] : "N/A";
-        tmp.Country = country !== undefined ? country[0] : "N/A";
-        tmp.db_xref = db_xref !== undefined ? db_xref[0] : "N/A";
-        tmp.Host = host !== undefined ? host[0] : "N/A";
-        /**
-accession: "EPI_ISL_450699"
-clade: "unassigned"
-collection_date: (3) ["2020", "04", "29"]
-database: "GISAID"
-isolate: "hCoV-19/USA/CA-CZB-1195/2020"
-location: (4) ["North America", "USA", "California", "San Francisco"]
-snv: "C1059T, C3037T, C11916T, ..."
-snv.all: (10) ["C241T", "C1059T", "C3037T", "C11916T", "C14408T", "C18998T", "A23403G", "G25563T", "G25947C", "G29540A"]
-treeview: 0
-*/
-        // const { accession, clade, collection_date, database, isolate, treeview,  } = d;
-        // let tmp = { _id: accession };
-        // tmp.Accession = accession;
-        // tmp.Organism = reference || "";
-        // tmp.Molecule_Type = "N/A";
-        // tmp.Strain = reference || "N/A";
-        // tmp.Isolate = isolate;
-        // tmp.Collection_Date = Array.isArray(collection_date) ? collection_date.join('-') : "N/A";
-        // tmp.Country = location[1] || "N/A";
-        // tmp.db_xref = "N/A";
-        // tmp.Host = "Homo sapiens";
-        // return tmp;
-      });
-    })
+//       DATA[fullNames[reference].id] = fileHandle.map((d, i) => {
+//         const {
+//           accession,
+//           organism,
+//           isolate,
+//           mol_type,
+//           strain,
+//           db_xref,
+//           collection_date,
+//           country,
+//           host
+//         } = d;
+//         let tmp = { _id: i + 1 };
+//         tmp.Accession = accession;
+//         tmp.Organism = organism[0] || "";
+//         tmp.Molecule_Type = mol_type !== undefined ? mol_type[0] : "N/A";
+//         tmp.Strain = strain !== undefined ? strain[0] : "N/A";
+//         tmp.Isolate = isolate !== undefined ? isolate[0] : "N/A";
+//         tmp.Collection_Date =
+//           collection_date !== undefined ? collection_date[0] : "N/A";
+//         tmp.Country = country !== undefined ? country[0] : "N/A";
+//         tmp.db_xref = db_xref !== undefined ? db_xref[0] : "N/A";
+//         tmp.Host = host !== undefined ? host[0] : "N/A";
+//         /**
+// accession: "EPI_ISL_450699"
+// clade: "unassigned"
+// collection_date: (3) ["2020", "04", "29"]
+// database: "GISAID"
+// isolate: "hCoV-19/USA/CA-CZB-1195/2020"
+// location: (4) ["North America", "USA", "California", "San Francisco"]
+// snv: "C1059T, C3037T, C11916T, ..."
+// snv.all: (10) ["C241T", "C1059T", "C3037T", "C11916T", "C14408T", "C18998T", "A23403G", "G25563T", "G25947C", "G29540A"]
+// treeview: 0
+// */
+//         // const { accession, clade, collection_date, database, isolate, treeview,  } = d;
+//         // let tmp = { _id: accession };
+//         // tmp.Accession = accession;
+//         // tmp.Organism = reference || "";
+//         // tmp.Molecule_Type = "N/A";
+//         // tmp.Strain = reference || "N/A";
+//         // tmp.Isolate = isolate;
+//         // tmp.Collection_Date = Array.isArray(collection_date) ? collection_date.join('-') : "N/A";
+//         // tmp.Country = location[1] || "N/A";
+//         // tmp.db_xref = "N/A";
+//         // tmp.Host = "Homo sapiens";
+//         // return tmp;
+//       });
+//     })
   })
 
   const TRACKS = sessionStorage.getItem("tracks");
@@ -325,8 +325,7 @@ treeview: 0
           <Graphic class="material-icons" aria-hidden="true">inbox</Graphic>
           <Text>Data Table</Text>
         </Item>
-        {#if virusFullName !== 'SARS-CoV-2'}
-        <Item
+        <!-- <Item
           href="javascript:void(0)"
           on:click={() => setActive(3)}
           activated={active === 3}>
@@ -334,8 +333,8 @@ treeview: 0
             shopping_cart
           </Graphic>
           <CartIndicator />
-        </Item>
-        {/if}
+        </Item> -->
+        
         <Item
           href="javascript:void(0)"
           on:click={() => setActive(4)}
@@ -374,7 +373,7 @@ treeview: 0
           {:else if active === 1}
             <div style="height: 800px;" class="container">
               {#if virusFullName === 'SARS-CoV-2'}
-                <TreeView virusName={virusFullName} treeMetadata={ncov_tree_metadata}/>
+                <TreeView virusName={virusFullName} METADATA={TREEVIEW_METADATA[virusFullName]}/>
               {:else}
                 <TreeView virusName={virusFullName}/>
               {/if}              
@@ -382,7 +381,7 @@ treeview: 0
           {:else if active === 2}
             <div style="height: 800px;">
               {#if virusFullName !== 'SARS-CoV-2'}
-                <DataTable {virusName} DATA={DATA[virusName]} {FILESJSON}/>
+                <!-- <DataTable {virusName} DATA={DATA[virusName]} {FILESJSON}/> -->
               {:else}
                 <div/>
                 <!-- <DataTable {virusName} DATA={DATA[virusName]} {FILESJSON}/> -->
@@ -399,15 +398,16 @@ treeview: 0
         <div class="w-full xl:w-1/5 lg:items-start" />
       </div>
       <!-- <div style="height: 100%;" class:hidden={active !== 1}>
-        <TreeView virusName={virusFullName} dataSelection={dataTableSelection} {covid_metadata}/>
+        <TreeView virusName={virusFullName} dataSelection={dataTableSelection} METADATA={TREEVIEW_METADATA[virusFullName]}/>
       </div> -->
       <div style="height: 100%;" class:hidden={active !== 2}>
-        {#if virusFullName === 'SARS-CoV-2'}
-          <DataReactiveSearch/>
-        {/if}
+        <!-- {#if virusFullName === 'SARS-CoV-2'} -->
+          <DataReactiveSearch { virusFullName }/>
+        <!-- {/if} -->
       </div>
       <div style="height: 100%;" class:hidden={active !== 4}>
-        <BrowserView {virusName} {active} {FILESJSON} dataSelection={dataTableSelection}/>
+        <!-- <BrowserView {virusName} {active} {FILESJSON} dataSelection={dataTableSelection}/> -->
+        <BrowserView {virusName} {active}/>
       </div>
     </main>
   </AppContent>

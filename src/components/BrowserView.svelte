@@ -45,21 +45,14 @@
   
   afterUpdate(() => {
     if (change_occured && active === 4) {
-      let generatedDatahub;
-      if (virusName === 'ncov') {
-        console.log(dataSelection)
-        generatedDatahub = createDatahubCustom(dataSelection, GENOME_NAME_MAP[virusName]); //SARS-CoV-2 only
-      } else {
-        generatedDatahub = saveDataOnWindow(DATA_FOR_DATAHUB, GENOME_NAME_MAP[virusName], FILESJSON);
-      }
       change_occured = false;
       uploaded = false;
       const UUID = uuid.v4();
       // let { tracks } = saveDataOnWindow($Cart.data, virusName, FILESJSON);
       // console.log($Cart.data);
-      console.log(DATA_FOR_DATAHUB);
+      // console.log(DATA_FOR_DATAHUB);
       // let generatedDatahub = saveDataOnWindow($Cart.data, GENOME_NAME_MAP[virusName], FILESJSON);
-      // generatedDatahub = saveDataOnWindow(DATA_FOR_DATAHUB, GENOME_NAME_MAP[virusName], FILESJSON);
+      const generatedDatahub = createDatahubCustom($Cart.data, GENOME_NAME_MAP[virusName]);
       console.log(generatedDatahub);
       console.log(UUID);
       // let generatedDatahub = createDatahub(content.tracks);

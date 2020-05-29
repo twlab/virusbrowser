@@ -1,4 +1,5 @@
 <script>
+  import { onMount, beforeUpdate } from 'svelte'; 
   import { COLORS } from './scripts/colors';
   export let CRITERIA;
   export let metadata;
@@ -13,6 +14,11 @@
       })
       terms = [...new Set(metadataByCriteria)];
   }
+
+  console.log(CRITERIA)
+  onMount(() => {
+    console.log(metadata);
+  })
 
   const monthName = {
     '01': 'January, 2020',

@@ -23,6 +23,7 @@
     terms = [...new Set(metadataByCriteria)];
   }
   const newick = createNewick(tree);
+  // console.log(newick);
   // const HARD_CODED_TREE = require(`../json/${virusName}.tree.js`);
 
   // if(virusName === 'SARS-CoV-2') {
@@ -31,15 +32,19 @@
   //     newick = createNewick(tree);
   // }
 
+
   function drawTree() {
+    console.log('drawing...')
     const selectedData = $Cart.data;
-    const constructedTree = new Phylogram(selector, newick, {
-      width: window.innerWidth * 0.5,
-      height: window.innerHeight * 0.8,
-      skipLabels: true,
-      skipTicks: false,
-      skipBranchLengthScaling: false
-    }, d3.scale.ordinal().domain(terms).range(COLORS), metadata, CRITERIA, selectedData).build();
+    setTimeout(() => {
+      const constructedTree = new Phylogram(selector, newick, {
+        width: window.innerWidth * 0.5,
+        height: window.innerHeight * 0.8,
+        skipLabels: true,
+        skipTicks: false,
+        skipBranchLengthScaling: false
+      }, d3.scale.ordinal().domain(terms).range(COLORS), metadata, CRITERIA, selectedData).build();
+    }, 100)
   }
 
   afterUpdate(() => {
