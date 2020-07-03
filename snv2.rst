@@ -34,21 +34,21 @@ The 4th column is mapped to colors through specifying "segmentColors" in the "op
 However, if you are using the SNV2 track to show AA mutations, you don't need to upload as json, because we have default color code mapping: 
 
 .. code-block:: JSON
-	"options": {
-	    "segmentColors": {
-	        "un_sequenced": "Linen",
-	        "noncoding_insertion": "LightGrey",
-	        "noncoding_deletion": "LightGrey",
-	        "noncoding_mismatch": "LightGrey",
-	        "silent": "DimGrey",
-	        "frameshift": "FireBrick",
-	        "missense": "CornflowerBlue",
-	        "AA_deletion": "CornflowerBlue",
-	        "AA_insertion": "CornflowerBlue",
-	        "N_mask": "Linen",
-	        "deletion_mask": "Linen"
-	    }
-	}
+ 	"options": {
+ 	    "segmentColors": {
+ 	        "un_sequenced": "Linen",
+ 	        "noncoding_insertion": "LightGrey",
+ 	        "noncoding_deletion": "LightGrey",
+ 	        "noncoding_mismatch": "LightGrey",
+ 	        "silent": "DimGrey",
+ 	        "frameshift": "FireBrick",
+ 	        "missense": "CornflowerBlue",
+ 	        "AA_deletion": "CornflowerBlue",
+ 	        "AA_insertion": "CornflowerBlue",
+ 	        "N_mask": "Linen",
+ 	        "deletion_mask": "Linen"
+ 	    }
+ 	}
 
 For a quick demo: 
 
