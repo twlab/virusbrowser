@@ -89,3 +89,6 @@ Scripts for generating snv2 tracks
 
 All of our premade SNV2 tracks that you can see in :code:`Tracks -> Public Data Hubs` are generated through a set of scripts that can be found at https://github.com/debugpoint136/WashU-Virus-Genome-Browser/tree/master/scripts/snv2/
 
+The main function :code:`tsv2snv2.2()`, which we used to generate all snv2 files in the public data hubs, is in :code:`snv2_public_7_2_20.R`, while the helper functions are in :code:`snv2_helper_7_2_20.R`. To generate the tsv file with ORF information required in the main function, visit :code:`snv2_orf_7_2_20.R`
+
+The arguments of `tsv2snv2.2()`
