@@ -55,16 +55,16 @@ For a quick demo:
 zip it and index it using bgzip and tabix (https://epigenomegateway.readthedocs.io/en/latest/tracks.html?highlight=tabix#prepare-track-files). Then put it into a Json like this: 
 .. code-block:: JSON
 
-	[{
-        "name": "duck",
-        "type": "snv2",
-        "url": "http://your.url.to.duck.file/duck.snv2.gz",
-        "options": {
-            "segmentColors": {
-                "duck": "red"
-            }
-        }
-	}]
+  [{
+         "name": "duck",
+         "type": "snv2",
+         "url": "http://your.url.to.duck.file/duck.snv2.gz",
+         "options": {
+             "segmentColors": {
+                 "duck": "red"
+             }
+         }
+  }]
 
 
 upload the track through Tracks -> Remote Tracks -> Add Remote Data Hub
