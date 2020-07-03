@@ -66,6 +66,7 @@ zip it and index it using bgzip and tabix (https://epigenomegateway.readthedocs.
         }
 	}]
 
+
 upload the track through Tracks -> Remote Tracks -> Add Remote Data Hub
 You will see: 
 
