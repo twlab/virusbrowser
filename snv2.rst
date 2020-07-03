@@ -1,10 +1,5 @@
 SNV2 track
 ==========
-.. code-block:: JSON
-
-  {
-    "key": "value"
-  }
 
 Functionality of SNV2 tracks
 ----------------------------
@@ -54,10 +49,12 @@ However, if you are using the SNV2 track to show AA mutations, you don't need to
 For a quick demo: 
 
 .. code-block:: bash
+
 	NC_045512.2	10000	10001	duck	cyberduck	cyberduck quit unexpectedly
 
 zip it and index it using bgzip and tabix (https://epigenomegateway.readthedocs.io/en/latest/tracks.html?highlight=tabix#prepare-track-files). Then put it into a Json like this: 
 .. code-block:: JSON
+
 	[{
         "name": "duck",
         "type": "snv2",
@@ -76,6 +73,7 @@ You will see:
 
 One of our snv2 tracks for SARS-CoV-2 is coded like this: 
 .. code-block:: bash
+
 	NC_045512.2     0       16      un_sequenced            un_sequenced
 	NC_045512.2     240     241     noncoding_mismatch      mismatch: T     NC_045512.2:240-241 | ORF:noncoding | C > T | noncoding_mismatch
 	NC_045512.2     3036    3037    silent  mismatch: T     NC_045512.2:3034-3037 | ORF1ab:F924 | TTC > TTT | F > F | silent ; NC_045512.2:3034-3037 | ORF1a:F924 | TTC > TTT | F > F | silent
