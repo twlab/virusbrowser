@@ -1,5 +1,10 @@
 SNV2 track
 ==========
+.. code-block:: JSON
+
+  {
+    "key": "value"
+  }
 
 Functionality of SNV2 tracks
 ----------------------------
