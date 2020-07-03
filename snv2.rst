@@ -53,6 +53,7 @@ For a quick demo:
 	NC_045512.2	10000	10001	duck	cyberduck	cyberduck quit unexpectedly
 
 zip it and index it using bgzip and tabix (https://epigenomegateway.readthedocs.io/en/latest/tracks.html?highlight=tabix#prepare-track-files). Then put it into a Json like this: 
+
 .. code-block:: JSON
 
   [{
@@ -73,6 +74,7 @@ You will see:
 .. image:: _static/snv2_duck.png
 
 One of our snv2 tracks for SARS-CoV-2 is coded like this: 
+
 .. code-block:: bash
 
 	NC_045512.2     0       16      un_sequenced            un_sequenced
