@@ -13,7 +13,7 @@ options(stringsAsFactors = F)
 #########################
 
 
-tsv2snv2.2 <- function(tsv.vec, ref.fa, ref.orf.table, min.contig.head.tail = 15, n.mask.ext = 1, out.snv2.vec,
+tsv2snv2.2 <- function(tsv.vec, ref.fa, ref.orf.table, min.contig.head.tail = 15, out.snv2.vec,
                        hier.df, thread.master, thread.sub, 
                        bedtools.path ,
                        return.df = F) {
