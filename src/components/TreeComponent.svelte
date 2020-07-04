@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { watchResize } from "svelte-watch-resize";
   let node;
+  let loading = true;
   let leftWidth;
   import { drawTreeWidget } from "../scripts/d3treeViewWidget";
   function handleLeftResize(node) {
@@ -30,6 +31,9 @@
   }
 </style>
 
+{#if loading}
+  Please wait...
+{/if}
 <div
   class="content"
   bind:this={node}

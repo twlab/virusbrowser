@@ -1,5 +1,6 @@
 // import CATEGORIES from '../json/categories.json';
 import {WANGFTP_URL_BASE, PUBLIC_FOLDER, IEDP_URL} from '../config';
+import DEFAULT from './default.json';
 
 export const saveDataOnWindow = function (FILES, virusName, FILESJSON) {
   let tracks = [];
@@ -21,21 +22,30 @@ export const saveDataOnWindow = function (FILES, virusName, FILESJSON) {
       type: 'pairwise',
       showOnHubLoad: true,
       name: file.Accession + " pairwise alignment",
-      url: FILE[0].url,
+      url: FILE[0].url ,
       metadata: {...file}
     }) // PAIRWISE
   });
-  tracks.push({type: 'bed', name: 'putative_immune_epitopes', url: IEDP_URL}) // immune epitopes
-  tracks.push({type: 'bedGraph', name: `${virusName}_GC_content`, url: `${WANGFTP_URL_BASE}~dpuru${PUBLIC_FOLDER}${virusName}/GC_content/${virusName}_CGpct.bedgraph.sort.gz`}) // GC content
+  // tracks.push({type: 'bed', name: 'putative_immune_epitopes', url: IEDP_URL}) // immune epitopes
+  // tracks.push({type: 'bedGraph', name: `${virusName}_GC_content`, url: `${WANGFTP_URL_BASE}~dpuru${PUBLIC_FOLDER}${virusName}/GC_content/${virusName}_CGpct.bedgraph.sort.gz`}) // GC content
 
   let tmpVar = {
     reference: virusName,
     tracks: tracks
   }
 
-  localStorage.setItem('tracks', JSON.stringify(tracks));
-  localStorage.setItem('reference', JSON.stringify(virusName));
+  if (virusName !== 'ncov') {
+    DEFAULT[0].genome = virusName;
+  }
+  // let toReturn = DEFAULT.concat(tracks);
+  let toReturn = tracks;
 
-  return tmpVar;
+  console.log(virusName);
+  sessionStorage.setItem('tracks', JSON.stringify(tracks));
+  sessionStorage.setItem('reference', JSON.stringify(virusName));
+
+  // return tmpVar;
+  // console.log(toReturn);
+  return toReturn;
 
 }

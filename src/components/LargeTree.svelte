@@ -4,14 +4,16 @@
   import { Cart } from '../stores/Cart';
   import ButtonGroup from '../UI/ButtonGroup.svelte';
   export let virusName;
+  let loading = true;
   let virusDisplayed;
   import { createLargeTree } from "../scripts/createLargeTree";
   import { saveDataOnWindow } from '../scripts/saveDataOnWindow';
-  import FILESJSON from '../json/pairwise.json';
+  // import FILESJSON from '../json/pairwise.json';
 
   let mode = 'linear'; // mode
   let indent = 'right';
   export let metadata;
+  export let FILESJSON;
 
 
 function addDataToCart(input) {
@@ -83,3 +85,6 @@ function addDataToCart(input) {
   <Switch on:mode-change={handleModeChange}/>
 </div>
 <div><svg width="800" height="600" id="tree_display" /></div>
+<!-- {#if loading}
+   Loading ...
+{/if} -->

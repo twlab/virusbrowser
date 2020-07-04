@@ -1,0 +1,11 @@
+{
+  "genomeName": "SARS-CoV-2",
+  "viewInterval": { "start": 0, "end": 29903 },
+  "tracks": [],
+  "metadataTerms": [],
+  "regionSets": [],
+  "regionSetViewIndex": -1,
+  "trackLegendWidth": 120,
+  "bundleId": "8e976800-901d-11ea-857a-f5d336568ae2",
+  "isShowingNavigator": true
+}

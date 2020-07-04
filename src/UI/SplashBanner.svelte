@@ -2,6 +2,15 @@
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
   export let virusName, fullNames;
+  console.log(virusName);
+  const GENOME_NAME_MAP = {
+    ncov: "SARS-CoV-2",
+    mers: "MERS",
+    sars: "SARS",
+    ebola: "Ebola"
+  };
+  console.log(fullNames[GENOME_NAME_MAP[virusName]]);
+
 </script>
 
 <!--Main-->
@@ -14,12 +23,12 @@
     <h1
       class="my-4 text-3xl md:text-5xl text-purple-800 font-bold leading-tight
       text-center md:text-left slide-in-bottom-h1">
-      {fullNames[virusName].name}
+      {fullNames[GENOME_NAME_MAP[virusName]].name}
     </h1>
     <p
       class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left
       slide-in-bottom-subtitle">
-      {fullNames[virusName].desc}
+      {fullNames[GENOME_NAME_MAP[virusName]].desc}
     </p>
   </div>
   <div

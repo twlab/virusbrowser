@@ -5,8 +5,9 @@
   import { saveDataOnWindow } from "../scripts/saveDataOnWindow";
   export let virusName;
   export let DATA;
+  export let FILESJSON;
   // import FILESJSON from '../json/database.json';
-  import FILESJSON from "../json/pairwise.json";
+  // import FILESJSON from "../json/pairwise.json";
   import ALIGNMENTSJSON from "../json/alignment_bed.json";
 
   function updateCart(input) {
@@ -26,7 +27,6 @@
       FILESJSON,
       ALIGNMENTSJSON
     );
-    // window.TRACKS = tracksWindow;
   }
 
   let example = 0;
@@ -161,13 +161,17 @@
         let letrs = {};
         rows.forEach(row => {
           let splitStr = row.Collection_Date.split("-");
+          // let year =
+          //   splitStr.length !== 0 ? splitStr[splitStr.length - 1] : "N/A";
           let year =
-            splitStr.length !== 0 ? splitStr[splitStr.length - 1] : "N/A";
+            splitStr.length !== 0 ? splitStr[0] : "N/A";
           let letr = year;
           if (letrs[letr] === undefined)
-            letrs[letr] = {
-              name: letr,
-              value: letr
+            letrs[row.Collection_Date] = {
+              // name: letr,
+              // value: letr,
+              name: row.Collection_Date,
+              value: row.Collection_Date
             };
         });
         // fix order
@@ -178,18 +182,24 @@
       },
       filterValue: v => {
         let splitStr = v.Collection_Date.split("-");
+        // let year =
+        //   splitStr !== undefined && splitStr.length !== 0
+        //     ? splitStr[splitStr.length - 1]
+        //     : "N/A";
+        // return splitStr[splitStr.length - 1];
         let year =
           splitStr !== undefined && splitStr.length !== 0
-            ? splitStr[splitStr.length - 1]
+            ? splitStr[0]
             : "N/A";
-        return splitStr[splitStr.length - 1];
+        // return splitStr[0];
+        return v.Collection_Date;
       }
     }
   ];
 </script>
 
 {#if DATA !== undefined}
-  <div class="overflow-y-scroll border-2 p-2 m-4" style="height: 80%;">
+  <div class="overflow-y-scroll border-2 p-2 m-4 h-screen">
     <div
       class="w-full pt-6 pb-6 text-sm text-center md:text-left fade-in flex
       justify-center">

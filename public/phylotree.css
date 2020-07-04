@@ -15,11 +15,11 @@
   shape-rendering: crispEdges;
 }
 
-.node circle, .node ellipse, .node rect {
+/* .node circle, .node ellipse, .node rect {
 fill: steelblue;
 stroke: black;
 stroke-width: 0.5px;
-}
+} */
 
 .internal-node circle, .internal-node ellipse, .internal-node rect{
 fill: #CCC;

@@ -1,0 +1,26 @@
+{
+  "Ebola": {
+    "name": "Ebola",
+    "id": "ebola",
+    "desc":
+      "Ebola is a rare but deadly virus that causes fever, body aches, and diarrhea, and sometimes bleeding inside and outside the body. As the virus spreads through the body, it damages the immune system and organs. Ultimately, it causes levels of blood-clotting cells to drop. This leads to severe, uncontrollable bleeding."
+  },
+  "SARS": {
+    "name": "SARS",
+    "id": "sars",
+    "desc":
+      "Severe acute respiratory syndrome (SARS) is a viral respiratory illness caused by a coronavirus called SARS-associated coronavirus (SARS-CoV). SARS was first reported in Asia in February 2003. The illness spread to more than two dozen countries in North America, South America, Europe, and Asia before the SARS global outbreak of 2003 was contained."
+  },
+  "MERS": {
+    "name": "MERS",
+    "id": "mers",
+    "desc":
+      "Middle East Respiratory Syndrome (MERS) is viral respiratory illness that is new to humans. It was first reported in Saudi Arabia in 2012 and has since spread to several other countries, including the United States. Most people infected with MERS-CoV developed severe respiratory illness, including fever, cough, and shortness of breath. Many of them have died."
+  },
+  "SARS-CoV-2": {
+    "name": "SARS-CoV-2",
+    "id": "ncov",
+    "desc":
+      "Since its debut in mid-December, 2019, the zoonotic SARS-CoV-2 has rapidly spread from its origin in Wuhan, China, to several countries across the globe, leading to a global health crisis. Research efforts have begun sequencing the 29 kb virus genome, allowing for comparisons between the novel virus and close relatives. The WashU Virus Genome Browser is home to the genomic sequences of 45 SARS-CoV-2 strains, as well as hundreds of related viruses, including severe acute respiratory syndrome coronavirus (SARS-CoV), Middle East respiratory syndrome coronavirus (MERS-CoV), and Ebola virus. In addition to included data tracks, the browser supports user-uploaded sequences, as well as two visualization platforms: a genomic track view and a phylogenetic tree view. Our hope is that the WashU Virus Genome Browser will serve as an efficient tool, aiding researchers in better understanding the disease."
+  }
+}

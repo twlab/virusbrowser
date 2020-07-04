@@ -29,6 +29,7 @@
   let myDrawerOpen = true;
   // let active = "Gray Kittens";
   let active = 0;
+  let FILESJSON = [];
   function setActive(value) {
     active = value;
     // myDrawerOpen = false;
@@ -36,54 +37,79 @@
 
   const virusList = ["Ebola", "SARS", "MERS", "SARS-CoV-2"];
   const virusNameList = ["ebola", "sars", "mers", "ncov"];
-  const fullNames = {
-    ebola: {
+  let fullNames = {
+    "Ebola": {
       name: "Ebola",
+      id: 'ebola',
       desc:
         "Ebola is a rare but deadly virus that causes fever, body aches, and diarrhea, and sometimes bleeding inside and outside the body. As the virus spreads through the body, it damages the immune system and organs. Ultimately, it causes levels of blood-clotting cells to drop. This leads to severe, uncontrollable bleeding."
     },
-    sars: {
+    "SARS": {
       name: "SARS",
+      id: "sars",
       desc:
         "Severe acute respiratory syndrome (SARS) is a viral respiratory illness caused by a coronavirus called SARS-associated coronavirus (SARS-CoV). SARS was first reported in Asia in February 2003. The illness spread to more than two dozen countries in North America, South America, Europe, and Asia before the SARS global outbreak of 2003 was contained."
     },
-    mers: {
+    "MERS": {
       name: "MERS",
+      id: "mers",
       desc:
         "Middle East Respiratory Syndrome (MERS) is viral respiratory illness that is new to humans. It was first reported in Saudi Arabia in 2012 and has since spread to several other countries, including the United States. Most people infected with MERS-CoV developed severe respiratory illness, including fever, cough, and shortness of breath. Many of them have died."
     },
-    ncov: {
+    "SARS-CoV-2": {
       name: "SARS-CoV-2",
+      id: "ncov",
       desc:
         "Since its debut in mid-December, 2019, the zoonotic SARS-CoV-2 has rapidly spread from its origin in Wuhan, China, to several countries across the globe, leading to a global health crisis. Research efforts have begun sequencing the 29 kb virus genome, allowing for comparisons between the novel virus and close relatives. The WashU Virus Genome Browser is home to the genomic sequences of 45 SARS-CoV-2 strains, as well as hundreds of related viruses, including severe acute respiratory syndrome coronavirus (SARS-CoV), Middle East respiratory syndrome coronavirus (MERS-CoV), and Ebola virus. In addition to included data tracks, the browser supports user-uploaded sequences, as well as two visualization platforms: a genomic track view and a phylogenetic tree view. Our hope is that the WashU Virus Genome Browser will serve as an efficient tool, aiding researchers in better understanding the disease."
     }
   };
   let DATA = {};
-  let virusName = "ncov";
+  let virusName = "SARS-CoV-2";
+  let virusId;
+  let GENOMES_DICT;
 
   function handleReferenceSelect(event) {
-    if (event.detail === "SARS-CoV-2") {
-      virusName = "ncov";
-    } else {
-      virusName = event.detail.toLowerCase();
-    }
+    // if (event.detail === "SARS-CoV-2") {
+    //   virusName = "SARS-CoV-2";
+    // } else {
+    //   virusName = event.detail.toLowerCase();
+    // }
+    virusName = event.detail;
+    virusId = fullNames[event.detail].id;
+    console.log(virusName);
+    console.log(virusId);
     Cart.addDataItems([]);
     keyedTabsActive = iconTabs[2];
   }
 
   const unsubscribe = Cart.subscribe(async store => {
     const { data } = store;
-    // window.BROWSER_DATA.a = data;
   });
 
   onDestroy(() => {
     unsubscribe();
   });
 
-  onMount(() => {
-    virusNameList.forEach(reference => {
-      let fileHandle = require(`./metadata/${reference}_all_skinny.json`);
-      DATA[reference] = fileHandle.map((d, i) => {
+  onMount(async () => {
+    let FILESJSON_not_ncov = require("./json/pairwise.json");
+    // GENOMES_DICT = require("./genomes.json");
+    // console.log(FILESJSON_not_ncov.length)
+    // const pairwise_ncov_res = await fetch('https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/latest/updated.json');
+    const pairwise_ncov_res = await fetch('https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/updated.json'); // TEST
+    const pairwise_ncov_json = await pairwise_ncov_res.json();
+    FILESJSON = [...FILESJSON_not_ncov, ...pairwise_ncov_json];
+    
+    // await virusNameList.forEach(async reference => {
+    await virusList.forEach(async reference => {
+      let fileHandle;
+      if (reference === 'SARS-CoV-2') {
+        // const res = await fetch(`https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/latest/metadata.json`);
+        const res = await fetch(`https://wangftp.wustl.edu/~cfan/public_viralBrowser/ncov/daily_updates/test/metadata.json`); // TEST
+		    fileHandle = await res.json();
+      } else {
+        fileHandle = require(`./metadata/${fullNames[reference].id}_all_skinny.json`);
+      }
+      DATA[fullNames[reference].id] = fileHandle.map((d, i) => {
         const {
           accession,
           organism,
@@ -110,8 +136,7 @@
       });
     });
 
-    // localStorage.setItem("tracks", "");
-    const TRACKS = localStorage.getItem("tracks");
+    const TRACKS = sessionStorage.getItem("tracks");
     if (TRACKS !== "") {
       let parsedTracks = JSON.parse(TRACKS) || [];
       Cart.addDataItems(
@@ -119,9 +144,15 @@
       );
     }
 
-    let referenceLS = localStorage.getItem("reference");
-    let parsedReference = JSON.parse(referenceLS);
+    let referenceLS = sessionStorage.getItem("reference");
+    let parsedReference;
+    console.log(referenceLS);
+    if (referenceLS !== undefined && referenceLS !== 'undefined' ) {
+      parsedReference = JSON.parse(referenceLS);
+    }
+    console.log(parsedReference);
     if (parsedReference) {
+      console.log('reaching here')
       virusName = parsedReference;
     }
   });
@@ -296,11 +327,11 @@
             </div>
           {:else if active === 1}
             <div style="height: 800px;" class="container">
-              <LargeTreeContainer {virusName} DATA={DATA[virusName]} />
+              <LargeTreeContainer virusName={virusId} FILESJSON={FILESJSON} DATA={DATA[virusId]} />
             </div>
           {:else if active === 2}
             <div style="height: 800px;">
-              <DataTable {virusName} DATA={DATA[virusName]} />
+              <DataTable virusName={virusId} FILESJSON={FILESJSON} DATA={DATA[virusId]} />
             </div>
           {:else if active === 3}
             <div style="height: 100%;" class="container">
@@ -313,7 +344,7 @@
         <div class="w-full xl:w-1/5 lg:items-start" />
       </div>
       <div style="height: 100%;" class:hidden={active !== 4}>
-        <BrowserView {virusName} {active} />
+        <BrowserView virusName={virusId} {active} {FILESJSON}/>
       </div>
     </main>
   </AppContent>

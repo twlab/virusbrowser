@@ -73,14 +73,13 @@
       });
     });
 
-    // localStorage.setItem("tracks", "");
-    const TRACKS = localStorage.getItem('tracks');
+    const TRACKS = sessionStorage.getItem('tracks');
     if (TRACKS !== '') {
       let parsedTracks = JSON.parse(TRACKS);
       Cart.addDataItems(parsedTracks.filter(d => d.type === 'pairwise').map(d => d.metadata));
     }
 
-    let referenceLS = localStorage.getItem('reference');
+    let referenceLS = sessionStorage.getItem('reference');
     let parsedReference = JSON.parse(referenceLS);
     if (parsedReference) {
       virusName = parsedReference;

@@ -5,19 +5,22 @@
 
   const dispatch = createEventDispatcher();
   function updateSelected(input) {
-    if (input === 'SARS-CoV-2') {
-      input = 'ncov';
-    }
+    // if (input === 'SARS-CoV-2') {
+    //   input = 'ncov';
+    // }
     selected = input;
     dispatch('reference-select', selected);
     // window.BROWSER_DATA.reference = input;
-    localStorage.setItem('tracks', JSON.stringify([]));
-    localStorage.setItem('reference', JSON.stringify(input.toLowerCase()));
+    sessionStorage.setItem('tracks', JSON.stringify([]));
+    sessionStorage.setItem('reference', JSON.stringify(input));
   }
 
   onMount(() => {
-    let referenceLS = localStorage.getItem('reference');
-    let parsedReference = JSON.parse(referenceLS);
+    let referenceLS = sessionStorage.getItem('reference');
+    let parsedReference;
+    if (referenceLS !== 'undefined') {
+      parsedReference = JSON.parse(referenceLS);
+    }
     if (parsedReference) {
       selected = parsedReference;
       if (parsedReference === 'ncov') {
