@@ -1,0 +1,8 @@
+type	hier
+un_sequenced	0
+frameshift	1
+AA_deletion	2
+AA_insertion	3
+missense	4
+silent	5
+	100
