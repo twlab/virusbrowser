@@ -5,6 +5,9 @@ This Github repository hosts all of our publicly available scripts, such as thos
 
 This is also where users can submit issues and feedback.
 
+
+Additional resources can be found here:
+
 - [Documentation for the WashU Virus Genome Browser](https://virusgateway.readthedocs.io/en/latest/index.html)
 - [A series of short tutorial videos is available](https://www.youtube.com/channel/UCuIQetcmC5h1h_LXmhrlKrA)
 
