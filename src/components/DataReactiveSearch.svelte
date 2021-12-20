@@ -1,12 +1,13 @@
 <script>
-  import { onDestroy, afterUpdate, onMount } from "svelte";
-	// import { Cart } from "../stores/Cart.js";
-	import Button, { Label } from "@smui/button";
+  import { onDestroy, afterUpdate, onMount } from 'svelte';
+  // import { Cart } from "../stores/Cart.js";
+  import Button, { Label } from '@smui/button';
   // import { saveDataOnWindow } from "../scripts/saveDataOnWindow";
   // import { createDatahub } from "../scripts/createDatahub";
   // import FILESJSON from "../json/pairwise.json";
-  import axios from "axios";
-  import uuid from "uuid";
+  import axios from 'axios';
+  // import uuid from "uuid";
+  const uuid = require('uuid').v4();
   export let virusName;
   export let active; // 4 if tab is active
   export let FILESJSON;
@@ -16,11 +17,9 @@
   let error;
   let content;
   let DATAHUB_URL;
-	let prevActive;
-	let change_occured = false;
+  let prevActive;
+  let change_occured = false;
 
-  // const POST_DATAHUB_URL =
-  //   "https://5dum6c4ytb.execute-api.us-east-1.amazonaws.com/dev/datahub";
   // const BROWSER_URL =
   //   "https://eg-react.s3-website-us-east-1.amazonaws.com/browser";
 
@@ -29,29 +28,29 @@
   //   mers: "MERS",
   //   sars: "SARS",
   //   ebola: "Ebola"
-	// };
-	
-	onMount(() => {
-    const SOURCE=`https://virusgateway-data-table.now.sh/?VirusName=%5B%22${virusFullName}%22%5D`;
+  // };
+
+  onMount(() => {
+    const SOURCE = `https://virusgateway-data-table-dpuru.vercel.app/?VirusName=%5B%22${virusFullName}%22%5D`;
     // const SOURCE="http://localhost:3000";
 
-		content = `<iframe
+    content = `<iframe
 																id="data-search-embed"
 																src="${SOURCE}"
 																allowfullscreen>
                               </iframe>`;
-  })
-	afterUpdate(() => {
-    const SOURCE=`https://virusgateway-data-table.now.sh/?VirusName=%5B%22${virusFullName}%22%5D`;
+  });
+  afterUpdate(() => {
+    const SOURCE = `https://virusgateway-data-table-dpuru.vercel.app/?VirusName=%5B%22${virusFullName}%22%5D`;
     // const SOURCE="http://localhost:3000";
 
-		content = `<iframe
+    content = `<iframe
 																id="data-search-embed"
 																src="${SOURCE}"
 																allowfullscreen>
                               </iframe>`;
-  })
-  
+  });
+
   // afterUpdate(() => {
   //   if (change_occured && active === 4) {
   //     change_occured = false;
@@ -84,12 +83,12 @@
   //           // DATAHUB_URL = `https://epigenomegateway.wustl.edu/browser`;
   //           console.log("Created datahub:", DATAHUB_URL);
 
-  //           content = `<iframe
-	// 															id="browser-embed"
-	// 															src="${DATAHUB_URL}"
-	// 															allowfullscreen>
-	// 														</iframe>`;
-	// 					const browserHandle = document.getElementById("browser-embed");
+  //           content = `<
+  // 															id="browser-embed"
+  // 															src="${DATAHUB_URL}"
+  // 															allowfullscreen>
+  // 														</iframe>`;
+  // 					const browserHandle = document.getElementById("browser-embed");
   //           if (browserHandle && active === 4 && DATA.length > 0) {
   //             browserHandle.contentDocument.location.reload(true);
   //           }
@@ -100,14 +99,14 @@
   //         error = err;
   //       });
   //     // }
-	// 	}
-	// 	// prevActive = active;
+  // 	}
+  // 	// prevActive = active;
   // });
 
   // const unsubscribe = Cart.subscribe(async store => {
   //   const { data } = store;
-	// 	DATA = data;
-	// 	change_occured = true;
+  // 	DATA = data;
+  // 	change_occured = true;
   //   // const browserHandle = document.getElementById("browser-embed");
   //   // if (browserHandle && active === 4 && DATA.length > 0) {
   //   //   browserHandle.contentDocument.location.reload(true);
@@ -118,6 +117,25 @@
   //   unsubscribe();
   // });
 </script>
+
+<div class="test">
+  {#if uploaded}
+    <div class="float-right mt-4">
+      <a href={DATAHUB_URL} target="_blank"
+        ><Button><Label>View in new tab</Label></Button></a
+      >
+    </div>
+    <div class="iframe-container">
+      {@html content}
+    </div>
+  {:else if error}
+    <p>{error}</p>
+  {:else}
+    <p>Generating datahub. Please wait...</p>
+    <!-- {:else}
+    <p>Add data in Data tab</p> -->
+  {/if}
+</div>
 
 <style>
   .iframe-container {
@@ -136,21 +154,3 @@
     left: 0;
   }
 </style>
-
-<div class="test">
-  
-  {#if uploaded}
-		<div class="float-right mt-4">
-    <a href={DATAHUB_URL} target="_blank"><Button><Label>View in new tab</Label></Button></a>
-		</div>
-		<div class="iframe-container">
-			{@html content}
-		</div>
-  {:else if error}
-    <p>{error}</p>
-  {:else }
-    <p>Generating datahub. Please wait...</p>
-  <!-- {:else}
-    <p>Add data in Data tab</p> -->
-  {/if}
-</div>

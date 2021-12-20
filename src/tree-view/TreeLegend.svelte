@@ -15,7 +15,6 @@
       terms = [...new Set(metadataByCriteria)];
   }
 
-  console.log(CRITERIA)
   onMount(() => {
     console.log(metadata);
   })

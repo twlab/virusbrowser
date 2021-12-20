@@ -12,7 +12,7 @@
     Scrim
   } from "@smui/drawer";
   import List, { Item, Text, Graphic, Separator, Subheader } from "@smui/list";
-  import H6 from "@smui/common/H6.svelte";
+  // import H6 from "@smui/common/H6.svelte";
   import LargeTreeContainer from "./containers/LargeTreeContainer.svelte";
   import DataTable from "./components/DataTable.svelte";
   import { Cart } from "./stores/Cart.js";
@@ -301,7 +301,7 @@
         </Item>
 
         <Separator nav />
-        <Subheader component={H6}>Resources</Subheader>
+        <Subheader>Resources</Subheader>
         {#each helpMenuItems as item}
           <Item href={item.url}>
             <Graphic class="material-icons" aria-hidden="true">

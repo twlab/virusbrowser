@@ -1,5 +1,5 @@
 <script>
-  import { onMount, beforeUpdate } from 'svelte'; 
+  import { onMount, beforeUpdate, afterUpdate } from 'svelte'; 
   // import Tree from "./Tree.svelte";
   import TreeView from "./TreeView.svelte";
   import TreeLegend from "./TreeLegend.svelte";
@@ -23,9 +23,6 @@
 
   function handleCriteriaChange(event) {
     CRITERIA = event.detail;
-    if (CRITERIA.id === 3 && virusName !== 'SARS-CoV-2') {
-      CRITERIA.leaflet = 0;
-    }
   }
 
   const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
@@ -89,11 +86,13 @@
 
   beforeUpdate(async () => {
     if (virusName !== virusDisplayed) {
+      d3.select("#phylogram").selectAll().remove();
       CRITERIA = { id: 1, text: 'Clade', key: 'Clade' };
       virusDisplayed = virusName;
       console.log('and working here..');
+      // console.log(virusName)
       TREE = require(`../json/${virusName}.tree.js`)
-      console.log(METADATA);
+      // console.log(METADATA);
       // promise = Promise.all([getMetadata(), getTree()]);
       // const [metadata_response, tree_response] = await promise;
       // METADATA = metadata_response;
@@ -154,7 +153,7 @@
     {:else}
      -->
 
-    {#await promise}
+    <!-- {#await promise}
       <div>
       <p> Please wait .. loading metadata file...</p>
       <small>This will take a few seconds</small>
@@ -167,7 +166,7 @@
         </div>
         <div class="flex justify-between">
           <div class="w-3/4">
-            <TreeView {virusName} {CRITERIA} metadata={METADATA} tree={TREE}/>
+            <TreeView {CRITERIA} metadata={METADATA} tree={TREE}/>
           </div>
           <div class="w-1/4">
             <TreeLegend {CRITERIA} metadata={METADATA}/>
@@ -176,7 +175,21 @@
       </div>
     {:catch error}
       <p style="color: red">{error.message}</p>
-    {/await}
+    {/await} -->
     <!-- {/if} -->
+    <div class='mx-8'>
+      <div class="flex justify-start">
+        <Dropdown on:option-select={handleCriteriaChange} />
+        <div id="tooltip" class="tooltip ml-8 p-4 text-start mr-48 w-128 h-32 rounded-md text-xs font-mono hidden" />
+      </div>
+      <div class="flex justify-between">
+        <div class="w-3/4">
+          <TreeView {virusName} {CRITERIA} metadata={METADATA} tree={TREE}/>
+        </div>
+        <div class="w-1/4">
+          <TreeLegend {CRITERIA} metadata={METADATA}/>
+        </div>
+      </div>
+    </div>
   </main>
 </div>

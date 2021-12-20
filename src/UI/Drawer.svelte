@@ -9,14 +9,14 @@
   } from "@smui/drawer";
   import Button, { Label } from "@smui/button";
   import List, { Item, Text, Graphic, Separator, Subheader } from "@smui/list";
-  import H6 from "@smui/common/H6.svelte";
+  // import H6 from "@smui/common/H6.svelte";
   let clicked = "nothing yet";
-  let myDrawer;
-  let myDrawerOpen = true;
-  let active = "Gray Kittens";
-  function setActive(value) {
-    active = value;
-    myDrawerOpen = true;
+  let myDrawer2;
+  let myDrawer2Open = true;
+  let active2 = "Gray Kittens";
+  function setActive2(value) {
+    active2 = value;
+    myDrawer2Open = true;
   }
 </script>
 
@@ -85,7 +85,7 @@
       </Item>
 
       <Separator nav />
-      <Subheader component={H6}>Labels</Subheader>
+      <Subheader>Labels</Subheader>
       <Item
         href="javascript:void(0)"
         on:click={() => setActive2('Family')}
